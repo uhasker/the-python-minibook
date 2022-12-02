@@ -437,7 +437,7 @@ title="Print to PDF"
 <p>For example if we want to create a ball at position <code class="docutils literal notranslate"><span class="pre">10</span></code> and with speed <code class="docutils literal notranslate"><span class="pre">8</span></code>, we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball = Ball(10, 8)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_ball = Ball(10, 8)
 </pre></div>
 </div>
 </div>
@@ -445,7 +445,7 @@ title="Print to PDF"
 <p>Let us inspect the attributes of the <code class="docutils literal notranslate"><span class="pre">ball</span></code> object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f&quot;pos = {ball.pos}, speed = {ball.speed}&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f&quot;pos = {my_ball.pos}, speed = {my_ball.speed}&quot;
 </pre></div>
 </div>
 </div>
@@ -458,7 +458,7 @@ title="Print to PDF"
 <p>We can also get the class of the object using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(ball)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(my_ball)
 </pre></div>
 </div>
 </div>
@@ -471,7 +471,7 @@ title="Print to PDF"
 <p>We can also confirm that <code class="docutils literal notranslate"><span class="pre">ball</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class using the <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function. This will come in handy later:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>isinstance(ball, Ball)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>isinstance(my_ball, Ball)
 </pre></div>
 </div>
 </div>
@@ -484,14 +484,14 @@ title="Print to PDF"
 <p>We could now change the state of the ball directly. For example this is how we could move the ball:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball.pos += ball.speed
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>my_ball.pos += my_ball.speed
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f&quot;pos = {ball.pos}, speed = {ball.speed}&quot;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f&quot;pos = {my_ball.pos}, speed = {my_ball.speed}&quot;
 </pre></div>
 </div>
 </div>
@@ -511,25 +511,17 @@ title="Print to PDF"
         self.pos = pos
         self.speed = speed
         
-    def move(self):
-        self.pos += self.speed
+    def move(self, t):
+        self.pos += self.speed * t
 </pre></div>
 </div>
 </div>
 </div>
+<p>Note that after creating the new class need to <em>redefine</em> the <code class="docutils literal notranslate"><span class="pre">my_ball</span></code> object, otherwise we will still be using the old class!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball.move()
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ball</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: &#39;Ball&#39; object has no attribute &#39;move&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball = Ball(10, 8)
+ball.move(2)
 </pre></div>
 </div>
 </div>
@@ -546,6 +538,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Note that if you see the error message <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">'Ball'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'move'</span></code> this means that you are still using the <em>old</em> ball class and you need to redefine the class.</p>
 <p>Note how the behaviour <em>changed</em> the object state. This is what objects are all about. They are initialized with some state and then we can use their behaviour to update the state.</p>
 </section>
 <section id="the-str-and-repr-methods">
@@ -558,7 +551,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7f6190876e30&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7f0f8404c640&gt;
 </pre></div>
 </div>
 </div>
@@ -570,7 +563,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7f6190876e30&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7f0f8404c640&gt;
 </pre></div>
 </div>
 </div>
@@ -760,7 +753,7 @@ ball1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=316, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=318, y=240, dx=-2, dy=2)
 </pre></div>
 </div>
 </div>
@@ -846,7 +839,7 @@ ball2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003370880
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139704616143216
 </pre></div>
 </div>
 </div>
@@ -858,7 +851,7 @@ ball2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003370880
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139704616143216
 </pre></div>
 </div>
 </div>
@@ -891,7 +884,7 @@ ball2 = Ball(320, 240, -2, 2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003361808
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139704616141632
 </pre></div>
 </div>
 </div>
@@ -903,7 +896,7 @@ ball2 = Ball(320, 240, -2, 2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003368384
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139704616144656
 </pre></div>
 </div>
 </div>

@@ -124,6 +124,21 @@ const thebe_selector_output = ".output, .cell_output"
    Chapter 3. Functions
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-classes.html">
+   Chapter 4. Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-iterables.html">
+   Chapter 5. Iterables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-control-flow.html">
+   Chapter 6. Control flow
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -365,6 +380,11 @@ title="Print to PDF"
      Using the operators on strings
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     Logical operators
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -419,6 +439,11 @@ title="Print to PDF"
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#using-the-operators-on-strings">
      Using the operators on strings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logical-operators">
+     Logical operators
     </a>
    </li>
   </ul>
@@ -658,7 +683,7 @@ my_country
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [45],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_country</span> <span class="o">=</span> <span class="n">Germany</span>
 
 <span class="ne">NameError</span>: name &#39;Germany&#39; is not defined
@@ -667,6 +692,44 @@ my_country
 </div>
 </div>
 <p>We get a <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'Germany'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>. This is because in this example the interpreter thinks that <code class="docutils literal notranslate"><span class="pre">Germany</span></code> is supposed to be the symbolic name of a variable (as the quotes are missing). Since we did not declare a variable <code class="docutils literal notranslate"><span class="pre">Germany</span></code>, Python raises a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> telling us that there is no variable with the name <code class="docutils literal notranslate"><span class="pre">Germany</span></code>.</p>
+<p>This is very important to keep in mind - if you write a sequence of characters <em>without quotes</em>, the Python interpreter will think that the sequence of characters represents a variable name:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>the_answer_to_everything = 42
+
+# Python assumes that this sequence of characters represents the variable the_answer_to_everything.
+# Accordingly outputting or accessing the variable will output or access its value
+# which in this case is 42.
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+the_answer_to_everything
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
+</div>
+<p>However if you write a sequence of characters <em>with quotes</em>, the Python interpreter will think that the sequence of characters represents a string value:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Python assumes that this sequence of characters represents the string with the value &quot;the_answer_to_everything&quot;.
+# Accordingly outputting or accessing the variable will output or access its value
+# which in this case is &quot;the_answer_to_everything&quot;.
+# vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+&quot;the_answer_to_everything&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;the_answer_to_everything&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p>Sometimes you want to include the value of variables in strings. You can do this using a so called <strong>format string</strong>. In order to construct a format string, you prefix the string with <code class="docutils literal notranslate"><span class="pre">f</span></code> and put the variables inside square brackets <code class="docutils literal notranslate"><span class="pre">{}</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -791,7 +854,7 @@ z = 2
 </div>
 </div>
 </div>
-<p>The reason <code class="docutils literal notranslate"><span class="pre">==</span></code> outputs <code class="docutils literal notranslate"><span class="pre">False</span></code> here is because <code class="docutils literal notranslate"><span class="pre">42</span></code> is the integer <code class="docutils literal notranslate"><span class="pre">42</span></code>, while <code class="docutils literal notranslate"><span class="pre">&quot;42&quot;</span></code> is a string with the content <code class="docutils literal notranslate"><span class="pre">42</span></code>. These are two completely different things! In general in Python a string will never be equal to an integer. Generally speaking, if two values have a different data type, they will rarely be equal.</p>
+<p>The reason <code class="docutils literal notranslate"><span class="pre">==</span></code> outputs <code class="docutils literal notranslate"><span class="pre">False</span></code> here is because <code class="docutils literal notranslate"><span class="pre">42</span></code> is the integer <code class="docutils literal notranslate"><span class="pre">42</span></code>, while <code class="docutils literal notranslate"><span class="pre">&quot;42&quot;</span></code> is a string with the content <code class="docutils literal notranslate"><span class="pre">42</span></code>. These are two completely different things! In general in Python a string will never be equal to an integer. <em>Generally speaking, if two values have a different data type, they will rarely be equal.</em></p>
 <p>The most prominent exception to that rule is that floating point numbers are equal to integers if they have the same value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -986,7 +1049,7 @@ y = 43.5
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">49</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">58</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">42</span> <span class="o">/</span> <span class="mi">0</span>
 
 <span class="ne">ZeroDivisionError</span>: division by zero
@@ -1024,6 +1087,71 @@ y = 43.5
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>2 ** 3
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+</pre></div>
+</div>
+</div>
+</div>
+<p>All the operators we just introduced have so-called <strong>in-place</strong> equivalents which perform the operation and an assignment. For example instead of writing <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></code> you can write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+=</span> <span class="pre">y</span></code>.</p>
+<p>Here are a few examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 42
+y = 43
+x += y
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 42
+y = 43
+x *= y
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1806
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x = 2
+y = 3
+x **= y
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x
 </pre></div>
 </div>
 </div>
@@ -1144,6 +1272,19 @@ my_str * 3
 </div>
 </div>
 </div>
+<p>Note that two strings only compare equal, if <em>all</em> characters are equal (including whitespace characters). For example the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello&quot;</span></code> will <em>not be equal</em> to the string <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">&quot;</span></code> (with a whitespace at the end).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>&quot;Hello&quot; == &quot;Hello &quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 <p>Interestingly enough we can even use the comparison operators, which compares the strings <strong>lexicographically</strong>. Every character of string is compared alphabetically until we find two characters that aren’t equal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1170,6 +1311,133 @@ my_str * 3
 </div>
 </div>
 <p>Don’t spend too much time worrying about this - you will rarely use <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> to compare strings. We mostly mention this for the sake of completeness.</p>
+</section>
+<section id="logical-operators">
+<h3>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this headline">#</a></h3>
+<p>Finally, we need to mention the <strong>logical operators</strong> <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> which take boolean values.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator takes two boolean values and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if and only if they are <em>both</em> <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>False and False
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>False and True
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True and False
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True and True
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">or</span></code> operator takes two boolean values and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if <em>at least one</em> of the two values is <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>False or False
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>False or True
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True or False
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>True or True
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">not</span></code> operator takes a single boolean value and returns the <em>negation</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>not False
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>not True
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 </section>

@@ -1,0 +1,1080 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 4. Classes &#8212; Python Minibook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 5. Iterables" href="5-iterables.html" />
+    <link rel="prev" title="Chapter 3. Functions" href="3-functions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Minibook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    The Python minibook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-installation.html">
+   Chapter 1. Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-variables-data-types-and-operators.html">
+   Chapter 2. Variables, data types and operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-functions.html">
+   Chapter 3. Functions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 4. Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-iterables.html">
+   Chapter 5. Iterables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-control-flow.html">
+   Chapter 6. Control flow
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/4-classes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F4-classes.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/4-classes.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objects-and-classes">
+   Objects and classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-str-and-repr-methods">
+   The __str__ and __repr__ methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-identity">
+   Object identity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-equality">
+   Object equality
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 4. Classes</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objects-and-classes">
+   Objects and classes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-str-and-repr-methods">
+   The __str__ and __repr__ methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-identity">
+   Object identity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#object-equality">
+   Object equality
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-classes">
+<h1>Chapter 4. Classes<a class="headerlink" href="#chapter-4-classes" title="Permalink to this headline">#</a></h1>
+<section id="objects-and-classes">
+<h2>Objects and classes<a class="headerlink" href="#objects-and-classes" title="Permalink to this headline">#</a></h2>
+<p>An <strong>object</strong> is a data structure that contains <em>state</em> and <em>behaviour</em>.</p>
+<p>Before we can create objects, we (usually) need to define a <strong>class</strong> which is essentially a template for creating objects.</p>
+<p>Consider an example. We have a ball which has a position and a speed. The position and the speed are therefore the <em>state</em> of the ball. The ball can also move, i.e. update its position based on the speed. This is <em>behaviour</em>.</p>
+<p>We can define a class <code class="docutils literal notranslate"><span class="pre">Ball</span></code> (which will be the template for creating <code class="docutils literal notranslate"><span class="pre">Ball</span></code> objects in the future) like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class Ball:
+    def __init__(self, pos, speed):
+        self.pos = pos
+        self.speed = speed
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here the state consists of the values <code class="docutils literal notranslate"><span class="pre">pos</span></code> and <code class="docutils literal notranslate"><span class="pre">speed</span></code>. Generally speaking, values that are associated with objects (and represent its state) are called <strong>attributes</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function is a special function which <strong>initializes</strong> an object with some <em>initial state</em>.</p>
+<p>For example if we want to create a ball at position <code class="docutils literal notranslate"><span class="pre">10</span></code> and with speed <code class="docutils literal notranslate"><span class="pre">8</span></code>, we write:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball = Ball(10, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us inspect the attributes of the <code class="docutils literal notranslate"><span class="pre">ball</span></code> object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f&quot;pos = {ball.pos}, speed = {ball.speed}&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pos = 10, speed = 8&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also get the class of the object using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>type(ball)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__main__.Ball
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also confirm that <code class="docutils literal notranslate"><span class="pre">ball</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class using the <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> function. This will come in handy later:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>isinstance(ball, Ball)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>We could now change the state of the ball directly. For example this is how we could move the ball:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball.pos += ball.speed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f&quot;pos = {ball.pos}, speed = {ball.speed}&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pos = 18, speed = 8&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>But this isn’t really the way to go. What if we wanted to change the speed calculation later (for example taking friction into account)? Then we would need to adjust the calculation in every single place we use it, which is a lot of work and could introduce bugs if we forget the calculation adjustment somewhere.</p>
+<p>If you paid attention in the previous chapter, this is the same problem we had when introducing functions. We stored the repetitive calculations in the function body and then simply called the function. Luckily, objects provide a similar mechanism.</p>
+<p>We can define functions on objects - these functions are called <strong>methods</strong> and define the <em>behaviour</em> of the object. Note that the first parameter of all methods is the object itself. By convention this parameter is called <code class="docutils literal notranslate"><span class="pre">self</span></code>. For example here is how we could implement the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class with a <code class="docutils literal notranslate"><span class="pre">move</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class Ball:
+    def __init__(self, pos, speed):
+        self.pos = pos
+        self.speed = speed
+        
+    def move(self):
+        self.pos += self.speed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball.move()
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ball</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;Ball&#39; object has no attribute &#39;move&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>f&quot;pos = {ball.pos}, speed = {ball.speed}&quot;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pos = 26, speed = 8&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note how the behaviour <em>changed</em> the object state. This is what objects are all about. They are initialized with some state and then we can use their behaviour to update the state.</p>
+</section>
+<section id="the-str-and-repr-methods">
+<h2>The __str__ and __repr__ methods<a class="headerlink" href="#the-str-and-repr-methods" title="Permalink to this headline">#</a></h2>
+<p>Quite often, we want to output the object (e.g. using the <code class="docutils literal notranslate"><span class="pre">print</span></code> function) to see its current state. However, if we just try to output the object, we get a string that is pretty useless:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7f6190876e30&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(ball)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7f6190876e30&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Luckily, Python allows us to change this behaviour. There are two special methods called <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method produces a human-readable string for consumption by the end user. The <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method produces an <em>exact representation</em> of the object. This is reflected by when these methods are called. For example if you just output an object in the REPL, you will see the output of <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. If you <code class="docutils literal notranslate"><span class="pre">print</span></code> and object, you will see the result of <code class="docutils literal notranslate"><span class="pre">__str__</span></code>.</p>
+<p>These two methods often have the same implementation (since the end user usually wants to see the exact representation), but this doesn’t have to be the case. For example, we could argue, that the end user doesn’t care about the speed of the ball and only cares about its current position. Then the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method would return a string that doesn’t contain <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>. However the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method should still return all attributes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class Ball:
+    def __init__(self, x, y, dx, dy):
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
+        
+    def move(self):
+        self.x += self.dx
+        self.y += self.dy
+        
+    def __str__(self):
+        return f&quot;Ball(x={self.x}, y={self.y})&quot;
+    
+    def __repr__(self):
+        return f&quot;Ball(x={self.x}, y={self.y}, dx={self.dx}, dy={self.dy})&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball = Ball(x=320, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Note how printing the ball results in the output of __str__
+
+print(ball)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># However just outputting the ball results in the output of __repr__
+
+ball
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also call <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> manually by calling the <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">repr</span></code> functions:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>str(ball)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ball(x=320, y=240)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>repr(ball)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ball(x=320, y=240, dx=-2, dy=2)&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> are often the same, it’s enough to just define <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. If no <code class="docutils literal notranslate"><span class="pre">__str__</span></code> is defined and you try to call it, Python will fallback to calling <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class Ball:
+    def __init__(self, x, y, dx, dy):
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
+        
+    def move(self):
+        self.x += self.dx
+        self.y += self.dy
+    
+    def __repr__(self):
+        return f&quot;Ball(x={self.x}, y={self.y}, dx={self.dx}, dy={self.dy})&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print(ball)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should write <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> for practically all your classes as a second nature. Being able to see the state of an object when outputting it is extremely valuable.</p>
+</section>
+<section id="object-identity">
+<h2>Object identity<a class="headerlink" href="#object-identity" title="Permalink to this headline">#</a></h2>
+<p>Let’s create two objects of class <code class="docutils literal notranslate"><span class="pre">Ball</span></code> whose attributes have the same values:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 = Ball(320, 240, -2, 2)
+ball2 = Ball(320, 240, -2, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that all the attributes of these two objects have the same values, but they are <em>totally different</em> objects:</p>
+<p><img alt="" src="_images/different-objects.png" /></p>
+<p>This means that if we change the values of <code class="docutils literal notranslate"><span class="pre">ball1</span></code>, then <code class="docutils literal notranslate"><span class="pre">ball2</span></code> will be <em>completely unaffected</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1.x += ball1.dx
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># The value of ball1.x has changed
+
+ball1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=316, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># However the value of ball2.x is exactly the same as before
+
+ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>But what happens if we write this?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 = Ball(320, 240, -2, 2)
+ball2 = ball1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we have a completely different situation. The symbolic names <code class="docutils literal notranslate"><span class="pre">ball1</span></code> and <code class="docutils literal notranslate"><span class="pre">ball2</span></code> are still two different names, but they <em>refer to the exact same object</em>:</p>
+<p><img alt="" src="_images/same-object.png" /></p>
+<p>This means that whenever we make a change using the name <code class="docutils literal notranslate"><span class="pre">ball1</span></code>, that change will be visible in the name <code class="docutils literal notranslate"><span class="pre">ball2</span></code> as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1.x += ball1.dx
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Outputting ball1 obviously shows the new value of x
+ball1
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=318, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># However, outputting ball2 also outputs the new value of x!
+ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=318, y=240, dx=-2, dy=2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We say that <code class="docutils literal notranslate"><span class="pre">ball1</span></code> <em>is</em> <code class="docutils literal notranslate"><span class="pre">ball2</span></code> (i.e. they are the same object). In fact the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator can be used to check if two names represent the same object:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 is ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also see that <code class="docutils literal notranslate"><span class="pre">ball1</span></code> and <code class="docutils literal notranslate"><span class="pre">ball2</span></code> are the same object using the <code class="docutils literal notranslate"><span class="pre">id</span></code> function. Generally speaking, this function hands us a number that is unique for each object (as long as that object exists). In the Python interpreter we downloaded in chapter 1 (which is the CPython interpreter) this is achieved by returning the <strong>memory address</strong> of the object.</p>
+<p>In this case <code class="docutils literal notranslate"><span class="pre">ball1</span></code> and <code class="docutils literal notranslate"><span class="pre">ball2</span></code> point to the same object, so their memory address is the same:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>id(ball1)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003370880
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>id(ball2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003370880
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>id(ball1) == id(ball2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>However if we have two names that refer to different objects, then their memory address will not be the same and the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator will return <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 = Ball(320, 240, -2, 2)
+ball2 = Ball(320, 240, -2, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>id(ball1)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003361808
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>id(ball2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140057003368384
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>id(ball1) == id(ball2)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 is ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="object-equality">
+<h2>Object equality<a class="headerlink" href="#object-equality" title="Permalink to this headline">#</a></h2>
+<p>An interesting question is what happens if we use the equality operator <code class="docutils literal notranslate"><span class="pre">==</span></code> on objects. By default, the equality operator is equivalent to the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 = Ball(320, 240, -2, 2)
+ball2 = Ball(320, 240, -2, 2)
+
+ball1 == ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 = Ball(320, 240, -2, 2)
+ball2 = ball1
+
+ball1 == ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is not particularly useful. After all, if two balls have the exact same position and the exact same speed, we would probably want them to be equal (even though the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator returns <code class="docutils literal notranslate"><span class="pre">False</span></code>).</p>
+<p>Luckily, Python gives us a way to achieve this by <strong>overriding</strong> (i.e. providing a custom implementation) for the equality operator. In order to do this, we need to write a custom <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method which takes <code class="docutils literal notranslate"><span class="pre">self</span></code> and the other object we want to compare this object to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>class Ball:
+    def __init__(self, x, y, dx, dy):
+        self.x = x
+        self.y = y
+        self.dx = dx
+        self.dy = dy
+        
+    # some methods
+    
+    def __eq__(self, other):
+        return isinstance(other, Ball) and self.x == other.x and self.y == other.y and self.dx == other.dx and self.dy == other.dy
+    
+    def __repr__(self):
+        return f&quot;Ball(x={self.x}, y={self.y}, dx={self.dx}, dy={self.dy})&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method checks for two things. The first thing it checks for is if the other object is an instance of <code class="docutils literal notranslate"><span class="pre">Ball</span></code>. If it’s not, then the whole logical chain becomes <code class="docutils literal notranslate"><span class="pre">False</span></code>. This makes sense - after all, a <code class="docutils literal notranslate"><span class="pre">Ball</span></code> object should never be equal to a non-<code class="docutils literal notranslate"><span class="pre">Ball</span></code> object.</p>
+<p>However, if the other object is a <code class="docutils literal notranslate"><span class="pre">Ball</span></code> as well, we check whether all attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are equal. If they are, we return <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise we return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Now the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator works as we would like it to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>ball1 = Ball(320, 240, -2, 2)
+ball2 = Ball(320, 240, -2, 2)
+
+ball1 == ball2
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note that how and if you want to override <code class="docutils literal notranslate"><span class="pre">==</span></code> depends on your needs. For example it might actually be the case, that two balls shouldn’t compare equal, even <em>if</em> their attributes have the same values.</p>
+<p>But generally speaking, <em>if</em> you override the equality operator, you should override it by checking that the two objects have the same class and their attributes have the same values.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="3-functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 3. Functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="5-iterables.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 5. Iterables</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By uhasker<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

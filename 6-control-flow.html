@@ -1,0 +1,804 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 6. Control flow &#8212; Python Minibook</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Chapter 5. Iterables" href="5-iterables.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Python Minibook</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    The Python minibook
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-installation.html">
+   Chapter 1. Installation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-variables-data-types-and-operators.html">
+   Chapter 2. Variables, data types and operators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-functions.html">
+   Chapter 3. Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-classes.html">
+   Chapter 4. Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-iterables.html">
+   Chapter 5. Iterables
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Chapter 6. Control flow
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/6-control-flow.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F6-control-flow.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/6-control-flow.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-statements">
+   Conditional statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loops">
+   For loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehensions">
+   List comprehensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loops">
+   While loops
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Chapter 6. Control flow</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-statements">
+   Conditional statements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#for-loops">
+   For loops
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehensions">
+   List comprehensions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#while-loops">
+   While loops
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-control-flow">
+<h1>Chapter 6. Control flow<a class="headerlink" href="#chapter-6-control-flow" title="Permalink to this headline">#</a></h1>
+<section id="conditional-statements">
+<h2>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h2>
+<p>Very often, we want to execute some code depending on whether a <strong>condition</strong> is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Let’s say that we have a function <code class="docutils literal notranslate"><span class="pre">process_event</span></code> which takes a user event in a game and processes that event. Depending on the event we would need to execute different code.</p>
+<p>This achieved with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
+    if event == &quot;mousemoved&quot;:
+        print(&quot;User moved his mouse!&quot;)
+    elif event == &quot;keypressed&quot;:
+        print(&quot;User has pressed a key!&quot;)
+    else:
+        print(&quot;User did something else!&quot;)
+
+process_event(&quot;keypressed&quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User has pressed a key!
+</pre></div>
+</div>
+</div>
+</div>
+<p>First we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;mousemoved&quot;</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">moved</span> <span class="pre">his</span> <span class="pre">mouse!&quot;)</span></code>.
+If it isn’t we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;keypressed&quot;</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">has</span> <span class="pre">pressed</span> <span class="pre">his</span> <span class="pre">key!&quot;)</span></code>. Finally if none of the checks passed we move to the body of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement and execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">did</span> <span class="pre">something</span> <span class="pre">else!&quot;)</span></code>.</p>
+<p>We can have an arbitrary number of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. For example this would work just fine:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
+    if event == &quot;mousemoved&quot;:
+        print(&quot;User moved his mouse!&quot;)
+    elif event == &quot;keypressed&quot;:
+        print(&quot;User has pressed a key!&quot;)
+    elif event == &quot;keyreleased&quot;:
+        print(&quot;User has released a key!&quot;)
+    elif event == &quot;quit&quot;:
+        print(&quot;User quit the game!&quot;)
+    else:
+        print(&quot;User did something else!&quot;)
+
+process_event(&quot;quit&quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User quit the game!
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements are not needed. We can have an <code class="docutils literal notranslate"><span class="pre">if</span></code> statements without anything else:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
+    if event == &quot;mousemoved&quot;:
+        print(&quot;User moved his mouse!&quot;) 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>process_event(&quot;mousemoved&quot;)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User moved his mouse!
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we pass an event not covered by the <code class="docutils literal notranslate"><span class="pre">if</span></code> then nothing will happen because no code will be executed on the <code class="docutils literal notranslate"><span class="pre">process_event</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>process_event(&quot;somethingelse&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If statements can also be arbitrarily nested:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
+    if event[&quot;type&quot;] == &quot;keypressed&quot;:
+        if event[&quot;key&quot;] == &quot;SPACE&quot;:
+            print(&quot;User pressed space&quot;)
+        elif event[&quot;key&quot;] == &quot;UP&quot;:
+            print(&quot;User pressed up arrow&quot;)
+        else:
+            print(&quot;User pressed something else&quot;)
+    else:
+        print(&quot;User did something else&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>process_event({&quot;type&quot;: &quot;keypressed&quot;, &quot;key&quot;: &quot;SPACE&quot;})
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User pressed space
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="for-loops">
+<h2>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h2>
+<p>Another important control flow construct is the <strong>for loop</strong>. In Python, the for loop can be used to <strong>iterate</strong> over iterables and execute a block of code for each iteration.</p>
+<p>Here is how we could iterate over a list and print each element of that list:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>values = [0, 1, 4, 9, 16]
+for square in values:
+    print(square)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+4
+9
+16
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also iterate over ranges. This is commonly used if you need to iterate over a bunch of numbers and do something depending on the number:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for i in range(4):
+    print(i)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+1
+2
+3
+</pre></div>
+</div>
+</div>
+</div>
+<p>For example here is how we could create the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list automatically:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares = []
+for i in range(5):
+    squares.append(i ** 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="list-comprehensions">
+<h2>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h2>
+<p>Instead of populating a list using a for loop, we can write a <strong>list comprehension</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares = [i ** 2 for i in range(5)]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 4, 9, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is a feature that is pretty specific to Python and allows us to express complex control flow very concisely. Consider the difference between the following two constructs:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Regular for loop
+squares = []
+for i in range(5):
+    squares.append(i ** 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># List comprehension
+squares = [i ** 2 for i in range(5)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The second one is not only shorter, but also <em>more readable</em> because the intent of the code is clearer - we wish to create a new list. This is all the more powerful since list comprehensions can take conditions as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares = [i ** 2 for i in range(5) if i % 2 == 0]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Constrast this with what we would need to do if we wanted to write a regular for loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares = []
+for i in range(5):
+    if i % 2 == 0:
+        even_squares.append(i ** 2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4, 16]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Whenever we need to create a new list based on some values, we will utilize a list comprehension.</p>
+</section>
+<section id="while-loops">
+<h2>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h2>
+<p>Finally, <strong>while loops</strong> allow us to execute a block of code as long as a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Let’s say we have a list of items which have a certain weight and a knapsack with a limited maximum weight. We want to find out which items we can pack into the knapsack without exceeding that maximum weight. We would move over the list <em>while</em> the maximum weight is not exceeded and add the items:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>current_weight = 0
+maximum_weight = 100
+item_weights = [10, 20, 30, 20, 40, 20, 30]
+index = 0
+
+while current_weight &lt; maximum_weight:
+    current_weight += item_weights[index]
+    index += 1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>current_weight
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>index
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>item_weights[:index]
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 20, 40]
+</pre></div>
+</div>
+</div>
+</div>
+<p>A common example of while loop is the main loop of a game. Here we would have a <strong>flag</strong> that determines if the game is active or not. The body of the while loop then updates the game. If the player wins or loses the game, the flag is set to <code class="docutils literal notranslate"><span class="pre">False</span></code> and we will exit the while loop on the next iteration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">active</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">while</span> <span class="n">active</span><span class="p">:</span>
+    <span class="c1"># update game, this sets active = False here (e.g. if player wins or loses the game)</span>
+    
+    <span class="o">...</span>
+    
+    <span class="c1"># rerender game</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="5-iterables.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Chapter 5. Iterables</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By uhasker<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

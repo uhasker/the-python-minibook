@@ -538,8 +538,9 @@ ball.move(2)
 </div>
 </div>
 </div>
-<p>Note that if you see the error message <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">'Ball'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'move'</span></code> this means that you are still using the <em>old</em> ball class and you need to redefine the class.</p>
+<p>If you see the error message <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">'Ball'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'move'</span></code> this means that you are still using the <em>old</em> ball class and you need to redefine the class.</p>
 <p>Note how the behaviour <em>changed</em> the object state. This is what objects are all about. They are initialized with some state and then we can use their behaviour to update the state.</p>
+<p>We should also point out that apart from having to write classes yourself, you will <em>use</em> them <em>all the time</em>. In fact, we will introduce many extremely important classes in the <em>next chapter</em>.</p>
 </section>
 <section id="the-str-and-repr-methods">
 <h2>The __str__ and __repr__ methods<a class="headerlink" href="#the-str-and-repr-methods" title="Permalink to this headline">#</a></h2>
@@ -551,7 +552,7 @@ ball.move(2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7f6c9ce18d60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7f36745b9760&gt;
 </pre></div>
 </div>
 </div>
@@ -563,7 +564,7 @@ ball.move(2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7f6c9ce18d60&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7f36745b9760&gt;
 </pre></div>
 </div>
 </div>
@@ -839,7 +840,7 @@ ball2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140104465617920
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139871857120256
 </pre></div>
 </div>
 </div>
@@ -851,7 +852,7 @@ ball2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140104465617920
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139871857120256
 </pre></div>
 </div>
 </div>
@@ -884,7 +885,7 @@ ball2 = Ball(320, 240, -2, 2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140104465617680
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139871857122656
 </pre></div>
 </div>
 </div>
@@ -896,7 +897,7 @@ ball2 = Ball(320, 240, -2, 2)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140104465617488
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139871857122464
 </pre></div>
 </div>
 </div>

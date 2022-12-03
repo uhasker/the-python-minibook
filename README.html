@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>The Python minibook &#8212; Python Minibook</title>
+    <title>The Python minibook &#8212; The Python Minibook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <h1 class="site-logo" id="site-title">Python Minibook</h1>
+      <h1 class="site-logo" id="site-title">The Python Minibook</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -108,33 +108,43 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="1-installation.html">
+  <a class="reference internal" href="src/1-installation/chapter.html">
    Chapter 1. Installation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2-variables-data-types-and-operators.html">
+  <a class="reference internal" href="src/2-variables-data-types-and-operators/chapter.html">
    Chapter 2. Variables, data types and operators
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3-functions.html">
+  <a class="reference internal" href="src/3-functions/chapter.html">
    Chapter 3. Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4-classes.html">
+  <a class="reference internal" href="src/4-classes/chapter.html">
    Chapter 4. Classes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="5-iterables.html">
+  <a class="reference internal" href="src/5-iterables/chapter.html">
    Chapter 5. Iterables
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="6-control-flow.html">
+  <a class="reference internal" href="src/6-control-flow/chapter.html">
    Chapter 6. Control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/7-files/chapter.html">
+   Chapter 7. Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="src/8-modules-and-packages/chapter.html">
+   Chapter 8. Modules and packages
   </a>
  </li>
 </ul>
@@ -210,7 +220,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/uhasker/the-python-minibook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -227,7 +237,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -360,7 +370,16 @@ title="Print to PDF"
 <section id="useful-commands">
 <h2>Useful commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">#</a></h2>
 <p>Clear all notebooks:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find . -maxdepth <span class="m">1</span> -type f -name <span class="s2">&quot;*.ipynb&quot;</span> -exec jupyter nbconvert --clear-output --inplace <span class="o">{}</span> <span class="se">\;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find src -type f -name <span class="s2">&quot;*.ipynb&quot;</span> -exec jupyter nbconvert --clear-output --inplace <span class="o">{}</span> <span class="se">\;</span>
+</pre></div>
+</div>
+<p>Build the book as HTML:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+jupyter-book build .
+</pre></div>
+</div>
+<p>Build the book as PDF:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book build --builder pdfhtml .
 </pre></div>
 </div>
 </section>

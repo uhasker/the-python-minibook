@@ -9,5 +9,18 @@ The live version of the book is [here](https://uhasker.github.io/the-python-mini
 Clear all notebooks:
 
 ```sh
-find . -maxdepth 1 -type f -name "*.ipynb" -exec jupyter nbconvert --clear-output --inplace {} \;
+find src -type f -name "*.ipynb" -exec jupyter nbconvert --clear-output --inplace {} \;
+```
+
+Build the book as HTML:
+
+```sh
+pip install -r requirements.txt
+jupyter-book build .
+```
+
+Build the book as PDF:
+
+```sh
+jupyter-book build --builder pdfhtml .
 ```

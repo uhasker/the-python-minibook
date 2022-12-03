@@ -6,53 +6,54 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 6. Control flow &#8212; Python Minibook</title>
+    <title>Chapter 6. Control flow &#8212; The Python Minibook</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Chapter 5. Iterables" href="5-iterables.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Chapter 7. Files" href="../7-files/chapter.html" />
+    <link rel="prev" title="Chapter 5. Iterables" href="../5-iterables/chapter.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,14 +88,14 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
       
       
-      <h1 class="site-logo" id="site-title">Python Minibook</h1>
+      <h1 class="site-logo" id="site-title">The Python Minibook</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -102,40 +103,50 @@ const thebe_selector_output = ".output, .cell_output"
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
+                <a class="reference internal" href="../../intro.html">
                     The Python minibook
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="1-installation.html">
+  <a class="reference internal" href="../1-installation/chapter.html">
    Chapter 1. Installation
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="2-variables-data-types-and-operators.html">
+  <a class="reference internal" href="../2-variables-data-types-and-operators/chapter.html">
    Chapter 2. Variables, data types and operators
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="3-functions.html">
+  <a class="reference internal" href="../3-functions/chapter.html">
    Chapter 3. Functions
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="4-classes.html">
+  <a class="reference internal" href="../4-classes/chapter.html">
    Chapter 4. Classes
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="5-iterables.html">
+  <a class="reference internal" href="../5-iterables/chapter.html">
    Chapter 5. Iterables
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Chapter 6. Control flow
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../7-files/chapter.html">
+   Chapter 7. Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../8-modules-and-packages/chapter.html">
+   Chapter 8. Modules and packages
   </a>
  </li>
 </ul>
@@ -197,7 +208,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/6-control-flow.ipynb"
+        <a href="https://mybinder.org/v2/gh/uhasker/the-python-minibook/main?urlpath=tree/src/6-control-flow/chapter.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -207,7 +218,7 @@ title="Launch on Binder"
 
 <span class="headerbtn__icon-container">
   
-    <img src="_static/images/logo_binder.svg">
+    <img src="../../_static/images/logo_binder.svg">
   </span>
 <span class="headerbtn__text-container">Binder</span>
 </a>
@@ -240,7 +251,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book"
+        <a href="https://github.com/uhasker/the-python-minibook"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -257,7 +268,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F6-control-flow.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2Fsrc/6-control-flow/chapter.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -285,7 +296,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/6-control-flow.ipynb"
+        <a href="../../_sources/src/6-control-flow/chapter.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -421,15 +432,15 @@ title="Print to PDF"
 <p>This achieved with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
-    if event == &quot;mousemoved&quot;:
-        print(&quot;User moved his mouse!&quot;)
-    elif event == &quot;keypressed&quot;:
-        print(&quot;User has pressed a key!&quot;)
-    else:
-        print(&quot;User did something else!&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;mousemoved&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User moved his mouse!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;keypressed&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User has pressed a key!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User did something else!&quot;</span><span class="p">)</span>
 
-process_event(&quot;keypressed&quot;)
+<span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;keypressed&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -444,19 +455,19 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 <p>We can have an arbitrary number of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. For example this would work just fine:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
-    if event == &quot;mousemoved&quot;:
-        print(&quot;User moved his mouse!&quot;)
-    elif event == &quot;keypressed&quot;:
-        print(&quot;User has pressed a key!&quot;)
-    elif event == &quot;keyreleased&quot;:
-        print(&quot;User has released a key!&quot;)
-    elif event == &quot;quit&quot;:
-        print(&quot;User quit the game!&quot;)
-    else:
-        print(&quot;User did something else!&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;mousemoved&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User moved his mouse!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;keypressed&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User has pressed a key!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;keyreleased&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User has released a key!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;quit&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User quit the game!&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User did something else!&quot;</span><span class="p">)</span>
 
-process_event(&quot;quit&quot;)
+<span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;quit&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -469,16 +480,16 @@ process_event(&quot;quit&quot;)
 <p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements are not needed. We can have an <code class="docutils literal notranslate"><span class="pre">if</span></code> statements without anything else:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
-    if event == &quot;mousemoved&quot;:
-        print(&quot;User moved his mouse!&quot;) 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s2">&quot;mousemoved&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User moved his mouse!&quot;</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>process_event(&quot;mousemoved&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;mousemoved&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -491,7 +502,7 @@ process_event(&quot;quit&quot;)
 <p>If we pass an event not covered by the <code class="docutils literal notranslate"><span class="pre">if</span></code> then nothing will happen because no code will be executed on the <code class="docutils literal notranslate"><span class="pre">process_event</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>process_event(&quot;somethingelse&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;somethingelse&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -499,23 +510,23 @@ process_event(&quot;quit&quot;)
 <p>If statements can also be arbitrarily nested:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def process_event(event):
-    if event[&quot;type&quot;] == &quot;keypressed&quot;:
-        if event[&quot;key&quot;] == &quot;SPACE&quot;:
-            print(&quot;User pressed space&quot;)
-        elif event[&quot;key&quot;] == &quot;UP&quot;:
-            print(&quot;User pressed up arrow&quot;)
-        else:
-            print(&quot;User pressed something else&quot;)
-    else:
-        print(&quot;User did something else&quot;)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;keypressed&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;SPACE&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User pressed space&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">event</span><span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;UP&quot;</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User pressed up arrow&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User pressed something else&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User did something else&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>process_event({&quot;type&quot;: &quot;keypressed&quot;, &quot;key&quot;: &quot;SPACE&quot;})
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_event</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;keypressed&quot;</span><span class="p">,</span> <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;SPACE&quot;</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -532,9 +543,9 @@ process_event(&quot;quit&quot;)
 <p>Here is how we could iterate over a list and print each element of that list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>values = [0, 1, 4, 9, 16]
-for square in values:
-    print(square)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">square</span> <span class="ow">in</span> <span class="n">values</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -551,8 +562,8 @@ for square in values:
 <p>We can also iterate over ranges. This is commonly used if you need to iterate over a bunch of numbers and do something depending on the number:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for i in range(4):
-    print(i)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -568,16 +579,16 @@ for square in values:
 <p>For example here is how we could create the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list automatically:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares = []
-for i in range(5):
-    squares.append(i ** 2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span>
 </pre></div>
 </div>
 </div>
@@ -593,14 +604,14 @@ for i in range(5):
 <p>Instead of populating a list using a for loop, we can write a <strong>list comprehension</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares = [i ** 2 for i in range(5)]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>squares
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span>
 </pre></div>
 </div>
 </div>
@@ -613,18 +624,18 @@ for i in range(5):
 <p>This is a feature that is pretty specific to Python and allows us to express complex control flow very concisely. Consider the difference between the following two constructs:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Regular for loop
-squares = []
-for i in range(5):
-    squares.append(i ** 2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Regular for loop</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># List comprehension
-squares = [i ** 2 for i in range(5)]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># List comprehension</span>
+<span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -632,14 +643,14 @@ squares = [i ** 2 for i in range(5)]
 <p>The second one is not only shorter, but also <em>more readable</em> because the intent of the code is clearer - we wish to create a new list. This is all the more powerful since list comprehensions can take conditions as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares = [i ** 2 for i in range(5) if i % 2 == 0]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_squares</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_squares</span>
 </pre></div>
 </div>
 </div>
@@ -652,17 +663,17 @@ squares = [i ** 2 for i in range(5)]
 <p>Constrast this with what we would need to do if we wanted to write a regular for loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares = []
-for i in range(5):
-    if i % 2 == 0:
-        even_squares.append(i ** 2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_squares</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">even_squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>even_squares
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_squares</span>
 </pre></div>
 </div>
 </div>
@@ -680,21 +691,21 @@ for i in range(5):
 <p>Let’s say we have a list of items which have a certain weight and a knapsack with a limited maximum weight. We want to find out which items we can pack into the knapsack without exceeding that maximum weight. We would move over the list <em>while</em> the maximum weight is not exceeded and add the items:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>current_weight = 0
-maximum_weight = 100
-item_weights = [10, 20, 30, 20, 40, 20, 30]
-index = 0
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_weight</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">maximum_weight</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">item_weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
 
-while current_weight &lt; maximum_weight:
-    current_weight += item_weights[index]
-    index += 1
+<span class="k">while</span> <span class="n">current_weight</span> <span class="o">&lt;</span> <span class="n">maximum_weight</span><span class="p">:</span>
+    <span class="n">current_weight</span> <span class="o">+=</span> <span class="n">item_weights</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+    <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>current_weight
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">current_weight</span>
 </pre></div>
 </div>
 </div>
@@ -706,7 +717,7 @@ while current_weight &lt; maximum_weight:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>index
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">index</span>
 </pre></div>
 </div>
 </div>
@@ -718,7 +729,7 @@ while current_weight &lt; maximum_weight:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>item_weights[:index]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">item_weights</span><span class="p">[:</span><span class="n">index</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -755,7 +766,7 @@ while current_weight &lt; maximum_weight:
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./src/6-control-flow"
         },
         predefinedOutput: true
     }
@@ -769,12 +780,19 @@ while current_weight &lt; maximum_weight:
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="5-iterables.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../5-iterables/chapter.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Chapter 5. Iterables</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../7-files/chapter.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 7. Files</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
@@ -797,7 +815,7 @@ while current_weight &lt; maximum_weight:
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>

@@ -24,3 +24,25 @@ Build the book as PDF:
 ```sh
 jupyter-book build --builder pdfhtml .
 ```
+
+### TeX build
+
+Install required packages:
+
+```sh
+sudo apt-get install texlive-latex-extra \
+                     texlive-fonts-extra \
+                     texlive-xetex latexmk
+```
+
+Build the book:
+
+```sh
+jupyter-book build . --builder pdflatex
+```
+
+To generate only the LaTeX file:
+
+```
+jupyter-book build . --builder latex
+```

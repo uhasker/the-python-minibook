@@ -334,6 +334,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#useful-commands">
    Useful commands
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tex-build">
+     TeX build
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -358,6 +365,13 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#useful-commands">
    Useful commands
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tex-build">
+     TeX build
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -388,6 +402,23 @@ jupyter-book build .
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book build --builder pdfhtml .
 </pre></div>
 </div>
+<section id="tex-build">
+<h3>TeX build<a class="headerlink" href="#tex-build" title="Permalink to this headline">#</a></h3>
+<p>Install required packages:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt-get install texlive-latex-extra <span class="se">\</span>
+                     texlive-fonts-extra <span class="se">\</span>
+                     texlive-xetex latexmk
+</pre></div>
+</div>
+<p>Build the book:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book build . --builder pdflatex
+</pre></div>
+</div>
+<p>To generate only the LaTeX file:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">build</span> <span class="o">.</span> <span class="o">--</span><span class="n">builder</span> <span class="n">latex</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -425,7 +456,7 @@ jupyter-book build .
     <div class="footer-content row">
         <footer class="col footer"><p>
   
-    By uhasker<br/>
+    By Mikhail Berkov<br/>
   
       &copy; Copyright 2022.<br/>
 </p>

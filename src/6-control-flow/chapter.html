@@ -435,7 +435,7 @@ title="Print to PDF"
 <section id="conditional-statements">
 <h2>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h2>
 <p>Very often, we want to execute some code depending on whether a <strong>condition</strong> is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Let’s say that we have a function <code class="docutils literal notranslate"><span class="pre">process_event</span></code> which takes a user event in a game and processes that event. Depending on the event we would need to execute different code.</p>
-<p>This achieved with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
+<p>This can be achieved with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -456,8 +456,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>First we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;mousemoved&quot;</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">moved</span> <span class="pre">his</span> <span class="pre">mouse!&quot;)</span></code>.
-If it isn’t we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;keypressed&quot;</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">has</span> <span class="pre">pressed</span> <span class="pre">his</span> <span class="pre">key!&quot;)</span></code>. Finally if none of the checks passed we move to the body of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement and execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">did</span> <span class="pre">something</span> <span class="pre">else!&quot;)</span></code>.</p>
+<p>First we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;mousemoved&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">moved</span> <span class="pre">his</span> <span class="pre">mouse!&quot;)</span></code>.
+If it isn’t we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;keypressed&quot;</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">has</span> <span class="pre">pressed</span> <span class="pre">his</span> <span class="pre">key!&quot;)</span></code>. Finally if none of the checks passes we move on to the body of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement and execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">did</span> <span class="pre">something</span> <span class="pre">else!&quot;)</span></code>.</p>
 <p>We can have an arbitrary number of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. For example this would work just fine:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -483,7 +483,7 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements are not needed. We can have an <code class="docutils literal notranslate"><span class="pre">if</span></code> statements without anything else:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code> statements are not needed. We can have an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement without anything else:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -565,7 +565,7 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
-<p>We can also iterate over ranges. This is commonly used if you need to iterate over a bunch of numbers and do something depending on the number:</p>
+<p>We can also iterate over ranges. This is commonly used if you need to iterate over a bunch of numbers and do something depending on the value of each number:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
@@ -745,7 +745,7 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
-<p>A common example of while loop is the main loop of a game. Here we would have a <strong>flag</strong> that determines if the game is active or not. The body of the while loop then updates the game. If the player wins or loses the game, the flag is set to <code class="docutils literal notranslate"><span class="pre">False</span></code> and we will exit the while loop on the next iteration:</p>
+<p>A common example of a while loop is the main loop of a game. Here we would have a <strong>flag</strong> that determines if the game is active or not. The body of the while loop then updates the game. If the player wins or loses the game, the flag is set to <code class="docutils literal notranslate"><span class="pre">False</span></code> and we will exit the while loop on the next iteration:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">active</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">while</span> <span class="n">active</span><span class="p">:</span>

@@ -546,11 +546,12 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
-<p>We will now look at this wokflow in more detail.</p>
+<p>To summarize, we first need to <em>open</em> a file resulting in a <em>file object</em>. We are then able to perform operation on that <em>file object</em> like reading the content of the file. Finally we need to <em>close</em> the file object.</p>
+<p>We will now look at this workflow in more detail.</p>
 </section>
 <section id="the-with-statement">
 <h2>The “with” statement<a class="headerlink" href="#the-with-statement" title="Permalink to this headline">#</a></h2>
-<p>When working with files, we can use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement which will automatically close the file:</p>
+<p>To simplify working with files, we can use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement which will automatically close the file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -579,7 +580,7 @@ They&#39;re called violets.
 </section>
 <section id="writing-to-a-file">
 <h2>Writing to a file<a class="headerlink" href="#writing-to-a-file" title="Permalink to this headline">#</a></h2>
-<p>Writing a file is very similar to reading a file. You can write to a file by passing the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> mode to open (which stands for “write”) and calling the <code class="docutils literal notranslate"><span class="pre">write</span></code> method on the file object:</p>
+<p>Writing to a file works similarly to reading from a file. We can write to a file by passing the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> (“write”) mode as the second argument to <code class="docutils literal notranslate"><span class="pre">open</span></code> and calling the <code class="docutils literal notranslate"><span class="pre">write</span></code> method on the file object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;somefile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -588,12 +589,20 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
-<p>This will create a file <code class="docutils literal notranslate"><span class="pre">somefile.txt</span></code> with the content <code class="docutils literal notranslate"><span class="pre">&quot;Some</span> <span class="pre">content&quot;</span></code>. Note that if that file <em>already exists, it’s content will be completely overwritten by the new content</em>. If you wish to avoid that and instead <em>append</em> the new content to the existing content you need to use the <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> (append) mode.</p>
+<p>This will create a file <code class="docutils literal notranslate"><span class="pre">somefile.txt</span></code> with the content <code class="docutils literal notranslate"><span class="pre">&quot;Some</span> <span class="pre">content&quot;</span></code>. Note that if that file <em>already exists, it’s content will be completely overwritten by the new content</em>. If we want to avoid that and instead <em>append</em> the new content to the existing content we need to use the <code class="docutils literal notranslate"><span class="pre">&quot;a&quot;</span></code> (append) mode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;somefile.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Some content&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="escape-characters">
 <h2>Escape characters<a class="headerlink" href="#escape-characters" title="Permalink to this headline">#</a></h2>
-<p>Some characters are <strong>non-printable</strong>, i.e. they aren’t used for displaying content, but instead perform auxiliary functions. The most important example of this is the <strong>newline character</strong>.</p>
-<p>Let’s get the <em>representation</em> of <code class="docutils literal notranslate"><span class="pre">content</span></code>:</p>
+<p>Some characters don’t denote letters, digits or special characters like <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">;</span></code> and need special treatment. The most important example of this is the <strong>newline character</strong>.</p>
+<p>Remember that the file <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> contains newlines which are correctly displayed when calling <code class="docutils literal notranslate"><span class="pre">print</span></code> on the file content. To find out how these newlines are represented, let’s get the <em>representation</em> of <code class="docutils literal notranslate"><span class="pre">content</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span>
@@ -606,6 +615,7 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
+<p>If you are not inside a REPL, you will need to call the <code class="docutils literal notranslate"><span class="pre">repr</span></code> function manually.</p>
 <p>As you can see newline characters are represented using <code class="docutils literal notranslate"><span class="pre">\n</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -620,7 +630,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>Another important non-printable character is the <strong>tab character</strong> which is represented using <code class="docutils literal notranslate"><span class="pre">\t</span></code>:</p>
+<p>Another important character that gets special treatment is the <strong>tab character</strong> which is represented using <code class="docutils literal notranslate"><span class="pre">\t</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">first column</span><span class="se">\t</span><span class="s2">second column&quot;</span><span class="p">)</span>
@@ -633,7 +643,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">\t</span></code> and <code class="docutils literal notranslate"><span class="pre">\n</span></code> are also called <strong>escape characters</strong>. Because a backslash is used for <em>escaping</em> characters, if you want to display backslashes in your strings, you might need to escape them as well resulting in <code class="docutils literal notranslate"><span class="pre">\\</span></code>:</p>
+<p>The characters <code class="docutils literal notranslate"><span class="pre">\t</span></code> and <code class="docutils literal notranslate"><span class="pre">\n</span></code> are also called <strong>escape characters</strong>. Because a backslash is used for <em>escaping</em> characters, if you want to display backslashes in your strings, you might need to escape them as well resulting in <code class="docutils literal notranslate"><span class="pre">\\</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">t means tab&quot;</span><span class="p">)</span>
@@ -654,7 +664,7 @@ This is another line.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="n">this</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">work</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
             <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -677,7 +687,7 @@ This is another line.
 </section>
 <section id="encodings">
 <h2>Encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">#</a></h2>
-<p>Now that we have the basics out of the way, we need to have a look at how the content of file is actually stored. To accomplish that we will pass a second argument to <code class="docutils literal notranslate"><span class="pre">open</span></code> which describes the mode the file should be opened in. Here we will pass <code class="docutils literal notranslate"><span class="pre">rb</span></code> which means “read the file as a binary file” (<code class="docutils literal notranslate"><span class="pre">r</span></code> = read and <code class="docutils literal notranslate"><span class="pre">b</span></code> = binary):</p>
+<p>Now that we have the basics out of the way, we need to have a look at how the content of file is actually stored on disk. To accomplish that we will pass yet another mode argument to <code class="docutils literal notranslate"><span class="pre">open</span></code>, namely <code class="docutils literal notranslate"><span class="pre">rb</span></code>. The <code class="docutils literal notranslate"><span class="pre">rb</span></code> mode means “read the file as a binary file” (<code class="docutils literal notranslate"><span class="pre">r</span></code> = read and <code class="docutils literal notranslate"><span class="pre">b</span></code> = binary):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -712,7 +722,7 @@ This is another line.
 </div>
 </div>
 <p>This object contains the actual <em>bytes</em> of the file. A <strong>byte</strong> is simply the smallest unit of storage on a computer and can (usually) hold values from 0 to 255.</p>
-<p>For example we access the first byte of the file like this:</p>
+<p>For example we access the <em>first byte</em> of the file like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -725,7 +735,8 @@ This is another line.
 </div>
 </div>
 </div>
-<p>Wait, why do we suddenly have numbers when a file contains <em>characters</em>? The answer to this question is that the computer <em>deceptively lies to you</em>. Computers don’t <em>really</em> store characters. They can <em>only</em> store bytes which are numbers from 0 to 255. This means that the file <em>actually contains a sequence of numbers</em>.</p>
+<p>Wait, why do we suddenly have numbers when we know that a file contains <em>characters</em>? The answer to this question is that the computer <em>deceptively lies to us</em>.</p>
+<p>You see, computers can’t really store characters. They can <em>only store bytes</em>, i.e. essentially they store numbers from 0 to 255. This means that the file <em>actually contains a sequence of numbers</em>.</p>
 <p>However computers maintain mappings from those numbers to characters, so that they can <em>interpret those numbers as characters</em>. The simplest such mapping is the <strong>ASCII table</strong>. Here is an excerpt from that table:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">Byte</span> <span class="n">value</span> <span class="o">|</span> <span class="n">Character</span>        <span class="o">|</span>
 <span class="o">|</span> <span class="n">__________</span> <span class="o">|</span> <span class="n">_________________</span><span class="o">|</span>
@@ -783,7 +794,7 @@ This is another line.
 <span class="o">|</span> <span class="n">__________</span> <span class="o">|</span> <span class="n">_________________</span><span class="o">|</span>
 </pre></div>
 </div>
-<p>Now we can make some sense of the <code class="docutils literal notranslate"><span class="pre">content</span></code> variable:</p>
+<p>Now we can make some sense of the value of the <code class="docutils literal notranslate"><span class="pre">content</span></code> variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -845,7 +856,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>Note that space, newline etc are also simply stored as bytes:</p>
+<p>Characters like space, newline etc are also simply stored as bytes. For example the number corresponding to the space characters is <code class="docutils literal notranslate"><span class="pre">32</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
@@ -858,20 +869,21 @@ This is another line.
 </div>
 </div>
 </div>
-<p>The ASCII table worked fine for a while until programmers suddenly noticed that are languages in the world other than English. This was a truly <em>shocking</em> discovery that fundamentally changed the way programmers thought about the world. The <strong>Unicode</strong> standard was born.</p>
+<p>The ASCII table worked fine for a while until programmers suddenly noticed that there are languages in the world other than English. This was a truly <em>shocking</em> discovery that fundamentally changed the way programmers thought about the world. The <strong>Unicode</strong> standard was born.</p>
 <blockquote>
 <div><p>Note that this is really oversimplified history of the Unicode standard. The reality was much more complicated.</p>
 </div></blockquote>
-<p>The most important concept of the Unicode standard was the code point. A <strong>code point</strong> is a numerical value that maps to a specific character. This is very similar to the ASCII table, except that Unicode is extremely large and contains such characters as:</p>
+<p>The most important concept of the Unicode standard was the code point. A <strong>code point</strong> is a numerical value for a specific character. This is very similar to the ASCII table, except that Unicode is <em>much, much bigger</em> and contains such characters as:</p>
 <ul class="simple">
 <li><p>the German umlaut <code class="docutils literal notranslate"><span class="pre">ä</span></code> which has the code point 228</p></li>
 <li><p>the checkmark <code class="docutils literal notranslate"><span class="pre">✅</span></code> which has the code point 9989</p></li>
 <li><p>the emoji <code class="docutils literal notranslate"><span class="pre">😀</span></code> which has the code point 128512</p></li>
 </ul>
-<p>You can think of Unicode as a giant extension of the ASCII table.</p>
-<p>However we can no longer store every character in a single byte. In order to fit every Unicode characters, we would need at least <em>four bytes</em>. However this would be extremely wasteful for e.g. english texts, since we would rarely <em>actually</em> need all four bytes. In this case.</p>
-<p>Therefore the are multiple <strong>encodings</strong> which govern how code points are converted to bytes. For example an encoding can decide to represent some characters as a single byte, some characters as two bytes etc. We will not dive into encodings in this chapter since this is not essential. However it <em>is essential</em> to realize that the <em>same code point</em> can be <em>converted to a different sequence of bytes depending on the encoding</em>.</p>
-<p>For example the encoding <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> (which is the most popular encoding on the internet) represents the German umlaut <code class="docutils literal notranslate"><span class="pre">ä</span></code> using the following sequence of bytes:</p>
+<p>You can think of Unicode as a <em>giant</em> extension of the ASCII table.</p>
+<p>The fact that Unicode is so large means we can no longer store every character in a single byte. In order to fit every Unicode character, we would need at least <em>four bytes</em>. However this would be extremely wasteful for e.g. english texts, since we would rarely <em>actually</em> need all four bytes in this case.</p>
+<p>Therefore there are multiple <strong>encodings</strong> which govern how code points are <strong>encoded</strong> (i.e. converted) to bytes. For example an encoding can decide to represent some characters as a single byte, some characters as two bytes etc. We will not dive into the gritty details of encodings in this chapter since this is not essential to understand (at least not for know). But it <em>is essential</em> to realize that the <em>same code point</em> can be <em>converted to a different sequence of bytes depending on the encoding</em>.</p>
+<p>Consider the German umlaut <code class="docutils literal notranslate"><span class="pre">ä</span></code> for example. The code point of <code class="docutils literal notranslate"><span class="pre">ä</span></code> is (always) 228, because that is the code point that was assigned to <code class="docutils literal notranslate"><span class="pre">ä</span></code>. However <em>different encodings</em> will represent this code point using <em>different byte sequences</em>.</p>
+<p>For example the encoding <code class="docutils literal notranslate"><span class="pre">UTF-8</span></code> (which is the most popular encoding on the internet) will represent that code point using the following sequence of bytes.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utf8_umlaut</span> <span class="o">=</span> <span class="s2">&quot;ä&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
@@ -915,7 +927,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>However the <code class="docutils literal notranslate"><span class="pre">Windows-1252</span></code> encoding (called <code class="docutils literal notranslate"><span class="pre">cp1252</span></code> for short) which is commonly used on Windows systems represents the same character completely differently:</p>
+<p>However the <code class="docutils literal notranslate"><span class="pre">Windows-1252</span></code> encoding (called <code class="docutils literal notranslate"><span class="pre">cp1252</span></code> for short) which is commonly used on Windows systems represents the same code point completely differently:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cp1252_umlaut</span> <span class="o">=</span> <span class="s2">&quot;ä&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;cp1252&quot;</span><span class="p">)</span>
@@ -948,7 +960,7 @@ This is another line.
 </div>
 </div>
 <p>All of this has an extremely important practical consequence:</p>
-<p><strong>If you want to know what string a sequence of bytes represents, you need to know the encoding of the string.</strong></p>
+<p><strong>If you want to know what string a sequence of bytes represents, you need to know the encoding of the string. The sequence of bytes by itself is (generally speaking) useless without the encoding.</strong></p>
 <p>Consider the following sequence of bytes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -957,20 +969,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>If that sequence of bytes has the encoding <code class="docutils literal notranslate"><span class="pre">cp1252</span></code> it represents the following string:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;cp1252&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ã¤&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<p>However if that sequence of bytes has the encoding <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> it represents a completely different string:</p>
+<p>If that sequence of bytes has the encoding <code class="docutils literal notranslate"><span class="pre">utf-8</span></code> it represents the German umlaut <code class="docutils literal notranslate"><span class="pre">ä</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
@@ -983,8 +982,26 @@ This is another line.
 </div>
 </div>
 </div>
+<p>However if that sequence of bytes has the encoding <code class="docutils literal notranslate"><span class="pre">cp-1252</span></code> it suddenly represents a <em>completely different</em> string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;cp-1252&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">LookupError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;cp-1252&quot;</span><span class="p">)</span>
+
+<span class="ne">LookupError</span>: unknown encoding: cp-1252
+</pre></div>
+</div>
+</div>
+</div>
 <blockquote>
-<div><p>It should be noted that if you don’t know the encoding of a string there are certain statistical methods that can be used to guess that encoding using common patterns. However this can get very hacky and is not always accurate. Therefore you should never rely on these methods when writing production code.</p>
+<div><p>It should be noted that if you don’t know the encoding of a string there are certain statistical methods that can be used to guess that encoding using common patterns. In addition there are some encodings that are much more common than the rest (like UTF-8 or Windows-1252). However this is all guessing and therefore not always accurate. This means that it is usually a bad idea to rely on such guesses when writing production code.</p>
 </div></blockquote>
 <p>This also means that if you write a file using one encoding and then try to read it using a different encoding, you will either get scrambled content or maybe even fail to read the file completely. This is actually a fairly common occurence if a file was created on an operating system that uses one encoding by default and then read on another operating system that uses another encoding by default.</p>
 <p>Let’s see this in action. Create a text file <code class="docutils literal notranslate"><span class="pre">german.txt</span></code> with the following content:</p>
@@ -1000,7 +1017,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>Let’s know try to read the same file using a different encoding:</p>
+<p>Let’s try to read the same file using a different encoding:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;german.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;cp1252&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">german_file</span><span class="p">:</span>
@@ -1033,7 +1050,7 @@ This is another line.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">UnicodeDecodeError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">41</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;german.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-16&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">german_file</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">content</span> <span class="o">=</span> <span class="n">german_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
@@ -1058,7 +1075,10 @@ This is another line.
 </div>
 </div>
 </div>
-<p>This is actually better than scrambled content which represents a general principle in programming: <em>It’s better to crash than to proceed with invalid data</em>. The reason for that is simple: If you crash, then at least you know you have an error. If you proceed with invalid data, then you may never know that you have an error until something really bad happens much later. Consider a file that contains bank transactions. If you fail to read this file, then you know that your software has an error and you may try to fix it. But if you proceed with scrambled content, you may process completely wrong transactions resulting in <em>a lot</em> of headaches.</p>
+<p>This is actually better than scrambled content which represents a general principle in programming:</p>
+<p><strong>It’s better to crash than to proceed with invalid data</strong>.</p>
+<p>The reason for that is simple: If you crash, then at least you know you have an error. If you proceed with invalid data, then you may never know that you have an error until something really bad happens much later.</p>
+<p>Consider a file that contains bank transactions. If you fail to read this file, then you know that your software has an error and you may try to fix it. But if you proceed with scrambled content, you may process completely wrong transactions resulting in <em>a lot</em> of headaches for <em>a lot</em> of people (including <em>you</em>).</p>
 </section>
 </section>
 

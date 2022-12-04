@@ -1,0 +1,15 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: src/1-installation/chapter.ipynb
+- file: src/2-variables-data-types-and-operators/chapter.ipynb
+- file: src/3-functions/chapter.ipynb
+- file: src/4-classes/chapter.ipynb
+- file: src/5-iterables/chapter.ipynb
+- file: src/6-control-flow/chapter.ipynb
+- file: src/7-files/chapter.ipynb
+- file: src/8-modules-and-packages/chapter.ipynb
+- file: src/9-the-project/chapter.ipynb

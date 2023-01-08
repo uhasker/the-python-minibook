@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Chapter 7. Files" href="../7-files/chapter.html" />
+    <link rel="next" title="Chapter 7. Input and Output" href="../7-files/chapter.html" />
     <link rel="prev" title="Chapter 5. Iterables" href="../5-iterables/chapter.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../7-files/chapter.html">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1">
@@ -372,8 +372,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#list-comprehensions">
-   List comprehensions
+  <a class="reference internal nav-link" href="#comprehensions">
+   Comprehensions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -411,8 +411,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#list-comprehensions">
-   List comprehensions
+  <a class="reference internal nav-link" href="#comprehensions">
+   Comprehensions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -434,8 +434,8 @@ title="Print to PDF"
 <h1>Chapter 6. Control flow<a class="headerlink" href="#chapter-6-control-flow" title="Permalink to this headline">#</a></h1>
 <section id="conditional-statements">
 <h2>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this headline">#</a></h2>
-<p>Very often, we want to execute some code depending on whether a <strong>condition</strong> is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Let’s say that we have a function <code class="docutils literal notranslate"><span class="pre">process_event</span></code> which takes a user event in a game and processes that event. Depending on the event we would need to execute different code.</p>
-<p>This can be achieved with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement:</p>
+<p>Very often, we want to execute some code depending on whether a <strong>condition</strong> is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Let’s say that we have a function <code class="docutils literal notranslate"><span class="pre">process_event</span></code> which takes a user event in a game and processes that event. Depending on the kind of the event we receive we would need to execute different code.</p>
+<p>This can be achieved by using the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. This allows us to specify various tests and execute code depending on whether those tests succeed or fail:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_event</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
@@ -445,8 +445,28 @@ title="Print to PDF"
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User has pressed a key!&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User did something else!&quot;</span><span class="p">)</span>
-
-<span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;keypressed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>First we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;mousemoved&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">moved</span> <span class="pre">his</span> <span class="pre">mouse!&quot;)</span></code> and skip the remaining tests.</p>
+<p>If it isn’t we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;keypressed&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">has</span> <span class="pre">pressed</span> <span class="pre">his</span> <span class="pre">key!&quot;)</span></code>.</p>
+<p>Finally if none of the checks so far passed we move on to the body of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement and execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">did</span> <span class="pre">something</span> <span class="pre">else!&quot;)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;mousemoved&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User moved his mouse!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;keypressed&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -456,8 +476,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>First we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;mousemoved&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">moved</span> <span class="pre">his</span> <span class="pre">mouse!&quot;)</span></code>.
-If it isn’t we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;keypressed&quot;</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">has</span> <span class="pre">pressed</span> <span class="pre">his</span> <span class="pre">key!&quot;)</span></code>. Finally if none of the checks passes we move on to the body of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement and execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">did</span> <span class="pre">something</span> <span class="pre">else!&quot;)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;touchpadpressed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>User did something else!
+</pre></div>
+</div>
+</div>
+</div>
 <p>We can have an arbitrary number of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. For example this would work just fine:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -472,8 +502,13 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User quit the game!&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;User did something else!&quot;</span><span class="p">)</span>
-
-<span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;quit&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">process_event</span><span class="p">(</span><span class="s2">&quot;quit&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -513,6 +548,43 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
+<p>Generally speaking, the tests can be any expression that evaluates to a boolean value. As long as the resulting value will be <code class="docutils literal notranslate"><span class="pre">True</span></code>, the statement(s) in the body will be executed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will be printed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This will be printed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;True or False evaluates to True&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Therefore the two lines will be printed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True or False evaluates to True
+Therefore the two lines will be printed
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="kc">False</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This will not be printed&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>If statements can also be arbitrarily nested:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -542,6 +614,8 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
+<p>Note that the nesting is defined by the indentation. If you write nested <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, you should check whether your indentation is correct.</p>
+<p>Beware of <code class="docutils literal notranslate"><span class="pre">if</span></code> statements that are nested too deeply as such code will quickly become very hard to read and maintain.</p>
 </section>
 <section id="for-loops">
 <h2>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">#</a></h2>
@@ -604,9 +678,66 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
+<p>We can also iterate over dictionaries. By default, iterating over a dictionary will iterate over its keys:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ratings</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Alex&quot;</span><span class="p">:</span> <span class="mi">1500</span><span class="p">,</span> <span class="s2">&quot;Michael&quot;</span><span class="p">:</span> <span class="mi">1400</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">:</span> <span class="mi">1200</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">ratings</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alex
+Michael
+John
+Max
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also iterate over the values or key-value pairs of a dictionary using the <code class="docutils literal notranslate"><span class="pre">values</span></code> and <code class="docutils literal notranslate"><span class="pre">items</span></code> methods respectively:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">ratings</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rating</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1500
+1400
+1000
+1200
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">rating</span> <span class="ow">in</span> <span class="n">ratings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;name=</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">, rating=</span><span class="si">{</span><span class="n">rating</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>name=Alex, rating=1500
+name=Michael, rating=1400
+name=John, rating=1000
+name=Max, rating=1200
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="list-comprehensions">
-<h2>List comprehensions<a class="headerlink" href="#list-comprehensions" title="Permalink to this headline">#</a></h2>
+<section id="comprehensions">
+<h2>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this headline">#</a></h2>
 <p>Instead of populating a list using a for loop, we can write a <strong>list comprehension</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -666,7 +797,7 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 </div>
-<p>Constrast this with what we would need to do if we wanted to write a regular for loop:</p>
+<p>Constrast this with what we would need to do if we wanted to create this list inside a regular for loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_squares</span> <span class="o">=</span> <span class="p">[]</span>
@@ -690,6 +821,26 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 </div>
 </div>
 <p>Whenever we need to create a new list based on some values, we will utilize a list comprehension.</p>
+<p><strong>Dictionary comprehensions</strong> allow us to write similar code for creating new dictionaries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span><span class="n">k</span> <span class="o">**</span> <span class="mi">2</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="while-loops">
 <h2>While loops<a class="headerlink" href="#while-loops" title="Permalink to this headline">#</a></h2>
@@ -749,7 +900,8 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">active</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">while</span> <span class="n">active</span><span class="p">:</span>
-    <span class="c1"># update game, this sets active = False here (e.g. if player wins or loses the game)</span>
+    <span class="c1"># update game, this sets active = False here</span>
+    <span class="c1"># (e.g. if player wins or loses the game)</span>
     
     <span class="o">...</span>
     
@@ -796,7 +948,7 @@ If it isn’t we check whether <code class="docutils literal notranslate"><span 
     <a class='right-next' id="next-link" href="../7-files/chapter.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 7. Files</p>
+        <p class="prev-next-title">Chapter 7. Input and Output</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

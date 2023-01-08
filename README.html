@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="src/1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -140,7 +140,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="src/7-files/chapter.html">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1">
@@ -390,28 +390,28 @@ title="Print to PDF"
 <section id="useful-commands">
 <h2>Useful commands<a class="headerlink" href="#useful-commands" title="Permalink to this headline">#</a></h2>
 <p>Clear all notebooks:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find src -type f -name <span class="s2">&quot;*.ipynb&quot;</span> -exec jupyter nbconvert --clear-output --inplace <span class="o">{}</span> <span class="se">\;</span>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.ipynb&quot;</span><span class="w"> </span>-exec<span class="w"> </span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--clear-output<span class="w"> </span>--inplace<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
 </pre></div>
 </div>
 <p>Build the book as HTML:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
-jupyter-book build .
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+jupyter-book<span class="w"> </span>build<span class="w"> </span>.
 </pre></div>
 </div>
 <p>Build the book as PDF:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book build --builder pdfhtml .
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>--builder<span class="w"> </span>pdfhtml<span class="w"> </span>.
 </pre></div>
 </div>
 <section id="tex-build">
 <h3>TeX build<a class="headerlink" href="#tex-build" title="Permalink to this headline">#</a></h3>
 <p>Install required packages:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo apt-get install texlive-latex-extra <span class="se">\</span>
-                     texlive-fonts-extra <span class="se">\</span>
-                     texlive-xetex latexmk
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-latex-extra<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>texlive-fonts-extra<span class="w"> </span><span class="se">\</span>
+<span class="w">                     </span>texlive-xetex<span class="w"> </span>latexmk
 </pre></div>
 </div>
 <p>Build the book:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book build . --builder pdflatex
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>--builder<span class="w"> </span>pdflatex
 </pre></div>
 </div>
 <p>To generate only the LaTeX file:</p>

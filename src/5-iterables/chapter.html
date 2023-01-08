@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../7-files/chapter.html">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1">
@@ -432,8 +432,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-iterables">
 <h1>Chapter 5. Iterables<a class="headerlink" href="#chapter-5-iterables" title="Permalink to this headline">#</a></h1>
-<p>An <strong>iterable</strong> is a data structure that allows you <em>store multiple items in a single variable</em>. Put more formally, an iterable object is capable of returning its members one after each other.</p>
-<p>There are many iterables in Python - in this chapter we will only concern ourselves with the most important ones - lists, ranges, tuples and dictionaries. The first three (i.e. lists, ranges and tuples) are special iterables called <strong>sequences</strong> . Sequences are iterables which support access using a numerical index (we will see what this means in a second).</p>
+<p>An <strong>iterable</strong> is a data structure that allows you to <em>store multiple items in a single variable</em>. Put more formally, an iterable object is capable of returning its members one after another.</p>
+<p>There are many iterables in Python - in this chapter we will only concern ourselves with the most important ones - lists, ranges, tuples and dictionaries. The first three (i.e. lists, ranges and tuples) are special iterables called <strong>sequences</strong>. Sequences are iterables which support access using a numerical index (we will see what this means in a second).</p>
 <section id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h2>
 <p>Probably the most important iterable in Python is the <strong>list</strong>. Lists are <strong>mutable</strong> sequences, i.e. sequences whose contents can be changed. You can create a list using square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> and separating items with commas:</p>
@@ -470,8 +470,8 @@ title="Print to PDF"
 </div>
 <p>Every item in a list can be accessed by its index:</p>
 <p><img alt="" src="../../_images/list.png" /></p>
-<p>Note that indices start with <code class="docutils literal notranslate"><span class="pre">0</span></code>, not with <code class="docutils literal notranslate"><span class="pre">1</span></code>. Therefore if you want to access the first item of a list, you need to access the item with index <code class="docutils literal notranslate"><span class="pre">0</span></code>. This means that in the case of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list the item with index <code class="docutils literal notranslate"><span class="pre">1</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">4</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">3</span></code> is <code class="docutils literal notranslate"><span class="pre">9</span></code> etc.</p>
-<p>You can access an item of a list by its index using the square bracket notation. For example this how you would access the item of <code class="docutils literal notranslate"><span class="pre">squares</span></code> at index <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
+<p>Note that indices start with <code class="docutils literal notranslate"><span class="pre">0</span></code> and <em>not</em> with <code class="docutils literal notranslate"><span class="pre">1</span></code>. Therefore if you want to access the first item of a list, you need to access the item with index <code class="docutils literal notranslate"><span class="pre">0</span></code>. This means that in the case of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list the item with index <code class="docutils literal notranslate"><span class="pre">1</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">4</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">3</span></code> is <code class="docutils literal notranslate"><span class="pre">9</span></code> etc.</p>
+<p>You can access an item of a list by its index using the square bracket notation. For example this how you would access the item of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list at index <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -563,8 +563,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Generally speaking, the indices of the list range from <code class="docutils literal notranslate"><span class="pre">0</span></code> to until the length of the list <em>minus 1</em>.</p>
-<p>We can get the length of the list using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function:</p>
+<p>Generally speaking, the indices of the list range from <code class="docutils literal notranslate"><span class="pre">0</span></code> until the length of the list <em>minus 1</em>.</p>
+<p>Speaking of the length of the list - we can get it using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">squares</span><span class="p">)</span>
@@ -619,7 +619,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can also omit the <code class="docutils literal notranslate"><span class="pre">start</span></code> index if we want to start at the beginning of the list:</p>
+<p>We can omit the <code class="docutils literal notranslate"><span class="pre">start</span></code> index if we want to start at the beginning of the list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
@@ -632,7 +632,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can omit the <code class="docutils literal notranslate"><span class="pre">stop</span></code> index as well if we want to end at the end of the list:</p>
+<p>We can omit the <code class="docutils literal notranslate"><span class="pre">stop</span></code> index as well if we want to get all elements until the end of the list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
@@ -646,7 +646,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Remember how we said that lists are mutable? Using the square bracket notation we can not just <em>access</em> the item of a list, but also <em>change</em> it.</p>
-<p>For example this is how we could change the item at index <code class="docutils literal notranslate"><span class="pre">2</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span></code>:</p>
+<p>For example this is how we could change the item at index <code class="docutils literal notranslate"><span class="pre">2</span></code> to have a value of <code class="docutils literal notranslate"><span class="pre">5</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span>
@@ -687,7 +687,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Lists are objects and therefore have a whole bunch of useful methods. For example we can <em>add</em> a value to the end of a list using the <code class="docutils literal notranslate"><span class="pre">append</span></code> method:</p>
+<p>Lists are objects and therefore have a whole bunch of useful methods. For example we can <em>append</em> a value to the end of a list using the appropriately named <code class="docutils literal notranslate"><span class="pre">append</span></code> method:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
@@ -707,7 +707,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can <em>insert</em> a value in any place in the list using the <code class="docutils literal notranslate"><span class="pre">insert</span></code> method. This method takes the <em>index to insert the value at</em> and <em>the value to be inserted</em>.</p>
+<p>We can <em>insert</em> a value at any place in the list using the <code class="docutils literal notranslate"><span class="pre">insert</span></code> method. This method takes the <em>index to insert the value at</em> and <em>the value to be inserted</em>.</p>
 <p>Here is how we would insert the the value <code class="docutils literal notranslate"><span class="pre">7</span></code> at index <code class="docutils literal notranslate"><span class="pre">3</span></code> of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -765,6 +765,47 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also <em>extend</em> lists in place using the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator or the <code class="docutils literal notranslate"><span class="pre">extend</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list1</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 4, 5, 6]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">list2</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span>
 </pre></div>
 </div>
 </div>
@@ -863,10 +904,10 @@ title="Print to PDF"
 </section>
 <section id="tuples">
 <h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">#</a></h2>
-<p>Tuples are <strong>immutable</strong> sequences. We can construct tuples in a similar way as lists, however instead of square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> we need to use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>:</p>
+<p>Tuples are <strong>immutable</strong> sequences. We can construct tuples in a similar way as lists, just without the square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">0</span>
 </pre></div>
 </div>
 </div>
@@ -884,26 +925,6 @@ title="Print to PDF"
 </div>
 </div>
 <p>Unlike ranges, tuples don’t need to consist of numbers and generally don’t need to hold values of the same data type:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;flunky&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(42, &#39;flunky&#39;)
-</pre></div>
-</div>
-</div>
-</div>
-<p>We should point out that tuples don’t need parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;flunky&quot;</span>
@@ -924,6 +945,97 @@ title="Print to PDF"
 </div>
 </div>
 <p>Note that technically lists can also hold values of different data types, however this is <em>not recommended</em>.</p>
+<p>We should point out we can add parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> around the tuple items for better readability:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;flunky&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(42, &#39;flunky&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes the parentheses are necessary, for example when we try to create an empty tuple:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_tuple</span> <span class="o">=</span> <span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">empty_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tuple
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_tuple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>()
+</pre></div>
+</div>
+</div>
+</div>
+<p>The parentheses are also necessary if we want to pass a tuple as an argument to a function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_tuple</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_tuple</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3, 2)
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we try to leave the parentheses out, Python will think that we are passing two arguments to the function and yell at us:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_tuple</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">print_tuple</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: print_tuple() takes 1 positional argument but 2 were given
+</pre></div>
+</div>
+</div>
+</div>
 <p>Just like with lists, we can access tuple elements by index:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -937,7 +1049,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can also get the length of tuples using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function:</p>
+<p>We can also get the length of a tuple using the <code class="docutils literal notranslate"><span class="pre">len</span></code> function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
@@ -960,7 +1072,7 @@ title="Print to PDF"
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">44</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">54</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment
@@ -971,82 +1083,50 @@ title="Print to PDF"
 <p>While tuples are useful, they are often <em>overused</em>. A very tempting thing to do is to store data in tuples instead of objects. For example, you could do this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span> <span class="o">=</span> <span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here the first element of the tuple (<code class="docutils literal notranslate"><span class="pre">ball[0]</span></code>) represents the x coordinate of the ball. The second element of the tuple (<code class="docutils literal notranslate"><span class="pre">ball[1]</span></code>) represents the y coordinate of the ball. The third and fourth elements of the tuple represent how much the ball moves along the x and y coordinates:</p>
+<p>Here the first element of the tuple (<code class="docutils literal notranslate"><span class="pre">ball[0]</span></code>) represents the position of the ball. The second element of the tuple (<code class="docutils literal notranslate"><span class="pre">ball[1]</span></code>) represents the speed of the ball:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the x coordinate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the position of the ball</span>
 <span class="n">ball</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>320
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the y coordinate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the speed of the ball</span>
 <span class="n">ball</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>240
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How much does the ball move along the x coordinate?</span>
-<span class="n">ball</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How much does the ball move along the y coordinate?</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-</div>
-</div>
-<p>This is a <em>bad</em> idea. The reason is quite simple - representing complex data structures with tuples makes our code less readable. It is totally unclear what <code class="docutils literal notranslate"><span class="pre">ball[0]</span></code> is supposed to be if we just look at the respective line and don’t know the structure of the tuple. However the meaning of <code class="docutils literal notranslate"><span class="pre">ball.x</span></code> is totally clear even if we have no idea what else a ball can do - <code class="docutils literal notranslate"><span class="pre">ball.x</span></code> gives us the x coordinate of the ball.</p>
-<p>Generally speaking you should only use tuples for <em>very simple</em> data which contains values that should essentially always move together. Classic examples for valid tuple uses are things like RGB colors, video resolutions and positions:</p>
+<p>This is a <em>bad</em> idea. The reason for that is quite simple - representing complex data structures with tuples makes our code less readable. It is totally unclear what <code class="docutils literal notranslate"><span class="pre">ball[0]</span></code> is supposed to be if we just look at the respective line and don’t know the structure of the tuple. However the meaning of <code class="docutils literal notranslate"><span class="pre">ball.pos</span></code> is totally clear even if we have no idea what else a ball can do - <code class="docutils literal notranslate"><span class="pre">ball.pos</span></code> gives us the position of the ball.</p>
+<p>Generally speaking you should only use tuples for <em>very simple</em> data which contains values that always belong together. Classic examples for valid tuple uses are things like RGB colors, video resolutions and positions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rgb_color</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">0</span>  <span class="c1"># the color green</span>
 <span class="n">video_resolution</span> <span class="o">=</span> <span class="mi">1280</span><span class="p">,</span> <span class="mi">720</span>  <span class="c1"># the 720p video resolution</span>
-<span class="n">position</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span>  <span class="c1"># a position</span>
+<span class="n">position</span> <span class="o">=</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span>  <span class="c1"># a position in 2D</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Remember how we returned multiple values from functions in chapter 3? Well, that <em>was a lie</em>. In reality we returned a tuple:</p>
+<p>Remember how we returned multiple values from functions in chapter 3? Well, that <em>was a lie</em>. In reality we returned a single value that happened to be a tuple:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_color</span><span class="p">():</span>
@@ -1081,7 +1161,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>However because we can <strong>unpack</strong> a tuple, this is allows us to pretend that we return multiple values from a function:</p>
+<p>However because we can <strong>unpack</strong> tuples, we were able to pretend that we returned multiple values from a function:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">my_color</span>
@@ -1125,10 +1205,18 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>This what allowed us to write things like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="dictionaries">
 <h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h2>
-<p><strong>Dictionaries</strong> are data structures that <em>map (hashable) keys to values</em>.</p>
+<p><strong>Dictionaries</strong> are data structures that <em>map (immutable) keys to values</em>.</p>
 <p>We can define a dictionary using the <code class="docutils literal notranslate"><span class="pre">{}</span></code> bracket notation and separating key-value pairs with commas. For example here is how we could define a dictionary which maps countries to their capitals:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1157,7 +1245,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Unlike with lists, we don’t access dictionary values by indexes. Instead we access the values by their <em>keys</em>. For example if we want to access the capital of Germany, we provide the key <code class="docutils literal notranslate"><span class="pre">&quot;Germany&quot;</span></code> to our dictionary:</p>
+<p>Unlike with lists, we don’t access dictionary values by indexes. Instead we access the values by their <em>keys</em>.</p>
+<p>For example if we want to access the capital of Germany, we provide the key <code class="docutils literal notranslate"><span class="pre">&quot;Germany&quot;</span></code> to our dictionary:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">]</span>
@@ -1183,7 +1272,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Just like with lists, we can add values to a dictionary. To do that, we need to specify both the key and the value:</p>
+<p>Just like with lists, we can add values to a dictionary. To do that, we need to specify both the key and the value of the new key-value pair:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Italy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Rome&quot;</span>
@@ -1203,10 +1292,22 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can change the value of an <em>existing key</em> using the same notation:</p>
+<p>We can change the value of an <em>existing key</em> using the same notation. This will <em>overwrite</em> the current value for that key:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Munich&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span><span class="p">[</span><span class="s2">&quot;Germany&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Munich&#39;
 </pre></div>
 </div>
 </div>
@@ -1219,7 +1320,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can <em>delete</em> a value by its key using the <code class="docutils literal notranslate"><span class="pre">pop</span></code> method:</p>
+<p>We can <em>delete</em> a value by its key using the <code class="docutils literal notranslate"><span class="pre">pop</span></code> method. This method will also return the deleted value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="n">capitals</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;Italy&quot;</span><span class="p">)</span>
@@ -1251,7 +1352,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Dictionaries are useful if we need to store values and access them using other values. Examples of good uses of dictionaries are ratings of players, capitals of countries, ages of people etc.</p>
+<p>Dictionaries are useful if we need to store values and access them using other values. Examples of good uses of dictionaries include ratings of players, capitals of countries, ages of people etc.</p>
 </section>
 </section>
 

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 7. Files &#8212; The Python Minibook</title>
+    <title>Chapter 7. Input and Output &#8212; The Python Minibook</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1">
@@ -362,24 +362,48 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-a-text-file">
-   Read a text file
+  <a class="reference internal nav-link" href="#more-on-strings">
+   More on strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#important-string-methods">
+     Important string methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escape-characters">
+     Escape characters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-input-function">
+   The input() function
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-with-statement">
-   The “with” statement
+  <a class="reference internal nav-link" href="#working-with-text-files">
+   Working with text files
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#writing-to-a-file">
-   Writing to a file
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#escape-characters">
-   Escape characters
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-text-files">
+     Reading text files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-with-statement">
+     The with statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-mode-argument">
+     The mode argument
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#encodings">
@@ -395,7 +419,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Chapter 7. Files</h1>
+                <h1>Chapter 7. Input and Output</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -406,24 +430,48 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-a-text-file">
-   Read a text file
+  <a class="reference internal nav-link" href="#more-on-strings">
+   More on strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#important-string-methods">
+     Important string methods
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#escape-characters">
+     Escape characters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-input-function">
+   The input() function
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-with-statement">
-   The “with” statement
+  <a class="reference internal nav-link" href="#working-with-text-files">
+   Working with text files
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#writing-to-a-file">
-   Writing to a file
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#escape-characters">
-   Escape characters
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reading-text-files">
+     Reading text files
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-with-statement">
+     The with statement
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-mode-argument">
+     The mode argument
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#encodings">
@@ -440,11 +488,355 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-files">
-<h1>Chapter 7. Files<a class="headerlink" href="#chapter-7-files" title="Permalink to this headline">#</a></h1>
-<p>In this chapter we will cover how to read and write files. We will also cover a topic that is rarely discussed in introductory programming books, but is should be understood by every working programmer - <em>encodings</em>.</p>
-<section id="read-a-text-file">
-<h2>Read a text file<a class="headerlink" href="#read-a-text-file" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-input-and-output">
+<h1>Chapter 7. Input and Output<a class="headerlink" href="#chapter-7-input-and-output" title="Permalink to this headline">#</a></h1>
+<p>In this chapter we will cover how to read input from a user or a file and how to write output to a file.</p>
+<p>We will also cover a topic that is rarely discussed in introductory programming books, but should be understood by every working programmer - <em>encodings</em>.</p>
+<section id="more-on-strings">
+<h2>More on strings<a class="headerlink" href="#more-on-strings" title="Permalink to this headline">#</a></h2>
+<p>When working with input and output, you will be usually need to perform operations on strings. While we introduced the string data type in chapter 1, we haven’t actually done too much with strings so far. Let us fix that and talk about strings in more detail.</p>
+<section id="important-string-methods">
+<h3>Important string methods<a class="headerlink" href="#important-string-methods" title="Permalink to this headline">#</a></h3>
+<p>Just like lists, strings have a bunch of operators and methods that you will use quite often. We already discussed the concatenation operator <code class="docutils literal notranslate"><span class="pre">+</span></code> and repetition operator <code class="docutils literal notranslate"><span class="pre">*</span></code>. Another important operator is the index access operator, which allows us to take the character at some position of a string. This operator works the same way it works for lists - you think of a string as a <em>list of characters</em> in this context:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Monty Python&#39;s Flying Circus&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;y&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;u&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>However there is an important difference between strings and lists - unlike lists, strings are immutable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;u&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_str</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;u&quot;</span>
+
+<span class="ne">TypeError</span>: &#39;str&#39; object does not support item assignment
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just like with lists, you can slice strings. This is how you get the <strong>substring</strong> of a string in Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Python&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings also ship with a lot of methods. It’s useful to know the most important ones, since you will be using them quite regulary.</p>
+<p>For example you can lowercase strings using the <code class="docutils literal notranslate"><span class="pre">lower()</span></code> method and uppercase them using the <code class="docutils literal notranslate"><span class="pre">upper()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Monty Python&#39;s Flying Circus&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;monty python&#39;s flying circus&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Monty Python&#39;s Flying Circus&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;MONTY PYTHON&#39;S FLYING CIRCUS&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can split a string into “words” using the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Monty Python&#39;s Flying Circus&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monty&#39;, &quot;Python&#39;s&quot;, &#39;Flying&#39;, &#39;Circus&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to split on custom delimiter, you can do that as well:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Monty Python&#39;s Flying Circus&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Monty Python&#39;, &#39;s Flying Circus&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The opposite of the <code class="docutils literal notranslate"><span class="pre">split()</span></code> method is the <code class="docutils literal notranslate"><span class="pre">join()</span></code> method. This method is a bit confusing because it’s not called on the lists of strings it joins, but on the delimiter (and takes the strings it joins as a parameter):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s2">&quot;Monty&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;Flying&quot;</span><span class="p">,</span> <span class="s2">&quot;Circus&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Monty Python&#39;s Flying Circus&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also check whether a string <em>starts with</em> a certain prefix or <em>ends with</em> a certain suffix:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Monty Python&#39;s Flying Circus&quot;</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;Monty Py&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Monty Python&#39;s Flying Circus&quot;</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;us&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="escape-characters">
+<h3>Escape characters<a class="headerlink" href="#escape-characters" title="Permalink to this headline">#</a></h3>
+<p>Some characters don’t denote letters, digits or special characters like <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">;</span></code> and need special treatment. The most important example of this is the <strong>newline character</strong>.</p>
+<p>The newline character is a <strong>non-printable character</strong>, because it’s - well - not really printed to the screen. Instead it describes an <em>action to take</em> (namely to go to the next line). Python represents newline characters using <code class="docutils literal notranslate"><span class="pre">\n</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;This a line.</span><span class="se">\n</span><span class="s2">This is another line.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we print <code class="docutils literal notranslate"><span class="pre">my_str</span></code>, we will see the newline:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_str</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This a line.
+This is another line.
+</pre></div>
+</div>
+</div>
+</div>
+<p>However if we get the <em>unambiguous representation</em> of <code class="docutils literal notranslate"><span class="pre">my_str</span></code>, we will see the <code class="docutils literal notranslate"><span class="pre">\n</span></code> representation of the newline:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This a line.\nThis is another line.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is actually more important than you might think at first. The reason is that both <code class="docutils literal notranslate"><span class="pre">\n</span></code> and the sequence <code class="docutils literal notranslate"><span class="pre">\r\n</span></code> represent a newline (which has to do with Windows quirks). Consider the following two strings:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str1</span> <span class="o">=</span> <span class="s2">&quot;This a line.</span><span class="se">\n</span><span class="s2">This is another line.&quot;</span>
+<span class="n">my_str2</span> <span class="o">=</span> <span class="s2">&quot;This a line.</span><span class="se">\r\n</span><span class="s2">This is another line.&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These two strings <em>look</em> equal, if we <code class="docutils literal notranslate"><span class="pre">print</span></code> them:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_str1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This a line.
+This is another line.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_str2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This a line.
+This is another line.
+</pre></div>
+</div>
+</div>
+</div>
+<p>However they are two different strings, which the equality operator confirms:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str1</span> <span class="o">==</span> <span class="n">my_str2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>This can be extremely confusing, if you look at the output of <code class="docutils literal notranslate"><span class="pre">print</span></code>. However the <em>unambiguous representation</em> of the strings immediately clears up the confusion:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This a line.\nThis is another line.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This a line.\r\nThis is another line.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remember that if you are not inside a REPL, you will need to call the <code class="docutils literal notranslate"><span class="pre">repr</span></code> function manually to get the <em>unambiguous representation</em> of the strings.</p>
+<p>Another important character that gets special treatment is the <strong>tab character</strong> which is represented using <code class="docutils literal notranslate"><span class="pre">\t</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">first column</span><span class="se">\t</span><span class="s2">second column&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	first column	second column
+</pre></div>
+</div>
+</div>
+</div>
+<p>The characters <code class="docutils literal notranslate"><span class="pre">\t</span></code> and <code class="docutils literal notranslate"><span class="pre">\n</span></code> are also called <strong>escape characters</strong> because a backslash is used for <em>escaping</em> characters.</p>
+<p>Because backslashes have this special meaning inside string, this means that if you want to display backslashes in your strings, you might need to escape them as well resulting in <code class="docutils literal notranslate"><span class="pre">\\</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">t means tab&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\t means tab
+</pre></div>
+</div>
+</div>
+</div>
+<p>Escape characters also allow you to use quotes inside a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="n">this</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">work</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="n">this</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">work</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">this will work</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;this will work&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-input-function">
+<h2>The input() function<a class="headerlink" href="#the-input-function" title="Permalink to this headline">#</a></h2>
+<p>We can read a string from the command line using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will read the input of the user into the variable <code class="docutils literal notranslate"><span class="pre">user_value</span></code>.</p>
+<p>It’s usually a good idea to supply the <code class="docutils literal notranslate"><span class="pre">prompt</span></code> argument to the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function which will display a prompt telling the user what to do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Supply a value:&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="working-with-text-files">
+<h2>Working with text files<a class="headerlink" href="#working-with-text-files" title="Permalink to this headline">#</a></h2>
+<section id="reading-text-files">
+<h3>Reading text files<a class="headerlink" href="#reading-text-files" title="Permalink to this headline">#</a></h3>
 <p>Let’s create a text file <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> with the following content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Roses</span> <span class="n">are</span> <span class="n">red</span><span class="o">.</span>
 <span class="n">Violets</span> <span class="n">aren</span><span class="s1">&#39;t blue.</span>
@@ -538,7 +930,7 @@ They&#39;re called violets.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
 <span class="ne">ValueError</span>: I/O operation on closed file.
@@ -547,17 +939,23 @@ They&#39;re called violets.
 </div>
 </div>
 <p>To summarize, we first need to <em>open</em> a file resulting in a <em>file object</em>. We are then able to perform operation on that <em>file object</em> like reading the content of the file. Finally we need to <em>close</em> the file object.</p>
-<p>We will now look at this workflow in more detail.</p>
 </section>
 <section id="the-with-statement">
-<h2>The “with” statement<a class="headerlink" href="#the-with-statement" title="Permalink to this headline">#</a></h2>
+<h3>The with statement<a class="headerlink" href="#the-with-statement" title="Permalink to this headline">#</a></h3>
 <p>To simplify working with files, we can use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement which will automatically close the file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
     <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
     
     <span class="c1"># The file is automatically closed, i.e. there is no need to call file.close()</span>
+
+<span class="n">file</span><span class="o">.</span><span class="n">closed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -578,8 +976,8 @@ They&#39;re called violets.
 </div>
 </div>
 </section>
-<section id="writing-to-a-file">
-<h2>Writing to a file<a class="headerlink" href="#writing-to-a-file" title="Permalink to this headline">#</a></h2>
+<section id="the-mode-argument">
+<h3>The mode argument<a class="headerlink" href="#the-mode-argument" title="Permalink to this headline">#</a></h3>
 <p>Writing to a file works similarly to reading from a file. We can write to a file by passing the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> (“write”) mode as the second argument to <code class="docutils literal notranslate"><span class="pre">open</span></code> and calling the <code class="docutils literal notranslate"><span class="pre">write</span></code> method on the file object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -598,96 +996,12 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
+<p>If you omit the mode, the mode will be set to <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> (read) by default.</p>
 </section>
-<section id="escape-characters">
-<h2>Escape characters<a class="headerlink" href="#escape-characters" title="Permalink to this headline">#</a></h2>
-<p>Some characters don’t denote letters, digits or special characters like <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">;</span></code> and need special treatment. The most important example of this is the <strong>newline character</strong>.</p>
-<p>Remember that the file <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> contains newlines which are correctly displayed when calling <code class="docutils literal notranslate"><span class="pre">print</span></code> on the file content. To find out how these newlines are represented, let’s get the <em>representation</em> of <code class="docutils literal notranslate"><span class="pre">content</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;Roses are red.\nViolets aren&#39;t blue.\nIt&#39;s literally in the name.\nThey&#39;re called violets.\n&quot;
-</pre></div>
-</div>
-</div>
-</div>
-<p>If you are not inside a REPL, you will need to call the <code class="docutils literal notranslate"><span class="pre">repr</span></code> function manually.</p>
-<p>As you can see newline characters are represented using <code class="docutils literal notranslate"><span class="pre">\n</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This a line.</span><span class="se">\n</span><span class="s2">This is another line.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This a line.
-This is another line.
-</pre></div>
-</div>
-</div>
-</div>
-<p>Another important character that gets special treatment is the <strong>tab character</strong> which is represented using <code class="docutils literal notranslate"><span class="pre">\t</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">first column</span><span class="se">\t</span><span class="s2">second column&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	first column	second column
-</pre></div>
-</div>
-</div>
-</div>
-<p>The characters <code class="docutils literal notranslate"><span class="pre">\t</span></code> and <code class="docutils literal notranslate"><span class="pre">\n</span></code> are also called <strong>escape characters</strong>. Because a backslash is used for <em>escaping</em> characters, if you want to display backslashes in your strings, you might need to escape them as well resulting in <code class="docutils literal notranslate"><span class="pre">\\</span></code>:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">t means tab&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\t means tab
-</pre></div>
-</div>
-</div>
-</div>
-<p>Escape characters also allow you to use quotes inside a string:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="n">this</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">work</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="n">this</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">work</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\&quot;</span><span class="s2">this will work</span><span class="se">\&quot;</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&quot;this will work&quot;
-</pre></div>
-</div>
-</div>
-</div>
 </section>
 <section id="encodings">
 <h2>Encodings<a class="headerlink" href="#encodings" title="Permalink to this headline">#</a></h2>
-<p>Now that we have the basics out of the way, we need to have a look at how the content of file is actually stored on disk. To accomplish that we will pass yet another mode argument to <code class="docutils literal notranslate"><span class="pre">open</span></code>, namely <code class="docutils literal notranslate"><span class="pre">rb</span></code>. The <code class="docutils literal notranslate"><span class="pre">rb</span></code> mode means “read the file as a binary file” (<code class="docutils literal notranslate"><span class="pre">r</span></code> = read and <code class="docutils literal notranslate"><span class="pre">b</span></code> = binary):</p>
+<p>Now that we have the basics out of the way, we need to have a look at how the content of a file is actually stored on disk. To accomplish that we will pass yet another mode argument to <code class="docutils literal notranslate"><span class="pre">open</span></code>, namely <code class="docutils literal notranslate"><span class="pre">rb</span></code>. The <code class="docutils literal notranslate"><span class="pre">rb</span></code> mode means “read the file as a binary file” (<code class="docutils literal notranslate"><span class="pre">r</span></code> = read and <code class="docutils literal notranslate"><span class="pre">b</span></code> = binary):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;example.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
@@ -736,7 +1050,7 @@ This is another line.
 </div>
 </div>
 <p>Wait, why do we suddenly have numbers when we know that a file contains <em>characters</em>? The answer to this question is that the computer <em>deceptively lies to us</em>.</p>
-<p>You see, computers can’t really store characters. They can <em>only store bytes</em>, i.e. essentially they store numbers from 0 to 255. This means that the file <em>actually contains a sequence of numbers</em>.</p>
+<p>You see, computers can’t really store characters. They can <em>only store bytes</em> which represent numbers. This means that the file <em>actually contains a sequence of numbers</em>.</p>
 <p>However computers maintain mappings from those numbers to characters, so that they can <em>interpret those numbers as characters</em>. The simplest such mapping is the <strong>ASCII table</strong>. Here is an excerpt from that table:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|</span> <span class="n">Byte</span> <span class="n">value</span> <span class="o">|</span> <span class="n">Character</span>        <span class="o">|</span>
 <span class="o">|</span> <span class="n">__________</span> <span class="o">|</span> <span class="n">_________________</span><span class="o">|</span>
@@ -794,7 +1108,7 @@ This is another line.
 <span class="o">|</span> <span class="n">__________</span> <span class="o">|</span> <span class="n">_________________</span><span class="o">|</span>
 </pre></div>
 </div>
-<p>Now we can make some sense of the value of the <code class="docutils literal notranslate"><span class="pre">content</span></code> variable:</p>
+<p>Now we can make some sense of the values in the <code class="docutils literal notranslate"><span class="pre">content</span></code> variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -869,9 +1183,9 @@ This is another line.
 </div>
 </div>
 </div>
-<p>The ASCII table worked fine for a while until programmers suddenly noticed that there are languages in the world other than English. This was a truly <em>shocking</em> discovery that fundamentally changed the way programmers thought about the world. The <strong>Unicode</strong> standard was born.</p>
+<p>The ASCII table worked fine for a while until programmers suddenly noticed that there are languages that are <em>not</em> English. This was a truly <em>shocking</em> discovery that fundamentally changed the way programmers thought about the world. The <strong>Unicode</strong> standard was born.</p>
 <blockquote>
-<div><p>Note that this is really oversimplified history of the Unicode standard. The reality was much more complicated.</p>
+<div><p>This is really oversimplified history of the Unicode standard. The reality was much more complicated.</p>
 </div></blockquote>
 <p>The most important concept of the Unicode standard was the code point. A <strong>code point</strong> is a numerical value for a specific character. This is very similar to the ASCII table, except that Unicode is <em>much, much bigger</em> and contains such characters as:</p>
 <ul class="simple">
@@ -960,7 +1274,7 @@ This is another line.
 </div>
 </div>
 <p>All of this has an extremely important practical consequence:</p>
-<p><strong>If you want to know what string a sequence of bytes represents, you need to know the encoding of the string. The sequence of bytes by itself is (generally speaking) useless without the encoding.</strong></p>
+<p><strong>If you want to know what string a sequence of bytes represents, you need to know the encoding of that sequence. The sequence of bytes by itself is (generally speaking) useless without the encoding.</strong></p>
 <p>Consider the following sequence of bytes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -985,17 +1299,12 @@ This is another line.
 <p>However if that sequence of bytes has the encoding <code class="docutils literal notranslate"><span class="pre">cp-1252</span></code> it suddenly represents a <em>completely different</em> string:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;cp-1252&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;cp1252&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">LookupError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">b</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;cp-1252&quot;</span><span class="p">)</span>
-
-<span class="ne">LookupError</span>: unknown encoding: cp-1252
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ã¤&#39;
 </pre></div>
 </div>
 </div>
@@ -1038,7 +1347,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>Uh-oh! The content of this file is completely scrambled! This is because we tried to read it in an encoding that is different from the original encoding is was written in.</p>
+<p>Uh-oh! The content of this file is completely scrambled! This is because we tried to read it in an encoding that is different from the original encoding it was written in.</p>
 <p>Depending on the encoding, the read may even fail <em>completely</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1050,11 +1359,11 @@ This is another line.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">UnicodeDecodeError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">61</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;german.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-16&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">german_file</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">content</span> <span class="o">=</span> <span class="n">german_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/codecs.py:322,</span> in <span class="ni">BufferedIncrementalDecoder.decode</span><span class="nt">(self, input, final)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.16/x64/lib/python3.9/codecs.py:322,</span> in <span class="ni">BufferedIncrementalDecoder.decode</span><span class="nt">(self, input, final)</span>
 <span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="c1"># decode input (taking the buffer into account)</span>
 <span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">+</span> <span class="nb">input</span>
@@ -1062,7 +1371,7 @@ This is another line.
 <span class="g g-Whitespace">    </span><span class="mi">323</span>     <span class="c1"># keep undecoded input until the next call</span>
 <span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">consumed</span><span class="p">:]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.15/x64/lib/python3.9/encodings/utf_16.py:61,</span> in <span class="ni">IncrementalDecoder._buffer_decode</span><span class="nt">(self, input, errors, final)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.16/x64/lib/python3.9/encodings/utf_16.py:61,</span> in <span class="ni">IncrementalDecoder._buffer_decode</span><span class="nt">(self, input, errors, final)</span>
 <span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">def</span> <span class="nf">_buffer_decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">final</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">60</span>         <span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">consumed</span><span class="p">,</span> <span class="n">byteorder</span><span class="p">)</span> <span class="o">=</span> \
@@ -1075,9 +1384,9 @@ This is another line.
 </div>
 </div>
 </div>
-<p>This is actually better than scrambled content which represents a general principle in programming:</p>
+<p>This is actually better than scrambled content because of the following general programming principle:</p>
 <p><strong>It’s better to crash than to proceed with invalid data</strong>.</p>
-<p>The reason for that is simple: If you crash, then at least you know you have an error. If you proceed with invalid data, then you may never know that you have an error until something really bad happens much later.</p>
+<p>The reason for this is simple: If you crash, then at least you know you have an error. If you proceed with invalid data, then you may never know that you have an error until something really bad happens much later.</p>
 <p>Consider a file that contains bank transactions. If you fail to read this file, then you know that your software has an error and you may try to fix it. But if you proceed with scrambled content, you may process completely wrong transactions resulting in <em>a lot</em> of headaches for <em>a lot</em> of people (including <em>you</em>).</p>
 </section>
 </section>

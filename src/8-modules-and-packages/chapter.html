@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Chapter 9. The project" href="../9-the-project/chapter.html" />
-    <link rel="prev" title="Chapter 7. Files" href="../7-files/chapter.html" />
+    <link rel="prev" title="Chapter 7. Input and Output" href="../7-files/chapter.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../7-files/chapter.html">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -520,17 +520,7 @@ title="Print to PDF"
 <p>Be careful not to <strong>shadow</strong> the module name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="n">get_greeting</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">greeting</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="n">get_greeting</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: get_greeting() missing 1 required positional argument: &#39;full_name&#39;
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="n">greeting</span><span class="o">.</span><span class="n">get_greeting</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span> <span class="n">full_name</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -542,7 +532,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;greeting&#39; from &#39;/home/runner/work/the-python-minibook/the-python-minibook/src/8-modules-and-packages/greeting.py&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, John Doe&#39;
 </pre></div>
 </div>
 </div>
@@ -555,16 +545,16 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">greeting</span><span class="o">.</span><span class="n">get_greeting</span><span class="p">(</span><span class="n">full_name</span><span class="p">)</span>
 
-<span class="ne">TypeError</span>: get_greeting() missing 1 required positional argument: &#39;full_name&#39;
+<span class="ne">AttributeError</span>: &#39;str&#39; object has no attribute &#39;get_greeting&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Uh-oh! This happens because <code class="docutils literal notranslate"><span class="pre">greeting</span></code> is now a string containing the greeting instead of the module <code class="docutils literal notranslate"><span class="pre">greeting</span></code>:</p>
+<p>Uh-oh! The <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> happens because <code class="docutils literal notranslate"><span class="pre">greeting</span></code> is now a string containing the greeting instead of the module <code class="docutils literal notranslate"><span class="pre">greeting</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span>
@@ -572,13 +562,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;greeting&#39; from &#39;/home/runner/work/the-python-minibook/the-python-minibook/src/8-modules-and-packages/greeting.py&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, John Doe&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>You probably noticed that if we want to use a function from <code class="docutils literal notranslate"><span class="pre">greeting</span></code> we have to prefix the function with the module name. Sometimes this is desirable, but in certain cases we want to avoid to need for writing this prefix.</p>
-<p>We can do accomplish this by using the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">...</span></code> statement:</p>
+<p>You probably noticed that if we want to use a function from <code class="docutils literal notranslate"><span class="pre">greeting</span></code> we have to prefix the function with the module name. Sometimes this is desirable, but in certain cases we want to avoid the need for writing this prefix.</p>
+<p>We can accomplish this by using the <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">...</span> <span class="pre">import</span> <span class="pre">...</span></code> statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">greeting</span> <span class="kn">import</span> <span class="n">get_greeting</span>
@@ -588,17 +578,12 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_greeting</span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">get_greeting</span><span class="p">(</span><span class="s2">&quot;Welcome&quot;</span><span class="p">,</span> <span class="s2">&quot;John Doe&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">get_greeting</span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">)</span>
-
-<span class="ne">TypeError</span>: get_greeting() missing 1 required positional argument: &#39;full_name&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Welcome, John Doe&#39;
 </pre></div>
 </div>
 </div>
@@ -742,7 +727,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6688676660058911
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.287961499951115
 </pre></div>
 </div>
 </div>
@@ -754,7 +739,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -766,7 +751,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;third element&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;second element&#39;
 </pre></div>
 </div>
 </div>
@@ -793,7 +778,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2022, 12, 4, 17, 2, 8, 247760)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 1, 8, 22, 42, 12, 319153)
 </pre></div>
 </div>
 </div>
@@ -805,7 +790,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
@@ -817,7 +802,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -829,7 +814,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22
 </pre></div>
 </div>
 </div>
@@ -841,7 +826,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
 </pre></div>
 </div>
 </div>
@@ -853,7 +838,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -865,7 +850,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2022
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2023
 </pre></div>
 </div>
 </div>
@@ -920,7 +905,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f1f79545af0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f5b102eeb50&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/chapter_61_1.png" src="../../_images/chapter_61_1.png" />
@@ -972,7 +957,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Chapter 7. Files</p>
+            <p class="prev-next-title">Chapter 7. Input and Output</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../9-the-project/chapter.html" title="next page">

@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../7-files/chapter.html">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1">
@@ -387,6 +387,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings">
+   Docstrings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#useful-built-in-functions">
    Useful built-in functions
   </a>
@@ -436,6 +441,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#docstrings">
+   Docstrings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#useful-built-in-functions">
    Useful built-in functions
   </a>
@@ -455,8 +465,8 @@ title="Print to PDF"
 <section id="why-functions">
 <h2>Why functions?<a class="headerlink" href="#why-functions" title="Permalink to this headline">#</a></h2>
 <p>The most important concept in Python and arguably in all of programming is that of a <strong>function</strong>. Functions are <em>reusable blocks of code</em>.</p>
-<p>Consider the following example. We are writing an application for handling tournaments and want to compute player ratings using the <a class="reference external" href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO rating system</a>. This system works by calculating the probabilities of the players winning (i.e. the expected scores) and then obtaining a new rating from those probabilities and the old ratings.</p>
-<p>For example let’s say that the first player has the rating <code class="docutils literal notranslate"><span class="pre">1000</span></code> and the second player has the rating <code class="docutils literal notranslate"><span class="pre">1500</span></code>:</p>
+<p>Consider the following example. We are writing an application for handling tournaments and want to compute player ratings using the <a class="reference external" href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO rating system</a>. This system works by first calculating the probabilities of the players winning (i.e. the expected scores) and then updating the player’s rating from those probabilities and their old ratings.</p>
+<p>Consider an example with two players, where the first player has the rating <code class="docutils literal notranslate"><span class="pre">1000</span></code> and the second player has the rating <code class="docutils literal notranslate"><span class="pre">1500</span></code>. Let’s store the rating of the first player in a variable <code class="docutils literal notranslate"><span class="pre">rating1</span></code> and the rating of the second player in a variable <code class="docutils literal notranslate"><span class="pre">rating2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rating1</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -465,7 +475,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can calculate the expected score of the first player as following:</p>
+<p>We can calculate the expected score of the first player using this formula:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expected1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">rating2</span> <span class="o">-</span> <span class="n">rating1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
@@ -485,8 +495,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Don’t spend too much time worrying about the details of this formula. Basically, the higher the difference between <code class="docutils literal notranslate"><span class="pre">rating2</span></code> and <code class="docutils literal notranslate"><span class="pre">rating1</span></code> the lower the expected score of the first player becomes. This makes sense, since if the first player has a substantially lower rating than the second player, we don’t expect him to achieve a high score. Additionally, the score is normalized to be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>. An expected score of <code class="docutils literal notranslate"><span class="pre">0</span></code> means that the first player has no chance of winning. An expected score of <code class="docutils literal notranslate"><span class="pre">1</span></code> means that the first player will definitely win.</p>
-<p>In this particular case we see that the expected score of the first player is very small, which makes sense since the first player is very unlikely to win this game. The expected score of the second player can be calculated in a similar manner:</p>
+<p>Don’t spend too much time worrying about the details of this formula. Basically, the higher the difference between <code class="docutils literal notranslate"><span class="pre">rating2</span></code> and <code class="docutils literal notranslate"><span class="pre">rating1</span></code>, the lower the expected score of the first player should be. After all a high value of <code class="docutils literal notranslate"><span class="pre">rating2</span> <span class="pre">-</span> <span class="pre">rating1</span></code> means that the first player has a substantially lower rating than the second player, i.e. we don’t expect the first player to achieve a high score.</p>
+<p>Additionally, the score is normalized to be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>. An expected score of <code class="docutils literal notranslate"><span class="pre">0</span></code> means that the first player has no chance of winning. An expected score of <code class="docutils literal notranslate"><span class="pre">1</span></code> means that the first player will definitely win.</p>
+<p>In this particular case we see that the expected score of the first player is very small (around <code class="docutils literal notranslate"><span class="pre">0.05</span></code>), which makes sense since the first player has a much lower rating than the second player.</p>
+<p>The expected score of the second player can be calculated in a similar manner:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expected2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">rating1</span> <span class="o">-</span> <span class="n">rating2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
@@ -506,7 +518,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Let’s say that the first player won the game. In that case the rating update can be performed like this:</p>
+<p>This expected score is very high, which again makes sense as the second player has a much higher rating than the first player.</p>
+<p>Let’s say that the first player surprises everyone and wins the game. In that case the rating update can be performed like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_rating1</span> <span class="o">=</span> <span class="n">rating1</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">expected1</span><span class="p">)</span>
@@ -515,6 +528,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<p>Put simply, the rating increases by an amount proportional to the expected score for the winner and decreases by an amount proportional to the expected score for the loser.</p>
+<p>Inspecting the new rating gives us the following result:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_rating1</span>
@@ -539,7 +554,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can see that the rating of the first player has increased since he won against a stronger player. Meanwhile the rating of the second player has decreased since he lost against a weaker player.</p>
+<p>We can see that the rating of the first player has increased quite substantially since he won against a stronger player. Meanwhile the rating of the second player has decreased (also quite substantially) since he lost against a weaker player.</p>
 <p>Let’s find out what happens, if the first player loses the game:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -576,17 +591,20 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>This makes sense, too. The rating of the second player increased because he won. However the increase was very small, because the second player is much stronger than the first player according to the ratings.</p>
-<p>We can already see how <em>duplicate code</em> is creeping into out application. After all, this calculation would have to be done quite often, which would result in a lot of tedious repetition of code.</p>
-<p>This has several drawbacks.</p>
+<p>This makes sense, too. If the second player wins, his rating increases. However the amount of the rating increase is very small, because the second player is much stronger than the first player according to the ratings and so his win was expected.</p>
+<p>We can already see how <em>duplicate code</em> is creeping into out application. After all, this calculation would have to be done quite often in our tournament application, which would result in a lot of tedious repetition of code.</p>
+<p>This leads to several problems.</p>
 <p>First of all, <em>we would have to repeat the exact same code over and over again, which costs time and with each repetition we become more likely to introduce a mistake somewhere</em>.</p>
 <p>Second, if we want to change the rating calculation at some point, <em>we would need to adjust it in every place the calculation happens</em>. This, again, costs time and if we forget to do it somewhere, then some of the code will still be using old calculation, which will result in bugs.</p>
-<p>Instead of going through all this tedium, let us define the calculation in <em>a single place</em> by using a function. If we do that, we can use simply use that function every time we need to do the calculation.</p>
+<p>Instead of going through all this tedium, we can define the calculation <em>once</em> inside a function. Then every time we need to perform the calculation, we will simply <em>use the function</em>.</p>
+<p>This fixes both our problems.</p>
+<p>First, from now on we only need to write the code once (namely inside the function).</p>
+<p>Second, if we want to change the rating calculation, we only need to update the function - all code that uses the function will automatically use the new rating calculation.</p>
 </section>
 <section id="defining-and-calling-functions">
 <h2>Defining and calling functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this headline">#</a></h2>
 <p>We <strong>define</strong> a function using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword followed by the function name and parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. After that a <strong>function body</strong> follows which contains the function implementation (i.e. the code that we want to store inside the function).</p>
-<p>For example here is a function that prints a greeting. This function is super useful, but it will serve to illustrate a few important concepts:</p>
+<p>For example here is a function that prints a greeting. This function is not super useful, but it will serve to illustrate a few important concepts:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function definition below</span>
@@ -625,7 +643,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The Python style guide outlined in <a class="reference external" href="https://peps.python.org/pep-0008/">PEP8</a> specifies that you should indent the code using <em>4 spaces</em>. However when working in a REPL it’s common practice to indent code using tabs, because you need to type less characters that way.</p>
+<blockquote>
+<div><p>PEP8 note: Code should always be indented using <em>4 spaces</em>. However when working in a REPL it’s common practice to indent code using tabs, because you need to type less characters that way. In addition editors like PyCharm will automatically insert 4 spaces when you press the tab key.</p>
+</div></blockquote>
 <p>If the function body has multiple statements, you must <em>indent them all</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -654,7 +674,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>We can execute the function body with a <strong>function call</strong>. To call a function we write the function name followed by parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. No <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword is present in a function call:</p>
+<p>We can execute the function body with a <strong>function call</strong>. To call a function we write down the function name followed by parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. No <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword is present in a function call:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="p">()</span>
@@ -685,7 +705,7 @@ Hello, other user
 </section>
 <section id="function-parameters-and-arguments">
 <h2>Function parameters and arguments<a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this headline">#</a></h2>
-<p>Functions can take <strong>parameters</strong> between the parentheses which allow us to pass additional values to the function in function call. These parameters may then be used inside the function body just like regular variables.</p>
+<p>Functions can take <strong>parameters</strong> between the parentheses which allow us to pass additional values to the function in a function call. These parameters may then be used inside the function body just like regular variables.</p>
 <p>Consider a function that should print a greeting given a name. We would write it like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -696,7 +716,7 @@ Hello, other user
 </div>
 </div>
 <p>Here <code class="docutils literal notranslate"><span class="pre">name</span></code> is a parameter.</p>
-<p>When calling a function with parameters, we must pass <strong>arguments</strong> to the function which are then assigned to the parameters:</p>
+<p>When calling a function with parameters, we must pass <strong>arguments</strong> to the function which are then assigned to the parameters. Since <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> has one parameter, we must call it with one argument:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
@@ -709,7 +729,25 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>The string <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> is an argument which will be assigned to the parameter <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>Here the string <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> is an argument which is assigned to the parameter <code class="docutils literal notranslate"><span class="pre">name</span></code>.</p>
+<p>If we try to call <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> without the argument, we will get the following error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">print_greeting</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: print_greeting() missing 1 required positional argument: &#39;name&#39;
+</pre></div>
+</div>
+</div>
+</div>
 <p>We could also write the function call like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -732,7 +770,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>If a function takes multiple parameters, the arguments to that function are also separated by commas:</p>
+<p>If a function takes multiple parameters, we need to pass the corresponding number of arguments in a function call. The arguments must also be separated by commas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
@@ -745,7 +783,44 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>These arguments are called a <strong>positional argument</strong> because the parameters they will be assigned to are determined from their position. Since <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> appears as the first argument in the call, it will be assigned to the first parameter (<code class="docutils literal notranslate"><span class="pre">first_name</span></code>). <code class="docutils literal notranslate"><span class="pre">&quot;Doe&quot;</span></code> appears as the second argument in the call and will therefore be assigned to the second parameter (<code class="docutils literal notranslate"><span class="pre">last_name</span></code>).</p>
+<p>The number of arguments must be exactly equal to the number of parameters. Passing more or less arguments won’t do. For example, if we pass too few arguments, Python will <em>calmly</em> inform us that we are missing arguments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: print_complex_greeting() missing 1 required positional argument: &#39;last_name&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>If we pass too many arguments, Python will also inform us that we passed too many arguments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Michael&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Michael&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: print_complex_greeting() takes 2 positional arguments but 3 were given
+</pre></div>
+</div>
+</div>
+</div>
+<p>An important takeaway from this discussion is that you <strong>should always carefully read error messages</strong>. Unlike <em>some</em> other languages, Python’s error messages are generally quite helpful.</p>
+<p>Upon careful reading of the errors, we can see that Python calls the arguments we pass <strong>positional arguments</strong> because the parameters they will be assigned to are determined from their position. Since <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> appears as the first argument in the call, it will be assigned to the first parameter (<code class="docutils literal notranslate"><span class="pre">first_name</span></code>). <code class="docutils literal notranslate"><span class="pre">&quot;Doe&quot;</span></code> appears as the second argument in the call and will therefore be assigned to the second parameter (<code class="docutils literal notranslate"><span class="pre">last_name</span></code>).</p>
 <p>Alternatively we could write the above function call like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -759,8 +834,8 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>Now these arguments are <strong>keyword arguments</strong> because the parameters they will be assigned to are determined from the parameter names. This means that <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Doe&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">last_name</span></code>.</p>
-<p>If we use keyword arguments, the order of the arguments plays no role. For example this function call is also equivalent to the two preceding function calls:</p>
+<p>Now these arguments are <strong>keyword arguments</strong> because the parameters they will be assigned to are determined from the argument names. This means that <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Doe&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">last_name</span></code>.</p>
+<p>If we use keyword arguments, the order of the arguments plays no role. For example this function call is equivalent to the preceding function call:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
@@ -786,7 +861,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>Note that positional argument and keyword arguments can be mixed:</p>
+<p>Positional arguments and keyword arguments can be mixed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
@@ -809,7 +884,7 @@ Hello, other user
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: print_complex_greeting() got multiple values for argument &#39;first_name&#39;
@@ -817,8 +892,8 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>This is because <code class="docutils literal notranslate"><span class="pre">&quot;Doe&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">first_name</span></code> since it’s the first positional argument and <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> will also be assigned to <code class="docutils literal notranslate"><span class="pre">first_name</span></code>, because we it’s a keyword argument with the <code class="docutils literal notranslate"><span class="pre">first_name</span></code> keyword.</p>
-<p>The following is also invalid, because Python does not allow positional arguments <em>after</em> keyword arguments (as that wouldn’t make a whole lot of sense):</p>
+<p>This is because <code class="docutils literal notranslate"><span class="pre">&quot;Doe&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">first_name</span></code> since it’s the first positional argument and <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> will also be assigned to <code class="docutils literal notranslate"><span class="pre">first_name</span></code>, because it’s a keyword argument called <code class="docutils literal notranslate"><span class="pre">first_name</span></code>.</p>
+<p>The following is also invalid, because Python does not allow positional arguments <em>after</em> keyword arguments (which wouldn’t make a whole lot of sense anyway):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
@@ -826,7 +901,7 @@ Hello, other user
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
     <span class="n">print_complex_greeting</span><span class="p">(</span><span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;Doe&quot;</span><span class="p">)</span>
                                                    <span class="o">^</span>
 <span class="ne">SyntaxError</span>: positional argument follows keyword argument
@@ -837,7 +912,7 @@ Hello, other user
 </section>
 <section id="the-return-keyword">
 <h2>The return keyword<a class="headerlink" href="#the-return-keyword" title="Permalink to this headline">#</a></h2>
-<p>At the moment we are <em>printing</em> values inside our functions. But usually we would like the function to <em>compute</em> a value and hand it to us. We can do this using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword.</p>
+<p>At the moment we are <em>printing</em> values inside our functions. But usually we would like the function to <em>compute</em> a value and hand it to us. We can accomplish this using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword.</p>
 <p>Let’s rewrite the <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> function to a <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code> function that <em>returns</em> the greeting instead of <em>printing</em> it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -866,7 +941,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>Something that often trips up beginners is that they confuse <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">return</span></code>. However these are <em>two completely different and unrelated things</em>. The first one - <code class="docutils literal notranslate"><span class="pre">print</span></code> - is a <em>function which prints a value</em>. The second one - <code class="docutils literal notranslate"><span class="pre">return</span></code> - is a <em>keyword which allows a function to return a value to its caller</em>.</p>
+<p>Something that often trips up beginners is that they confuse <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">return</span></code>. However these are <em>two completely different and unrelated things</em>. The first one - <code class="docutils literal notranslate"><span class="pre">print</span></code> - is a <em>function which prints a value</em>. The second one - <code class="docutils literal notranslate"><span class="pre">return</span></code> - is a <em>keyword which allows a function to return a value to the code that calls it</em>.</p>
 <p>Therefore <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> and <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code> are two completely different functions. The function <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> prints the greeting and doesn’t return anything. For example if we try to assign a value to the result of <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code>, this happens:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -950,7 +1025,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>However if we would have printed <code class="docutils literal notranslate"><span class="pre">full_name</span></code> instead of returning it we couldn’t pass it to <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code>.</p>
+<p>However if we would have printed <code class="docutils literal notranslate"><span class="pre">full_name</span></code> instead of returning it we wouldn’t have been able to pass it to <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code>.</p>
 </section>
 <section id="writing-a-complex-function">
 <h2>Writing a complex function<a class="headerlink" href="#writing-a-complex-function" title="Permalink to this headline">#</a></h2>
@@ -972,15 +1047,15 @@ Hello, other user
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_new_ratings</span><span class="p">(</span><span class="n">rating_winner</span><span class="p">,</span> <span class="n">rating_loser</span><span class="p">):</span>
     <span class="n">expected_winner</span><span class="p">,</span> <span class="n">expected_loser</span> <span class="o">=</span> <span class="n">get_expected_scores</span><span class="p">(</span><span class="n">rating_winner</span><span class="p">,</span> <span class="n">rating_loser</span><span class="p">)</span>
-    <span class="n">new_rating1</span> <span class="o">=</span> <span class="n">rating_winner</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">expected_winner</span><span class="p">)</span>
-    <span class="n">new_rating2</span> <span class="o">=</span> <span class="n">rating_loser</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span> <span class="o">-</span> <span class="n">expected_loser</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">new_rating1</span><span class="p">,</span> <span class="n">new_rating2</span>
+    <span class="n">new_rating_winner</span> <span class="o">=</span> <span class="n">rating_winner</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">expected_winner</span><span class="p">)</span>
+    <span class="n">new_rating_loser</span> <span class="o">=</span> <span class="n">rating_loser</span> <span class="o">+</span> <span class="mi">32</span> <span class="o">*</span> <span class="p">(</span><span class="mi">0</span> <span class="o">-</span> <span class="n">expected_loser</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_rating_winner</span><span class="p">,</span> <span class="n">new_rating_loser</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>Pay attention to how <code class="docutils literal notranslate"><span class="pre">get_new_ratings</span></code> calls <code class="docutils literal notranslate"><span class="pre">get_expected_scores</span></code> which improves readability. Generally it’s a good idea to create functions that are as small as possible and split subtasks into helper functions.</p>
-<p>Let’s check if our new functions work the way they should. Because <code class="docutils literal notranslate"><span class="pre">get_new_ratings</span></code> returns multiple values, we to use multiple values when calling it:</p>
+<p>Let’s check if our new functions work the way they should. Because <code class="docutils literal notranslate"><span class="pre">get_new_ratings</span></code> returns multiple values, we have to assign the result to multiple values when calling it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_winner_rating</span><span class="p">,</span> <span class="n">new_loser_rating</span> <span class="o">=</span> <span class="n">get_new_ratings</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span>
@@ -1024,8 +1099,32 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>While the <code class="docutils literal notranslate"><span class="pre">flunkify</span></code> function technically does the same thing as the <code class="docutils literal notranslate"><span class="pre">get_expected_scores</span></code> function it’s much worse, because it is <em>not readable</em>. Code that is not readable will generally lead for headaches for your fellow developers which will quickly lead to headaches for <em>you personally</em>.</p>
+<p>While the <code class="docutils literal notranslate"><span class="pre">flunkify</span></code> function technically does the same thing as the <code class="docutils literal notranslate"><span class="pre">get_expected_scores</span></code> function the <code class="docutils literal notranslate"><span class="pre">flunkify</span></code> function contains <em>terrible code</em>, because it is <em>not readable</em>. Code that is not readable will generally lead for headaches for your fellow developers which will quickly lead to headaches for <em>you personally</em>.</p>
 <p><strong>Therefore you should always use sensible names for your variables, parameters and functions.</strong></p>
+</section>
+<section id="docstrings">
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this headline">#</a></h2>
+<p>To further improve the readability of our functions, it’s common practice to document them using so called <strong>documentation strings</strong> (or docstrings for short).</p>
+<p>This looks like this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_expected_scores</span><span class="p">(</span><span class="n">rating1</span><span class="p">,</span> <span class="n">rating2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the expected scores of two players given their ratings.</span>
+<span class="sd">    </span>
+<span class="sd">    The expected scores are calculated using the formula</span>
+<span class="sd">    E = 1 / (1 + 10 ** ((RA - RB) / 400)).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">expected1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">rating2</span> <span class="o">-</span> <span class="n">rating1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
+    <span class="n">expected2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">rating1</span> <span class="o">-</span> <span class="n">rating2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">expected1</span><span class="p">,</span> <span class="n">expected2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Docstrings should contain a brief description of what the function does, as well as additional information and a description of potential edge cases.</p>
+<p>You should write docstrings for all functions that will be used by other developers in a codebase (so called <em>public functions</em>).</p>
 </section>
 <section id="useful-built-in-functions">
 <h2>Useful built-in functions<a class="headerlink" href="#useful-built-in-functions" title="Permalink to this headline">#</a></h2>
@@ -1115,6 +1214,44 @@ Hello, other user
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">abs</span></code> function provides the absolute value of an integer or a float:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">32</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mf">38.7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>38.7
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">round</span></code> function allows you to round a value to the specified number of digits:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">12.525</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.5
 </pre></div>
 </div>
 </div>

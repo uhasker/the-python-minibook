@@ -112,7 +112,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -142,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../7-files/chapter.html">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1">
@@ -435,7 +435,7 @@ title="Print to PDF"
 <section id="objects-and-classes">
 <h2>Objects and classes<a class="headerlink" href="#objects-and-classes" title="Permalink to this headline">#</a></h2>
 <p>An <strong>object</strong> is a data structure that contains <em>state</em> and <em>behaviour</em>.</p>
-<p>Before we can create objects, we (usually) need to define a <strong>class</strong> which is <em>a template for creating objects</em>. The objects which we create from that class will be <strong>instances</strong> of the class.</p>
+<p>Before we can create objects, we (usually) need to define a <strong>class</strong> which will be our <em>a template for creating objects</em>. The objects which we create from that template are called <strong>instances</strong> of the class.</p>
 <p>Consider an example. We have a ball which has a position and a speed. The position and the speed describe the <em>state</em> of the ball. The ball can also move, i.e. update its position based on the speed. This is the <em>behaviour</em> of the ball.</p>
 <p>We can define a class <code class="docutils literal notranslate"><span class="pre">Ball</span></code> (which will be the template for creating ball objects in the future) like this:</p>
 <div class="cell docutils container">
@@ -448,7 +448,7 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Here the state consists of the values <code class="docutils literal notranslate"><span class="pre">pos</span></code> and <code class="docutils literal notranslate"><span class="pre">speed</span></code>. Generally speaking, values that are associated with objects (and represent its state) are called <strong>attributes</strong>.</p>
+<p>Here the state consists of the variables <code class="docutils literal notranslate"><span class="pre">pos</span></code> and <code class="docutils literal notranslate"><span class="pre">speed</span></code>. Generally speaking, variables that are associated with objects (and represent its state) are called <strong>attributes</strong>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function is a special function which <strong>initializes</strong> an object with some <em>initial state</em>.</p>
 <p>For example if we want to create a ball with the position <code class="docutils literal notranslate"><span class="pre">10</span></code> and with speed <code class="docutils literal notranslate"><span class="pre">8</span></code>, we write:</p>
 <div class="cell docutils container">
@@ -527,8 +527,10 @@ title="Print to PDF"
 </div>
 </div>
 <p>But this isn’t really the way to go. What if we wanted to change the speed calculation later (for example taking friction into account)? Then we would need to adjust the calculation in every single place we use it, which is a lot of work and could introduce bugs if we forget the calculation adjustment somewhere.</p>
-<p>If you paid attention in the previous chapter, you will quickly realize that we have the same problem that motivated the introduction of functions. After we introduced functions, we stored the repetitive calculations in the function body and then simply called the function when we needed those calculations. Luckily, classes and objects provide a similar mechanism.</p>
-<p>We can define functions on classes - these functions are called <strong>methods</strong> and define the <em>behaviour</em> of the objects of that class. Note that the first parameter of all methods is an instance of the current object. By convention this parameter is called <code class="docutils literal notranslate"><span class="pre">self</span></code>. For example here is how we could implement the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class with a <code class="docutils literal notranslate"><span class="pre">move</span></code> method:</p>
+<p>If you paid attention in the previous chapter, you will quickly realize that we have the <em>exact same</em> problem that motivated the introduction of <em>functions</em>.</p>
+<p>After we introduced functions, we stored the repetitive calculations in the function body and then simply called the function when we needed those calculations. Luckily, classes and objects provide a similar mechanism.</p>
+<p>We can define functions on classes - these functions are called <strong>methods</strong> and define the <em>behaviour</em> of the objects of that class. Note that the first parameter of all methods is an instance of the current object. By convention this parameter is called <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<p>For example here is how we could implement a <code class="docutils literal notranslate"><span class="pre">move</span></code> method on the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ball</span><span class="p">:</span>
@@ -554,90 +556,73 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;pos = </span><span class="si">{</span><span class="n">ball</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">, speed = </span><span class="si">{</span><span class="n">ball</span><span class="o">.</span><span class="n">speed</span><span class="si">}</span><span class="s2">&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sa">f</span><span class="s2">&quot;pos = </span><span class="si">{</span><span class="n">my_ball</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">, speed = </span><span class="si">{</span><span class="n">my_ball</span><span class="o">.</span><span class="n">speed</span><span class="si">}</span><span class="s2">&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="sa">f</span><span class="s2">&quot;pos = </span><span class="si">{</span><span class="n">ball</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">, speed = </span><span class="si">{</span><span class="n">ball</span><span class="o">.</span><span class="n">speed</span><span class="si">}</span><span class="s2">&quot;</span>
-
-<span class="ne">NameError</span>: name &#39;ball&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;pos = 26, speed = 8&#39;
 </pre></div>
 </div>
 </div>
 </div>
 <p>If you see the error message <code class="docutils literal notranslate"><span class="pre">AttributeError:</span> <span class="pre">'Ball'</span> <span class="pre">object</span> <span class="pre">has</span> <span class="pre">no</span> <span class="pre">attribute</span> <span class="pre">'move'</span></code> this means that you are still using the <em>old</em> ball class and you need to recreate <code class="docutils literal notranslate"><span class="pre">my_ball</span></code>.</p>
-<p>Note how the executing the methods that defined the behaviour <em>changed</em> the object state. This is what objects are all about. They are initialized with some state and then we can use their behaviour to update the state.</p>
-<p>We should also point out that apart from having to write classes yourself, you will <em>use</em> them <em>all the time</em>. In fact, we will introduce many extremely important classes in the <em>next chapter</em>.</p>
+<p>Note how executing the methods that defined the behaviour <em>changed</em> the object state. This is what objects are all about. They are initialized with some state and then we can use their behaviour to update the state.</p>
+<p>We should also point out that apart from having to write classes yourself, you will <em>use</em> them <em>all the time</em>. In fact, we will introduce many extremely important classes in the <em>very next chapter</em>.</p>
 </section>
 <section id="the-str-and-repr-methods">
 <h2>The __str__ and __repr__ methods<a class="headerlink" href="#the-str-and-repr-methods" title="Permalink to this headline">#</a></h2>
-<p>Quite often, we want to obtain a string representation of an object (e.g. using the <code class="docutils literal notranslate"><span class="pre">print</span></code> function) that shows its current state. Unfortunately at the moment, if we try to print or get the representation of an object, we get a string that is pretty useless:</p>
+<p>Quite often, we want to obtain a string representation of an object (e.g. using the <code class="docutils literal notranslate"><span class="pre">print</span></code> function) that shows its current state. Unfortunately at the moment, if we try to print or get the representation of an object, we currently get a string that’s pretty useless.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_ball</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ball</span>
-
-<span class="ne">NameError</span>: name &#39;ball&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7f26ec297820&gt;
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">ball</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_ball</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">ball</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;ball&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7f26ec297820&gt;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Luckily, Python allows us to change this behaviour. Classes may implement are two special methods called <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method produces a human-readable string for consumption by the end user. The <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method produces an <em>exact representation</em> of the object. This is reflected in the circumstances under which these methods are called. For example if you just output an object in the REPL, you will see the output of a call to the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method of that object. If you <code class="docutils literal notranslate"><span class="pre">print</span></code> an object, you will see the result of a call to the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method of that object.</p>
-<p>These two methods often have the same implementation (since the end user usually wants to see the exact representation), but this doesn’t have to be the case. For example, we could argue, that the end user doesn’t care about the speed of the ball and only cares about its current position. Then the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method would return a string that doesn’t contain <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>. However the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method should still return all attributes:</p>
+<p>Luckily, Python allows us to change this behaviour. Classes may implement two special methods called <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method produces a human-readable string for consumption by the end user. The <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method produces an <em>unambiguous representation</em> of the object. This is reflected in the circumstances under which these methods are called. For example if you just output an object in the REPL, you will see the output of a call to the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method of that object. If you <code class="docutils literal notranslate"><span class="pre">print</span></code> an object, you will see the result of a call to the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method of that object.</p>
+<p>This is because in the REPL we generally want to see an <em>unambiguous representation</em> of our objects. On the other hand, when we call <code class="docutils literal notranslate"><span class="pre">print</span></code> we usually want a human-readable string that displays the information we primarily care about.</p>
+<p>These two methods often have the same implementation (since the end user often wants to see the <em>unambiguous representation</em>), but this doesn’t have to be the case. For example, we could argue, that the end user doesn’t care about the speed of the ball and only cares about its current position. Then the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method would return a string that doesn’t contain the <code class="docutils literal notranslate"><span class="pre">speed</span></code> attribute. However the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method should still return all attributes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ball</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="n">dx</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="n">dy</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
         
-    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span>
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">t</span>
         
     <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(x=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(pos=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">)&quot;</span>
     
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(x=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, dx=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="si">}</span><span class="s2">, dy=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(pos=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">, speed=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">speed</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">320</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">240</span><span class="p">,</span> <span class="n">dx</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -652,7 +637,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10)
 </pre></div>
 </div>
 </div>
@@ -667,7 +652,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10, speed=8)
 </pre></div>
 </div>
 </div>
@@ -680,7 +665,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ball(x=320, y=240)&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ball(pos=10)&#39;
 </pre></div>
 </div>
 </div>
@@ -692,34 +677,31 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ball(x=320, y=240, dx=-2, dy=2)&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ball(pos=10, speed=8)&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<p>Since <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> are often the same, it’s enough to just define <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. If no <code class="docutils literal notranslate"><span class="pre">__str__</span></code> is defined and you try to call it, Python will fallback to calling <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>:</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> should return the same string, it’s enough to just define <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. If no <code class="docutils literal notranslate"><span class="pre">__str__</span></code> is defined and you try to call it, Python will fallback to calling <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ball</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="n">dx</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="n">dy</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
         
-    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span>
+    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">t</span>
     
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(x=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, dx=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="si">}</span><span class="s2">, dy=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(pos=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">, speed=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">speed</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">320</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">240</span><span class="p">,</span> <span class="n">dx</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -731,7 +713,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10, speed=8)
 </pre></div>
 </div>
 </div>
@@ -743,21 +725,34 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10, speed=8)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Writing <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> for practically all your classes <em>should be second nature</em>. Being able to see the state of an object when outputting it is extremely valuable when looking for bugs and trying to understand what’s going on in your application.</p>
-<p>Therefore whenever you define a class, add a <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method which outputs the state of the objects of that class.</p>
+<p>Writing <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> for practically all your classes <em>should be second nature for you from now on</em>. Being able to see the state of an object when outputting it is <em>absolutely vital</em> when trying to spot bugs and attempting to understand what’s going on in your application.</p>
+<p>Therefore whenever you define a class, add a <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method which outputs a string that <em>unambiguously represents that class</em>. The best way to go about this is to return a string whose value represents the instantiation of a new object.</p>
+<p>For instance, in the above example <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> returned a string with the value <code class="docutils literal notranslate"><span class="pre">Ball(pos=10,</span> <span class="pre">speed=8)</span></code>. If we copy that value into our codebase, we would create a new <code class="docutils literal notranslate"><span class="pre">Ball</span></code> object with the exact same state as the object that produced this string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Ball</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10, speed=8)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="object-identity">
 <h2>Object identity<a class="headerlink" href="#object-identity" title="Permalink to this headline">#</a></h2>
-<p>Let’s create two objects of class <code class="docutils literal notranslate"><span class="pre">Ball</span></code> whose attributes have the same values:</p>
+<p>Let’s create two instances of the class <code class="docutils literal notranslate"><span class="pre">Ball</span></code> whose attributes have the same values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">ball2</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">ball2</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -769,7 +764,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10, speed=8)
 </pre></div>
 </div>
 </div>
@@ -781,7 +776,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10, speed=8)
 </pre></div>
 </div>
 </div>
@@ -791,12 +786,12 @@ title="Print to PDF"
 <p>This means that if we change the values of <code class="docutils literal notranslate"><span class="pre">ball1</span></code>, then <code class="docutils literal notranslate"><span class="pre">ball2</span></code> will be <em>completely unaffected</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">ball1</span><span class="o">.</span><span class="n">dx</span> <span class="o">*</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="n">ball1</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The value of <code class="docutils literal notranslate"><span class="pre">ball1.x</span></code> has now changed:</p>
+<p>The value of <code class="docutils literal notranslate"><span class="pre">ball1.pos</span></code> has now changed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span>
@@ -804,12 +799,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=316, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=26, speed=8)
 </pre></div>
 </div>
 </div>
 </div>
-<p>However the value of <code class="docutils literal notranslate"><span class="pre">ball2.x</span></code> is exactly the same as before:</p>
+<p>However the value of <code class="docutils literal notranslate"><span class="pre">ball2.pos</span></code> is exactly the same as before:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball2</span>
@@ -817,7 +812,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=320, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=10, speed=8)
 </pre></div>
 </div>
 </div>
@@ -825,7 +820,7 @@ title="Print to PDF"
 <p>But what happens if we write this?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">ball2</span> <span class="o">=</span> <span class="n">ball1</span>
 </pre></div>
 </div>
@@ -836,12 +831,12 @@ title="Print to PDF"
 <p>This means that whenever we make a change to that object using the name <code class="docutils literal notranslate"><span class="pre">ball1</span></code>, that change will be visible when we access the object using the name <code class="docutils literal notranslate"><span class="pre">ball2</span></code> as well:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="n">ball1</span><span class="o">.</span><span class="n">dx</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span><span class="o">.</span><span class="n">pos</span> <span class="o">+=</span> <span class="n">ball1</span><span class="o">.</span><span class="n">speed</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Outputting <code class="docutils literal notranslate"><span class="pre">ball1</span></code> obviously shows the new value of <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<p>Outputting <code class="docutils literal notranslate"><span class="pre">ball1</span></code> obviously shows the new value of <code class="docutils literal notranslate"><span class="pre">pos</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span>
@@ -849,12 +844,12 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=318, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=18, speed=8)
 </pre></div>
 </div>
 </div>
 </div>
-<p>However, outputting <code class="docutils literal notranslate"><span class="pre">ball2</span></code> also outputs the new value of <code class="docutils literal notranslate"><span class="pre">x</span></code>!</p>
+<p>However, outputting <code class="docutils literal notranslate"><span class="pre">ball2</span></code> also shows the new value of <code class="docutils literal notranslate"><span class="pre">pos</span></code>!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball2</span>
@@ -862,7 +857,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(x=318, y=240, dx=-2, dy=2)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ball(pos=18, speed=8)
 </pre></div>
 </div>
 </div>
@@ -890,7 +885,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140701729111008
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139805147625792
 </pre></div>
 </div>
 </div>
@@ -902,7 +897,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140701729111008
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139805147625792
 </pre></div>
 </div>
 </div>
@@ -922,8 +917,8 @@ title="Print to PDF"
 <p>However if we have two names that refer to different objects, then their memory address will not be the same and the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator will return <code class="docutils literal notranslate"><span class="pre">False</span></code> even <em>if the object attributes are all equal</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">ball2</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">ball2</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -935,7 +930,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140701732521104
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139805147626176
 </pre></div>
 </div>
 </div>
@@ -947,7 +942,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140701733020960
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139805147624064
 </pre></div>
 </div>
 </div>
@@ -982,8 +977,8 @@ title="Print to PDF"
 <p>An interesting question is what happens if we use the equality operator <code class="docutils literal notranslate"><span class="pre">==</span></code> on objects. By default, the equality operator does the same thing as the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">ball2</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">ball2</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="n">ball1</span> <span class="o">==</span> <span class="n">ball2</span>
 </pre></div>
@@ -997,7 +992,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 <span class="n">ball2</span> <span class="o">=</span> <span class="n">ball1</span>
 
 <span class="n">ball1</span> <span class="o">==</span> <span class="n">ball2</span>
@@ -1015,25 +1010,22 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Ball</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">=</span> <span class="n">dx</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">=</span> <span class="n">dy</span>
-        
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">pos</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
+
     <span class="c1"># some methods</span>
     
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Ball</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">dx</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">dx</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">dy</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">dy</span>
-    
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Ball</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">pos</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">speed</span>
+
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(x=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2">, y=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s2">, dx=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dx</span><span class="si">}</span><span class="s2">, dy=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dy</span><span class="si">}</span><span class="s2">)&quot;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Ball(pos=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="si">}</span><span class="s2">, speed=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">speed</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method checks for two things. The first thing it checks for is if the other object is an instance of <code class="docutils literal notranslate"><span class="pre">Ball</span></code>. If it’s not, then the whole chain of <code class="docutils literal notranslate"><span class="pre">and</span></code>s becomes <code class="docutils literal notranslate"><span class="pre">False</span></code>. This makes sense - after all, a <code class="docutils literal notranslate"><span class="pre">Ball</span></code> object should never be equal to a non-<code class="docutils literal notranslate"><span class="pre">Ball</span></code> object.</p>
-<p>However, if the other object is an instance of <code class="docutils literal notranslate"><span class="pre">Ball</span></code> as well, we check whether all attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are equal. If they are, we return <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise we return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>Our <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> method checks that the other object is an instance of <code class="docutils literal notranslate"><span class="pre">Ball</span></code> and whether all attributes of <code class="docutils literal notranslate"><span class="pre">self</span></code> and <code class="docutils literal notranslate"><span class="pre">other</span></code> are equal. If they are, we return <code class="docutils literal notranslate"><span class="pre">True</span></code>, otherwise we return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 <p>Now the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator works the way we would like it to:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1045,7 +1037,14 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">47</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ball1</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ball2</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ball1</span> <span class="o">==</span> <span class="n">ball2</span>
+
+<span class="ne">TypeError</span>: __init__() takes 3 positional arguments but 5 were given
 </pre></div>
 </div>
 </div>

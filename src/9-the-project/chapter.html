@@ -111,7 +111,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../1-installation/chapter.html">
-   Chapter 1. Installation
+   Chapter 1. Fundamentals
   </a>
  </li>
  <li class="toctree-l1">
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../7-files/chapter.html">
-   Chapter 7. Files
+   Chapter 7. Input and Output
   </a>
  </li>
  <li class="toctree-l1">
@@ -400,6 +400,11 @@ title="Print to PDF"
    Ending the game
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-up">
+   Wrapping up
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -459,6 +464,11 @@ title="Print to PDF"
    Ending the game
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wrapping-up">
+   Wrapping up
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -476,11 +486,11 @@ title="Print to PDF"
 <p>We will use the <code class="docutils literal notranslate"><span class="pre">pygame</span></code> package designed for writing games in Python. You can install it using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">pygame</span></code> (no surprises there if you followed the last chapter).</p>
 <section id="the-game-loop">
 <h2>The game loop<a class="headerlink" href="#the-game-loop" title="Permalink to this headline">#</a></h2>
-<p>We begin by writing the <strong>game loop</strong>. Here we create the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object which we draw onto. We also create a <code class="docutils literal notranslate"><span class="pre">clock</span></code> that will allow us to control how often we want to render a frame (in this case we want to have <code class="docutils literal notranslate"><span class="pre">30</span></code> frames per second). We also define a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop which the following as long as the game is active:</p>
+<p>We begin by writing the <strong>game loop</strong>. Here we create the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object which we draw onto. We also create a <code class="docutils literal notranslate"><span class="pre">clock</span></code> that will allow us to control how often we want to render a frame (for this game we want to render <code class="docutils literal notranslate"><span class="pre">30</span></code> frames per second). We also define a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop which repeatedly executes the following steps as long as the game is active:</p>
 <ol class="simple">
-<li><p>Process all currently existing user events. Right now we only process the <code class="docutils literal notranslate"><span class="pre">pygame.QUIT</span></code> event which happens if the user closes the window. In this case we set the <code class="docutils literal notranslate"><span class="pre">active</span></code> flag to <code class="docutils literal notranslate"><span class="pre">False</span></code> which will exit the game loop and therefore also exit the application (since there is no code following the game loop).</p></li>
+<li><p>Process all currently existing user events. Right now we only process the <code class="docutils literal notranslate"><span class="pre">pygame.QUIT</span></code> event which happens if the user closes the window. If we see a <code class="docutils literal notranslate"><span class="pre">pygame.QUIT</span></code> event we set the <code class="docutils literal notranslate"><span class="pre">active</span></code> flag to <code class="docutils literal notranslate"><span class="pre">False</span></code> which will exit the game loop and therefore also exit the application (since there is no code following the game loop).</p></li>
 <li><p>Update the clock using the <code class="docutils literal notranslate"><span class="pre">tick</span></code> method.</p></li>
-<li><p>Repaint the screen using <code class="docutils literal notranslate"><span class="pre">screen.fill</span></code> and update it <code class="docutils literal notranslate"><span class="pre">pygame.display.flip</span></code>. All game objects will be drawn between those two method calls.</p></li>
+<li><p>Repaint the screen using <code class="docutils literal notranslate"><span class="pre">screen.fill</span></code> and update it by calling <code class="docutils literal notranslate"><span class="pre">pygame.display.flip</span></code>. All game objects will be drawn between those two method calls.</p></li>
 </ol>
 <p>Here is how the corresponding code looks like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
@@ -498,10 +508,15 @@ title="Print to PDF"
     <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
         <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
             <span class="n">active</span> <span class="o">=</span> <span class="kc">False</span>
+            
+        <span class="c1"># more events will be processed here</span>
 
     <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
 
     <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+    
+    <span class="c1"># game objects will be drawn here</span>
+    
     <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -509,7 +524,7 @@ title="Print to PDF"
 <section id="the-paddle">
 <h2>The paddle<a class="headerlink" href="#the-paddle" title="Permalink to this headline">#</a></h2>
 <p>Next we need to create our game objects. First we create a paddle that we can move around using our mouse.</p>
-<p>The paddle needs to have the attributes <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code> which denote its position and its dimensions. It also needs to have the usual <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> methods. Additionaly it should have (like all game objects) have a <code class="docutils literal notranslate"><span class="pre">render</span></code> method which takes the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object and renders the paddle onto the screen. Finally we need a <code class="docutils literal notranslate"><span class="pre">move</span></code> method which attempts to mov the paddle to the respective mouse position.</p>
+<p>The paddle needs to have the attributes <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code> which denote its position and its dimensions. It also needs to have the usual <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> methods. Additionaly it should have (like all game objects) a <code class="docutils literal notranslate"><span class="pre">render</span></code> method which takes the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object and renders the paddle onto the screen. Finally we need a <code class="docutils literal notranslate"><span class="pre">move</span></code> method which attempts to move the paddle to the respective mouse position.</p>
 <p>Here is a first stab at the <code class="docutils literal notranslate"><span class="pre">Paddle</span></code> class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -540,8 +555,8 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Most of this is pretty self-explanatory except for the <code class="docutils literal notranslate"><span class="pre">move</span></code> method. We can’t move the paddle to the mouse position, because the paddle needs to always be anchored to the bottom of the screen. Therefore we ignore the y coordinate of the mouse completely and only focus on the x coordinate. To make the movement feel right, we take the x coordinate of the mouse to be the <em>center of the paddle</em>.</p>
-<p>This means that after the move <code class="docutils literal notranslate"><span class="pre">mouse_x</span></code> must be equal to <code class="docutils literal notranslate"><span class="pre">self.x</span> <span class="pre">+</span> <span class="pre">self.w</span> <span class="pre">/</span> <span class="pre">2</span></code> (since <code class="docutils literal notranslate"><span class="pre">self.x</span></code> indicates the left border of the paddle). Basic arithmetic therefores gives us the formula for the update: <code class="docutils literal notranslate"><span class="pre">self.x</span> <span class="pre">=</span> <span class="pre">mouse_x</span> <span class="pre">-</span> <span class="pre">self.w</span> <span class="pre">/</span> <span class="pre">2</span></code>.</p>
+<p>Most of this is pretty self-explanatory except for the <code class="docutils literal notranslate"><span class="pre">move</span></code> method. We can’t move the paddle to the mouse position, because we want the paddle to always be anchored to the bottom of the screen. Therefore we ignore the y coordinate of the mouse position completely and only focus on the x coordinate. To make the movement feel right, we take the x coordinate of the mouse to be the <em>center of the paddle</em>.</p>
+<p>This means that after the move <code class="docutils literal notranslate"><span class="pre">mouse_x</span></code> must be equal to <code class="docutils literal notranslate"><span class="pre">self.x</span> <span class="pre">+</span> <span class="pre">self.w</span> <span class="pre">/</span> <span class="pre">2</span></code> (since <code class="docutils literal notranslate"><span class="pre">self.x</span></code> indicates the left border of the paddle). Basic arithmetic therefore gives us the formula for the update: <code class="docutils literal notranslate"><span class="pre">self.x</span> <span class="pre">=</span> <span class="pre">mouse_x</span> <span class="pre">-</span> <span class="pre">self.w</span> <span class="pre">/</span> <span class="pre">2</span></code>.</p>
 <p>Let’s create a <code class="docutils literal notranslate"><span class="pre">paddle</span></code> object and play around with it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -581,9 +596,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>This looks quite good! Now we need to add the paddle to our game. In order to accomplish this, two things have to be done. First, we need to check for <code class="docutils literal notranslate"><span class="pre">pygame.MOUSEMOTION</span></code> events and update the paddle position on such an event. Second, we need to render the paddle in the game loop.</p>
+<p>This looks quite good! Now we need to add the paddle to our game. In order to accomplish this, two things need to be done. First, we need to check for <code class="docutils literal notranslate"><span class="pre">pygame.MOUSEMOTION</span></code> events and update the paddle position if such an event occurs. Second, we need to render the paddle in the game loop.</p>
 <p>Here is the code we need to add:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">paddle</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">460</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">paddle</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">460</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
 <span class="o">...</span>
 <span class="k">while</span> <span class="n">active</span><span class="p">:</span>
@@ -681,7 +696,7 @@ title="Print to PDF"
 </div>
 </div>
 <p>Nice work! Now we add a ball to the game loop. Since the ball doesn’t need to respond to external events, this is even simpler than the paddle. We create a <code class="docutils literal notranslate"><span class="pre">ball</span></code> object that starts at the center of the screen, call the <code class="docutils literal notranslate"><span class="pre">move</span></code> method after every tick and render the ball:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">paddle</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">460</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">dx</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">paddle</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">460</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="n">ball</span> <span class="o">=</span> <span class="n">ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">w</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">h</span> <span class="o">//</span> <span class="mi">2</span><span class="p">,</span> <span class="n">dx</span><span class="o">=-</span><span class="mi">8</span><span class="p">,</span> <span class="n">dy</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 <span class="o">...</span>
 
@@ -699,9 +714,9 @@ title="Print to PDF"
 </div>
 <p>Our game now looks like this:</p>
 <p><img alt="ball" src="../../_images/ball.png" /></p>
-<p>If you run the game now, you will see a tiny problem - the ball moves through the bottom wall and disappears. This is because currently we have no <strong>collision detection</strong>. Since <code class="docutils literal notranslate"><span class="pre">dy</span></code> is negative, the ball just keeps moving downwards.</p>
+<p>If you run the game now, you will see a tiny problem - the ball moves through the bottom wall and disappears. This is because we currently have no <strong>collision detection</strong>. Since <code class="docutils literal notranslate"><span class="pre">dy</span></code> is negative, the ball just keeps moving downwards until it’s no longer inside the playing area.</p>
 <p>The algorithm for collision detection will be relatively straightforward. We check if the ball collides with a wall and if that’s the case, we will simply reverse its direction. However we now have a problem. Finding out if the ball collides with one of the walls requires knowledge about the dimension of the screen.</p>
-<p>We could pass that information along to the ball object, but that doesn’t seem right. Additionally, we will later need to coordinate multiple objects anyway (like checking for collisions between balls and bricks). In order to accomplish this, we create a <code class="docutils literal notranslate"><span class="pre">Game</span></code> class which will coordinate our game objects.</p>
+<p>We could pass that information along to the ball object, but that doesn’t seem right. Additionally, we will later need to coordinate multiple objects anyway (for example we will have to check for collisions between balls and bricks). In order to accomplish this, we create a <code class="docutils literal notranslate"><span class="pre">Game</span></code> class which will coordinate our game objects.</p>
 </section>
 <section id="the-game-class">
 <h2>The Game class<a class="headerlink" href="#the-game-class" title="Permalink to this headline">#</a></h2>
@@ -957,7 +972,7 @@ title="Print to PDF"
             <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">dy</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
 </pre></div>
 </div>
-<p>We can now hit the ball with the paddle, but the ball still disappears through the ball. We need to check for wall collisions as well:</p>
+<p>We can now hit the ball with the paddle, but the ball still disappears through the wall. We need to check for wall collisions as well:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">:</span>
     <span class="o">...</span>
 
@@ -979,7 +994,7 @@ title="Print to PDF"
 </section>
 <section id="adding-the-bricks">
 <h2>Adding the bricks<a class="headerlink" href="#adding-the-bricks" title="Permalink to this headline">#</a></h2>
-<p>We now have a ball that bounces around and that can be hit with a paddle. However, we are still missing the <em>actual game</em>, i.e. the possibility to hit some bricks with our ball.</p>
+<p>We now have a ball that bounces around and can be hit with a paddle. However, we are still missing the <em>actual game</em>, i.e. the possibility to hit some bricks with our ball.</p>
 <p>Let’s create a file <code class="docutils literal notranslate"><span class="pre">brick.py</span></code> containing the <code class="docutils literal notranslate"><span class="pre">Brick</span></code> class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -996,6 +1011,7 @@ title="Print to PDF"
     <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Brick</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
+
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">w</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">h</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">h</span>
     
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1075,6 +1091,7 @@ title="Print to PDF"
     <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="o">...</span>
         
+        <span class="n">prev_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bricks</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bricks</span> <span class="o">=</span> <span class="p">[</span><span class="n">brick</span> <span class="k">for</span> <span class="n">brick</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">bricks</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">coords_in_rect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">brick</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">brick</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">brick</span><span class="o">.</span><span class="n">w</span><span class="p">,</span> <span class="n">brick</span><span class="o">.</span><span class="n">h</span><span class="p">)]</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bricks</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">prev_len</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="o">.</span><span class="n">dy</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
@@ -1085,7 +1102,7 @@ title="Print to PDF"
 </section>
 <section id="ending-the-game">
 <h2>Ending the game<a class="headerlink" href="#ending-the-game" title="Permalink to this headline">#</a></h2>
-<p>We are pretty much done, all that is left to do is ending the game when the player wins or lose. To accomplish that we will maintain a <em>game state</em> which will be one of <code class="docutils literal notranslate"><span class="pre">&quot;ongoing&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;won&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;lost&quot;</span></code> and render different things depending on the game state.</p>
+<p>We are pretty much done, all that is left to do is ending the game when the player wins or loses. To accomplish that we will maintain a <em>game state</em> which will be one of <code class="docutils literal notranslate"><span class="pre">&quot;ongoing&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;won&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;lost&quot;</span></code> and render different things depending on the game state.</p>
 <p>First, we update the <code class="docutils literal notranslate"><span class="pre">Game</span></code> class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">paddle</span><span class="p">,</span> <span class="n">ball</span><span class="p">,</span> <span class="n">n_bricks_x</span><span class="p">,</span> <span class="n">n_bricks_y</span><span class="p">):</span>
@@ -1138,6 +1155,9 @@ title="Print to PDF"
 <p>Now if we destroy all bricks we win the game:</p>
 <p><img alt="" src="../../_images/won.png" /></p>
 <p>Similarly if the ball disappers throught the bottom of the screen we lose the game.</p>
+</section>
+<section id="wrapping-up">
+<h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this headline">#</a></h2>
 <p>Congratulations, you just completed your first game! From here, there are a number of things you can try by yourself:</p>
 <ol class="simple">
 <li><p>The paddle currently partially disappears, if we move the mouse too far left or too far right. This can be improved by checking whether there is a collision between the paddle and a wall.</p></li>

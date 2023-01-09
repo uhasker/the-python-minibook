@@ -4,6 +4,8 @@
 title: The Python Minibook
 author: Mikhail Berkov
 
+exclude_patterns: [venv]
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:

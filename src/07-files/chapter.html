@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -62,11 +63,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'src/7-files/chapter';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/07-files/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Chapter 8. Modules and packages" href="../8-modules-and-packages/chapter.html" />
-    <link rel="prev" title="Chapter 6. Control flow" href="../6-control-flow/chapter.html" />
+    <link rel="next" title="Chapter 8. Exceptions" href="../08-exceptions/chapter.html" />
+    <link rel="prev" title="Chapter 6. Control flow" href="../06-control-flow/chapter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -77,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -152,15 +162,16 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../1-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3-functions/chapter.html">Chapter 3. Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4-classes/chapter.html">Chapter 4. Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5-iterables/chapter.html">Chapter 5. Iterables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6-control-flow/chapter.html">Chapter 6. Control flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control flow</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 7. Input and Output</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../8-modules-and-packages/chapter.html">Chapter 8. Modules and packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../9-the-project/chapter.html">Chapter 9. The project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-exceptions/chapter.html">Chapter 8. Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09-modules-and-packages/chapter.html">Chapter 8. Modules and packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10-the-project/chapter.html">Chapter 9. The project</a></li>
 </ul>
 
     </div>
@@ -232,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2Fsrc/7-files/chapter.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2Fsrc/07-files/chapter.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -262,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/src/7-files/chapter.ipynb" target="_blank"
+      <li><a href="../../_sources/src/07-files/chapter.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,10 +327,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -327,7 +338,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -1253,7 +1264,7 @@ They&#39;re called violets.
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;german.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-16&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">german_file</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">content</span> <span class="o">=</span> <span class="n">german_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.16/x64/lib/python3.9/codecs.py:322,</span> in <span class="ni">BufferedIncrementalDecoder.decode</span><span class="nt">(self, input, final)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/codecs.py:322,</span> in <span class="ni">BufferedIncrementalDecoder.decode</span><span class="nt">(self, input, final)</span>
 <span class="g g-Whitespace">    </span><span class="mi">319</span> <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">final</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="c1"># decode input (taking the buffer into account)</span>
 <span class="g g-Whitespace">    </span><span class="mi">321</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">+</span> <span class="nb">input</span>
@@ -1261,7 +1272,7 @@ They&#39;re called violets.
 <span class="g g-Whitespace">    </span><span class="mi">323</span>     <span class="c1"># keep undecoded input until the next call</span>
 <span class="g g-Whitespace">    </span><span class="mi">324</span>     <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">consumed</span><span class="p">:]</span>
 
-<span class="nn">File /opt/hostedtoolcache/Python/3.9.16/x64/lib/python3.9/encodings/utf_16.py:61,</span> in <span class="ni">IncrementalDecoder._buffer_decode</span><span class="nt">(self, input, errors, final)</span>
+<span class="nn">File /opt/hostedtoolcache/Python/3.9.18/x64/lib/python3.9/encodings/utf_16.py:61,</span> in <span class="ni">IncrementalDecoder._buffer_decode</span><span class="nt">(self, input, errors, final)</span>
 <span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="k">def</span> <span class="nf">_buffer_decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">errors</span><span class="p">,</span> <span class="n">final</span><span class="p">):</span>
 <span class="g g-Whitespace">     </span><span class="mi">59</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">60</span>         <span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">consumed</span><span class="p">,</span> <span class="n">byteorder</span><span class="p">)</span> <span class="o">=</span> \
@@ -1294,7 +1305,7 @@ They&#39;re called violets.
         },
         kernelOptions: {
             name: "python3",
-            path: "./src/7-files"
+            path: "./src/07-files"
         },
         predefinedOutput: true
     }
@@ -1306,14 +1317,13 @@ They&#39;re called violets.
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../6-control-flow/chapter.html"
+       href="../06-control-flow/chapter.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -1322,18 +1332,15 @@ They&#39;re called violets.
       </div>
     </a>
     <a class="right-next"
-       href="../8-modules-and-packages/chapter.html"
+       href="../08-exceptions/chapter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 8. Modules and packages</p>
+        <p class="prev-next-title">Chapter 8. Exceptions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1408,8 +1415,8 @@ By Mikhail Berkov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

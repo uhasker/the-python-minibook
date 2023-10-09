@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -62,11 +63,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'src/8-modules-and-packages/chapter';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/09-modules-and-packages/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Chapter 9. The project" href="../9-the-project/chapter.html" />
-    <link rel="prev" title="Chapter 7. Input and Output" href="../7-files/chapter.html" />
+    <link rel="next" title="Chapter 9. The project" href="../10-the-project/chapter.html" />
+    <link rel="prev" title="Chapter 8. Exceptions" href="../08-exceptions/chapter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -77,6 +78,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -152,15 +162,16 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../1-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../2-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../3-functions/chapter.html">Chapter 3. Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../4-classes/chapter.html">Chapter 4. Classes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../5-iterables/chapter.html">Chapter 5. Iterables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../6-control-flow/chapter.html">Chapter 6. Control flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../7-files/chapter.html">Chapter 7. Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07-files/chapter.html">Chapter 7. Input and Output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08-exceptions/chapter.html">Chapter 8. Exceptions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 8. Modules and packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../9-the-project/chapter.html">Chapter 9. The project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../10-the-project/chapter.html">Chapter 9. The project</a></li>
 </ul>
 
     </div>
@@ -232,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2Fsrc/8-modules-and-packages/chapter.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2Fsrc/09-modules-and-packages/chapter.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -262,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/src/8-modules-and-packages/chapter.ipynb" target="_blank"
+      <li><a href="../../_sources/src/09-modules-and-packages/chapter.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -316,10 +327,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -327,7 +338,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -408,7 +419,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;greeting&#39; from &#39;/home/runner/work/the-python-minibook/the-python-minibook/src/8-modules-and-packages/greeting.py&#39;&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;module &#39;greeting&#39; from &#39;/home/runner/work/the-python-minibook/the-python-minibook/src/09-modules-and-packages/greeting.py&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -675,7 +686,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6190514788748406
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.10167771463219166
 </pre></div>
 </div>
 </div>
@@ -699,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;first element&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;second element&#39;
 </pre></div>
 </div>
 </div>
@@ -726,7 +737,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 4, 3, 19, 39, 58, 611888)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 10, 9, 17, 42, 49, 905173)
 </pre></div>
 </div>
 </div>
@@ -738,7 +749,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49
 </pre></div>
 </div>
 </div>
@@ -750,7 +761,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -762,7 +773,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
 </pre></div>
 </div>
 </div>
@@ -774,7 +785,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -786,7 +797,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -853,10 +864,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb8880f2d00&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc27c6852e0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/d692ada99fd8c6dbaad345a84c8f92eb37b45f95f36cad446dc27c1bcbfd7a67.png" src="../../_images/d692ada99fd8c6dbaad345a84c8f92eb37b45f95f36cad446dc27c1bcbfd7a67.png" />
+<img alt="../../_images/514c5f1ab0a8f61e5df4c5465f6874a761487e9b5817dc170877aa762a67ba3c.png" src="../../_images/514c5f1ab0a8f61e5df4c5465f6874a761487e9b5817dc170877aa762a67ba3c.png" />
 </div>
 </div>
 <p>One particularly relevant package is <code class="docutils literal notranslate"><span class="pre">black</span></code> which is commonly used to automatically format Python code.</p>
@@ -887,7 +898,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./src/8-modules-and-packages"
+            path: "./src/09-modules-and-packages"
         },
         predefinedOutput: true
     }
@@ -899,23 +910,22 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../7-files/chapter.html"
+       href="../08-exceptions/chapter.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chapter 7. Input and Output</p>
+        <p class="prev-next-title">Chapter 8. Exceptions</p>
       </div>
     </a>
     <a class="right-next"
-       href="../9-the-project/chapter.html"
+       href="../10-the-project/chapter.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
@@ -923,10 +933,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -991,8 +998,8 @@ By Mikhail Berkov
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

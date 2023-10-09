@@ -1,6 +1,6 @@
-# The Python minibook
+# The Python Minibook
 
-This repository contains the files for "The Python minibook".
+This repository contains the files for "The Python Minibook".
 
 The live version of the book is [here](https://uhasker.github.io/the-python-minibook).
 

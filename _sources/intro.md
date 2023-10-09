@@ -1,4 +1,4 @@
-# The Python minibook
+# The Python Minibook
 
 Always wanted to learn to code, but didn't quite know where to start?
 This book is just what you need.

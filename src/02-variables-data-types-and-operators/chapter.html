@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 2. Variables, data types and operators &#8212; The Python Minibook</title>
+    <title>Chapter 2. Variables, Data Types and Operators &#8212; The Python Minibook</title>
   
   
   
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 2. Variables, Data Types and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
@@ -355,7 +355,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 2. Variables, data types and operators</h1>
+    <h1>Chapter 2. Variables, Data Types and Operators</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -366,20 +366,20 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integer-data-type">The integer data type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floating-point-data-type">The floating point data type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boolean-data-type">The boolean data type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-string-data-type">The string data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integer-data-type">The Integer Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floating-point-data-type">The Floating Point Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boolean-data-type">The Boolean Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-string-data-type">The String Data Type</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-operators">Equality operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">Arithmetic operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-operators-on-strings">Using the operators on strings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-operators-with-parentheses">Grouping operators with parentheses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-operators">Equality Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">Arithmetic Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-operators-on-strings">Using the Operators on Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-operators-with-parentheses">Grouping Operators with Parentheses</a></li>
 </ul>
 </li>
 </ul>
@@ -394,7 +394,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-variables-data-types-and-operators">
-<h1>Chapter 2. Variables, data types and operators<a class="headerlink" href="#chapter-2-variables-data-types-and-operators" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 2. Variables, Data Types and Operators<a class="headerlink" href="#chapter-2-variables-data-types-and-operators" title="Permalink to this heading">#</a></h1>
 <section id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 <p>Programming is all about <em>working with data</em>. Specifically, we need the ability to <em>store and access</em> data in the <strong>memory</strong> of our computer. Storing data sounds pretty simple - just write a value to some <strong>memory cell</strong> and be happy. But how do we access the value later?</p>
@@ -498,7 +498,7 @@ document.write(`
 </div>
 </section>
 <section id="data-types">
-<h2>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
+<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
 <p>The <strong>data type</strong> of a variable describes the possible values and allowed operations on a variable. For example, if a variable has the integer data type, its possible values are integers and you can perform operations like addition, subtraction, multiplication, division etc.</p>
 <p>Note that instead of saying that a variable has the type <code class="docutils literal notranslate"><span class="pre">thingy</span></code>, programmers often say that a variable <em>is a</em> <code class="docutils literal notranslate"><span class="pre">thingy</span></code>. For example if a variable has the data type integer, programmers will say that the variable <em>is an</em> integer.</p>
 <p>Python has four built-in data types that are of particular importance to us right now - namely the <strong>integer</strong> data type (<code class="docutils literal notranslate"><span class="pre">int</span></code> for short), the <strong>floating point</strong> data type (<code class="docutils literal notranslate"><span class="pre">float</span></code> for short), the <strong>boolean</strong> data type (<code class="docutils literal notranslate"><span class="pre">bool</span></code> for short) and the <strong>string</strong> data type (<code class="docutils literal notranslate"><span class="pre">str</span></code> for short). Let’s have a look at these data types one by one.</p>
@@ -506,7 +506,7 @@ document.write(`
 <div><p>These four data types are absolutely crucial to understand and you will be using them practically every time you write any code at all.</p>
 </div></blockquote>
 <section id="the-integer-data-type">
-<h3>The integer data type<a class="headerlink" href="#the-integer-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The Integer Data Type<a class="headerlink" href="#the-integer-data-type" title="Permalink to this heading">#</a></h3>
 <p>Variables of the integer data type are capable of storing, well, integers (<em>we should probably give you a moment to recover from this shock</em>). Such variables are called <em>integers</em> for short (<em>truly deep stuff</em>).</p>
 <p>For example, the following variables all have the integer data type:</p>
 <div class="cell docutils container">
@@ -558,7 +558,7 @@ document.write(`
 <p>All three lines output <code class="docutils literal notranslate"><span class="pre">int</span></code> which means that the respective values are indeed integers.</p>
 </section>
 <section id="the-floating-point-data-type">
-<h3>The floating point data type<a class="headerlink" href="#the-floating-point-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The Floating Point Data Type<a class="headerlink" href="#the-floating-point-data-type" title="Permalink to this heading">#</a></h3>
 <p>Variables of the floating point data type are capable of storing, well, floating point numbers (this book is just <em>full of surprises</em>). These are numbers which have a decimal point. Such variables are called <em>floats</em> for short.</p>
 <p>We should note that floats and real numbers are <em>not</em> the same thing. Floats are only approximations of real numbers. The reason they are <em>only approximations</em> is not because of Python, but because of the limitations of something all programmers really hate - <em>reality</em>.</p>
 <p>After all, real numbers can have an arbitrary amount of digits after the decimal point - some real numbers even have an infinite amount of digits after the decimal point (like the number <em>pi</em>). But of course such numbers cannot be represented accurately by our hardware. Unfortunately, computers do not have an infinite amount of memory space. In fact the amount of memory available to a single floating point number is usually <em>very finite</em>.</p>
@@ -601,7 +601,7 @@ document.write(`
 <p>For instance, if you need to store the amount of money in a bank account you should store it in cents (e.g. <code class="docutils literal notranslate"><span class="pre">15673</span></code> cents) instead of dollars (e.g. <code class="docutils literal notranslate"><span class="pre">156.73</span></code> dollars).</p>
 </section>
 <section id="the-boolean-data-type">
-<h3>The boolean data type<a class="headerlink" href="#the-boolean-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The Boolean Data Type<a class="headerlink" href="#the-boolean-data-type" title="Permalink to this heading">#</a></h3>
 <p>Another important data type is the <code class="docutils literal notranslate"><span class="pre">bool</span></code> data type. A boolean variable can store the two values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -615,7 +615,7 @@ document.write(`
 <p>For example we might want to determine whether a game object has been destroyed based on the outcome of a collision check. A boolean variable <code class="docutils literal notranslate"><span class="pre">collides</span></code> which is <code class="docutils literal notranslate"><span class="pre">True</span></code> if a collision happened and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise certainly comes in handy in such a case.</p>
 </section>
 <section id="the-string-data-type">
-<h3>The string data type<a class="headerlink" href="#the-string-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The String Data Type<a class="headerlink" href="#the-string-data-type" title="Permalink to this heading">#</a></h3>
 <p>The final data type we will look at in this chapter is the string data type. A <strong>string</strong> is just a <em>sequence of characters</em>.</p>
 <p>String literals go either between double quotes or between single quotes:</p>
 <div class="cell docutils container">
@@ -788,7 +788,7 @@ document.write(`
 <section id="operators">
 <h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
 <section id="equality-operators">
-<h3>Equality operators<a class="headerlink" href="#equality-operators" title="Permalink to this heading">#</a></h3>
+<h3>Equality Operators<a class="headerlink" href="#equality-operators" title="Permalink to this heading">#</a></h3>
 <p>Every data type has associated <strong>operators</strong>. An operator takes one or more values and produces a result.</p>
 <p>Two important operators we can use with variables of essentially every data type are <code class="docutils literal notranslate"><span class="pre">==</span></code> (equals) and <code class="docutils literal notranslate"><span class="pre">!=</span></code> (not equals). Consider the following variables:</p>
 <div class="cell docutils container">
@@ -906,7 +906,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="arithmetic-operators">
-<h3>Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h3>
+<h3>Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h3>
 <p>You can also use the usual <strong>arithmetic operators</strong> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> on integers and floats. Unless you slept through school (in which case we sympathize), you probably already know what they do.</p>
 <p>For completeness’ sake, here are some examples:</p>
 <div class="cell docutils container">
@@ -1214,7 +1214,7 @@ document.write(`
 </div>
 </section>
 <section id="comparison-operators">
-<h3>Comparison operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">#</a></h3>
+<h3>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">#</a></h3>
 <p>Python also has the <strong>comparison operators</strong> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, which work pretty much the way you would expect:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1323,7 +1323,7 @@ document.write(`
 <p>Not much to say here - pretty straightforward stuff.</p>
 </section>
 <section id="using-the-operators-on-strings">
-<h3>Using the operators on strings<a class="headerlink" href="#using-the-operators-on-strings" title="Permalink to this heading">#</a></h3>
+<h3>Using the Operators on Strings<a class="headerlink" href="#using-the-operators-on-strings" title="Permalink to this heading">#</a></h3>
 <p>Something that might be surprising to learn is that we can use all of these operators with strings. However in this context the operators take on different meanings. The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator becomes <strong>string concatenation</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1413,7 +1413,7 @@ document.write(`
 <p>Don’t spend too much time worrying about this - you will rarely use <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> to compare strings. We mostly mention this for the sake of completeness.</p>
 </section>
 <section id="logical-operators">
-<h3>Logical operators<a class="headerlink" href="#logical-operators" title="Permalink to this heading">#</a></h3>
+<h3>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this heading">#</a></h3>
 <p>Finally, we need to introduce the <strong>logical operators</strong> <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> which take boolean values and return another boolean value.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator takes two boolean values and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if and only if they are <em>both</em> <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <div class="cell docutils container">
@@ -1569,7 +1569,7 @@ document.write(`
 </div>
 </section>
 <section id="grouping-operators-with-parentheses">
-<h3>Grouping operators with parentheses<a class="headerlink" href="#grouping-operators-with-parentheses" title="Permalink to this heading">#</a></h3>
+<h3>Grouping Operators with Parentheses<a class="headerlink" href="#grouping-operators-with-parentheses" title="Permalink to this heading">#</a></h3>
 <p>Just like in mathematics, you can change the <strong>precedence</strong> of operators (i.e. which operator is evaluated first) using parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. Consider this expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1664,20 +1664,20 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data types</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integer-data-type">The integer data type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floating-point-data-type">The floating point data type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boolean-data-type">The boolean data type</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-string-data-type">The string data type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integer-data-type">The Integer Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-floating-point-data-type">The Floating Point Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-boolean-data-type">The Boolean Data Type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-string-data-type">The String Data Type</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operators">Operators</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-operators">Equality operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">Arithmetic operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-operators-on-strings">Using the operators on strings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical operators</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-operators-with-parentheses">Grouping operators with parentheses</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#equality-operators">Equality Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">Arithmetic Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">Comparison Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-operators-on-strings">Using the Operators on Strings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#logical-operators">Logical Operators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grouping-operators-with-parentheses">Grouping Operators with Parentheses</a></li>
 </ul>
 </li>
 </ul>

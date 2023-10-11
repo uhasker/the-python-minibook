@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, Data Types and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 5. Iterables</a></li>
@@ -383,7 +383,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-iterables">
 <h1>Chapter 5. Iterables<a class="headerlink" href="#chapter-5-iterables" title="Permalink to this heading">#</a></h1>
 <p>An <strong>iterable</strong> is a data structure that allows you to <em>store multiple items in a single variable</em>. Put more formally, an iterable object is capable of returning its members one after another.</p>
-<p>There are many iterables in Python - in this chapter we will only concern ourselves with the most important ones - lists, ranges, tuples and dictionaries. The first three (i.e. lists, ranges and tuples) are special iterables called <strong>sequences</strong>. Sequences are iterables which support access using a numerical index (we will see what this means in a second).</p>
+<p>You already saw an important iterable - namely the string data structure. There are many more iterables in Python - but in this chapter we will only concern ourselves with the most important ones - lists, ranges, tuples and dictionaries. The first three (i.e. lists, ranges and tuples) are special iterables called <strong>sequences</strong>. Sequences are iterables which support access using a numerical index (we will see what this means in a second).</p>
 <section id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h2>
 <p>Probably the most important iterable in Python is the <strong>list</strong>. Lists are <strong>mutable</strong> sequences, i.e. sequences whose contents can be changed. You can create a list using square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> and separating items with commas:</p>
@@ -851,6 +851,31 @@ document.write(`
 </div>
 </div>
 </div>
+<p>It is also possible to call <code class="docutils literal notranslate"><span class="pre">range</span></code> with a single value, in which case that value is interpreted as the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value and the <code class="docutils literal notranslate"><span class="pre">start</span></code> value is set to 0:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 3, 4]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="tuples">
 <h2>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">#</a></h2>
@@ -894,7 +919,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note that technically lists can also hold values of different data types, however this is <em>not recommended</em>.</p>
+<p>Note that technically lists can also hold values of different data types, however usually list <em>hold values of the same data type</em>.</p>
 <p>We should point out we can add parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> around the tuple items for better readability:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -978,7 +1003,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">51</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">53</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">print_tuple</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: print_tuple() takes 1 positional argument but 2 were given
@@ -1022,7 +1047,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">54</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">56</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
 
 <span class="ne">TypeError</span>: &#39;tuple&#39; object does not support item assignment

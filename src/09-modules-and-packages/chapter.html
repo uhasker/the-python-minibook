@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, Data Types and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
@@ -366,8 +366,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-modules">Built-in modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-packages">Third-party packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-modules">Built-in Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-packages">Third-party Packages</a></li>
 </ul>
             </nav>
         </div>
@@ -513,7 +513,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Uh-oh! The <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> happens because <code class="docutils literal notranslate"><span class="pre">greeting</span></code> is now a string containing the greeting instead of the module <code class="docutils literal notranslate"><span class="pre">greeting</span></code>:</p>
+<p>Uh-oh! The <code class="docutils literal notranslate"><span class="pre">AttributeError</span></code> happens because <code class="docutils literal notranslate"><span class="pre">greeting</span></code> is now a string containing the greeting instead of the module <code class="docutils literal notranslate"><span class="pre">greeting</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span>
@@ -588,7 +588,7 @@ document.write(`
 </div>
 </section>
 <section id="built-in-modules">
-<h2>Built-in modules<a class="headerlink" href="#built-in-modules" title="Permalink to this heading">#</a></h2>
+<h2>Built-in Modules<a class="headerlink" href="#built-in-modules" title="Permalink to this heading">#</a></h2>
 <p>There is a number of important <em>built-in modules</em> that Python ships with. We will not go over them all (this would require multiple books much larger than this one). However we will quickly take a brief look at some of them.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">math</span></code> module provides various important mathematical functions. Here is a <em>very</em> small selection of them:</p>
 <div class="cell docutils container">
@@ -686,7 +686,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7344219528001982
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1272827135082537
 </pre></div>
 </div>
 </div>
@@ -698,7 +698,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -710,7 +710,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;second element&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;third element&#39;
 </pre></div>
 </div>
 </div>
@@ -737,7 +737,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 10, 9, 17, 46, 43, 937130)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 10, 11, 10, 55, 30, 488391)
 </pre></div>
 </div>
 </div>
@@ -749,7 +749,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>43
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
 </pre></div>
 </div>
 </div>
@@ -761,7 +761,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>46
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55
 </pre></div>
 </div>
 </div>
@@ -773,7 +773,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
 </pre></div>
 </div>
 </div>
@@ -785,7 +785,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 </div>
@@ -817,7 +817,7 @@ document.write(`
 <p>There are <em>a lot</em> of modules in Python. Check out the <a class="reference external" href="https://docs.python.org/3/library/index.html">Python documentation</a> for more information.</p>
 </section>
 <section id="third-party-packages">
-<h2>Third-party packages<a class="headerlink" href="#third-party-packages" title="Permalink to this heading">#</a></h2>
+<h2>Third-party Packages<a class="headerlink" href="#third-party-packages" title="Permalink to this heading">#</a></h2>
 <p>We add third-party packages using the <strong>package manager</strong> <code class="docutils literal notranslate"><span class="pre">pip</span></code>. If you followed the installation instructions in chapter 1, <code class="docutils literal notranslate"><span class="pre">pip</span></code> should already be installed on your machine.</p>
 <p>This package manager lets us install packages using the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command. For example we can install the third-party package <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for numerical computations using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">numpy</span></code>:</p>
 <p><img alt="" src="../../_images/pip.png" /></p>
@@ -864,7 +864,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f0ad49c62b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7efbf0ddf1c0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/514c5f1ab0a8f61e5df4c5465f6874a761487e9b5817dc170877aa762a67ba3c.png" src="../../_images/514c5f1ab0a8f61e5df4c5465f6874a761487e9b5817dc170877aa762a67ba3c.png" />
@@ -949,8 +949,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modules">Modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-modules">Built-in modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-packages">Third-party packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-modules">Built-in Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#third-party-packages">Third-party Packages</a></li>
 </ul>
   </nav></div>
 

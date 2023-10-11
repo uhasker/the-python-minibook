@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Chapter 4. Classes" href="../04-classes/chapter.html" />
-    <link rel="prev" title="Chapter 2. Variables, data types and operators" href="../02-variables-data-types-and-operators/chapter.html" />
+    <link rel="prev" title="Chapter 2. Variables, Data Types and Operators" href="../02-variables-data-types-and-operators/chapter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, Data Types and Operators</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
@@ -365,10 +365,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-functions">Why functions?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and calling functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">Function parameters and arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-return-keyword">The return keyword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-functions">Why Functions?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and Calling Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">Function Parameters and Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-return-keyword">The <code class="docutils literal notranslate"><span class="pre">return</span></code> Keyword</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-complex-function">Writing a complex function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-built-in-functions">Useful built-in functions</a></li>
@@ -386,7 +386,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-functions">
 <h1>Chapter 3. Functions<a class="headerlink" href="#chapter-3-functions" title="Permalink to this heading">#</a></h1>
 <section id="why-functions">
-<h2>Why functions?<a class="headerlink" href="#why-functions" title="Permalink to this heading">#</a></h2>
+<h2>Why Functions?<a class="headerlink" href="#why-functions" title="Permalink to this heading">#</a></h2>
 <p>The most important concept in Python and arguably in all of programming is that of a <strong>function</strong>. Functions are <em>reusable blocks of code</em>.</p>
 <p>Consider the following example. We are writing an application for handling tournaments and want to compute player ratings using the <a class="reference external" href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO rating system</a>. This system works by first calculating the probabilities of the players winning (i.e. the expected scores) and then updating the player’s rating from those probabilities and their old ratings.</p>
 <p>Consider an example with two players, where the first player has the rating <code class="docutils literal notranslate"><span class="pre">1000</span></code> and the second player has the rating <code class="docutils literal notranslate"><span class="pre">1500</span></code>. Let’s store the rating of the first player in a variable <code class="docutils literal notranslate"><span class="pre">rating1</span></code> and the rating of the second player in a variable <code class="docutils literal notranslate"><span class="pre">rating2</span></code>:</p>
@@ -478,7 +478,7 @@ document.write(`
 </div>
 </div>
 <p>We can see that the rating of the first player has increased quite substantially since he won against a stronger player. Meanwhile the rating of the second player has decreased (also quite substantially) since he lost against a weaker player.</p>
-<p>Let’s find out what happens, if the first player loses the game:</p>
+<p>Let’s find out what happens if the first player loses the game:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rating1</span> <span class="o">=</span> <span class="mi">1000</span>
@@ -515,19 +515,19 @@ document.write(`
 </div>
 </div>
 <p>This makes sense, too. If the second player wins, his rating increases. However the amount of the rating increase is very small, because the second player is much stronger than the first player according to the ratings and so his win was expected.</p>
-<p>We can already see how <em>duplicate code</em> is creeping into out application. After all, this calculation would have to be done quite often in our tournament application, which would result in a lot of tedious repetition of code.</p>
+<p>We can already see how <em>duplicate code</em> is creeping into our application. After all, this calculation would have to be done quite often in our tournament application, which would result in a lot of tedious repetition of code.</p>
 <p>This leads to several problems.</p>
 <p>First of all, <em>we would have to repeat the exact same code over and over again, which costs time and with each repetition we become more likely to introduce a mistake somewhere</em>.</p>
 <p>Second, if we want to change the rating calculation at some point, <em>we would need to adjust it in every place the calculation happens</em>. This, again, costs time and if we forget to do it somewhere, then some of the code will still be using old calculation, which will result in bugs.</p>
-<p>Instead of going through all this tedium, we can define the calculation <em>once</em> inside a function. Then every time we need to perform the calculation, we will simply <em>use the function</em>.</p>
+<p>Instead of going through all this tedium, we can <em>define</em> the calculation <em>once</em> inside a <strong>function</strong>. Then every time we need to perform the calculation, we will simply <em>use the function</em>.</p>
 <p>This fixes both our problems.</p>
 <p>First, from now on we only need to write the code once (namely inside the function).</p>
 <p>Second, if we want to change the rating calculation, we only need to update the function - all code that uses the function will automatically use the new rating calculation.</p>
 </section>
 <section id="defining-and-calling-functions">
-<h2>Defining and calling functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this heading">#</a></h2>
+<h2>Defining and Calling Functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this heading">#</a></h2>
 <p>We <strong>define</strong> a function using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword followed by the function name and parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. After that a <strong>function body</strong> follows which contains the function implementation (i.e. the code that we want to store inside the function).</p>
-<p>For example here is a function that prints a greeting. This function is not super useful, but it will serve to illustrate a few important concepts:</p>
+<p>For example, here is a function that prints a greeting. This function is not super useful, but it will serve to illustrate a few important concepts:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function definition below</span>
@@ -627,7 +627,7 @@ Hello, other user
 <p>However to make our functions useful, we should give them parameters that we can use to <em>customize their behaviour</em>.</p>
 </section>
 <section id="function-parameters-and-arguments">
-<h2>Function parameters and arguments<a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this heading">#</a></h2>
+<h2>Function Parameters and Arguments<a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this heading">#</a></h2>
 <p>Functions can take <strong>parameters</strong> between the parentheses which allow us to pass additional values to the function in a function call. These parameters may then be used inside the function body just like regular variables.</p>
 <p>Consider a function that should print a greeting given a name. We would write it like this:</p>
 <div class="cell docutils container">
@@ -834,7 +834,7 @@ Hello, other user
 </div>
 </section>
 <section id="the-return-keyword">
-<h2>The return keyword<a class="headerlink" href="#the-return-keyword" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">return</span></code> Keyword<a class="headerlink" href="#the-return-keyword" title="Permalink to this heading">#</a></h2>
 <p>At the moment we are <em>printing</em> values inside our functions. But usually we would like the function to <em>compute</em> a value and hand it to us. We can accomplish this using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword.</p>
 <p>Let’s rewrite the <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> function to a <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code> function that <em>returns</em> the greeting instead of <em>printing</em> it.</p>
 <div class="cell docutils container">
@@ -864,7 +864,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>Something that often trips up beginners is that they confuse <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">return</span></code>. However these are <em>two completely different and unrelated things</em>. The first one - <code class="docutils literal notranslate"><span class="pre">print</span></code> - is a <em>function which prints a value</em>. The second one - <code class="docutils literal notranslate"><span class="pre">return</span></code> - is a <em>keyword which allows a function to return a value to the code that calls it</em>.</p>
+<p>Something that often trips up beginners is that they confuse <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">return</span></code>. However these are <em>two completely different and unrelated things</em>. The first one - <code class="docutils literal notranslate"><span class="pre">print</span></code> - is a <em>function which outputs a value to the console</em>. The second one - <code class="docutils literal notranslate"><span class="pre">return</span></code> - is a <em>keyword which allows a function to return a value to the code that calls it</em>.</p>
 <p>Therefore <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> and <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code> are two completely different functions. The function <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> prints the greeting and doesn’t return anything. For example if we try to assign a value to the result of <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code>, this happens:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1047,7 +1047,7 @@ Hello, other user
 </div>
 </div>
 <p>Docstrings should contain a brief description of what the function does, as well as additional information and a description of potential edge cases.</p>
-<p>You should write docstrings for all functions that will be used by other developers in a codebase (so called <em>public functions</em>).</p>
+<p>You should write docstrings for all functions that will be used by other developers in a codebase or if you are writing a package that is intended to be used by other people.</p>
 </section>
 <section id="useful-built-in-functions">
 <h2>Useful built-in functions<a class="headerlink" href="#useful-built-in-functions" title="Permalink to this heading">#</a></h2>
@@ -1179,6 +1179,7 @@ Hello, other user
 </div>
 </div>
 </div>
+<p>These were just a few examples - there are many more useful built-in functions.</p>
 </section>
 </section>
 
@@ -1218,7 +1219,7 @@ Hello, other user
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chapter 2. Variables, data types and operators</p>
+        <p class="prev-next-title">Chapter 2. Variables, Data Types and Operators</p>
       </div>
     </a>
     <a class="right-next"
@@ -1245,10 +1246,10 @@ Hello, other user
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-functions">Why functions?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and calling functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">Function parameters and arguments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-return-keyword">The return keyword</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-functions">Why Functions?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and Calling Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">Function Parameters and Arguments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-return-keyword">The <code class="docutils literal notranslate"><span class="pre">return</span></code> Keyword</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-complex-function">Writing a complex function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-built-in-functions">Useful built-in functions</a></li>

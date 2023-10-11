@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, Data Types and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
@@ -365,10 +365,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For Loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehensions">Comprehensions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While Loops</a></li>
 </ul>
             </nav>
         </div>
@@ -383,7 +383,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-control-flow">
 <h1>Chapter 6. Control flow<a class="headerlink" href="#chapter-6-control-flow" title="Permalink to this heading">#</a></h1>
 <section id="conditional-statements">
-<h2>Conditional statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
+<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
 <p>Very often, we want to execute some code depending on whether a <strong>condition</strong> is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Let’s say that we have a function <code class="docutils literal notranslate"><span class="pre">process_event</span></code> which takes a user event in a game and processes that event. Depending on the kind of the event we receive we would need to execute different code.</p>
 <p>This can be achieved by using the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. This allows us to specify various tests and execute code depending on whether those tests succeed or fail:</p>
 <div class="cell docutils container">
@@ -400,7 +400,7 @@ document.write(`
 </div>
 </div>
 <p>First we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;mousemoved&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">moved</span> <span class="pre">his</span> <span class="pre">mouse!&quot;)</span></code> and skip the remaining tests.</p>
-<p>If it isn’t we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;keypressed&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">has</span> <span class="pre">pressed</span> <span class="pre">his</span> <span class="pre">key!&quot;)</span></code>.</p>
+<p>If it isn’t, we check whether <code class="docutils literal notranslate"><span class="pre">event</span> <span class="pre">==</span> <span class="pre">&quot;keypressed&quot;</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>. If it is we execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">has</span> <span class="pre">pressed</span> <span class="pre">a</span> <span class="pre">key!&quot;)</span></code>.</p>
 <p>Finally if none of the checks so far passed we move on to the body of the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement and execute <code class="docutils literal notranslate"><span class="pre">print(&quot;User</span> <span class="pre">did</span> <span class="pre">something</span> <span class="pre">else!&quot;)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -568,7 +568,7 @@ Therefore the two lines will be printed
 <p>Beware of <code class="docutils literal notranslate"><span class="pre">if</span></code> statements that are nested too deeply as such code will quickly become very hard to read and maintain.</p>
 </section>
 <section id="for-loops">
-<h2>For loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h2>
+<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h2>
 <p>Another important control flow construct is the <strong>for loop</strong>. In Python, the for loop can be used to <strong>iterate</strong> over iterables and execute a block of code for each iteration.</p>
 <p>Here is how we could iterate over a list and print each element of that list:</p>
 <div class="cell docutils container">
@@ -747,7 +747,7 @@ name=Max, rating=1200
 </div>
 </div>
 </div>
-<p>Constrast this with what we would need to do if we wanted to create this list inside a regular for loop:</p>
+<p>Contrast this with what we would need to do if we wanted to create this list inside a regular for loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">even_squares</span> <span class="o">=</span> <span class="p">[]</span>
@@ -793,7 +793,7 @@ name=Max, rating=1200
 </div>
 </section>
 <section id="while-loops">
-<h2>While loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h2>
+<h2>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h2>
 <p>Finally, <strong>while loops</strong> allow us to execute a block of code as long as a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>Let’s say we have a list of items which have a certain weight and a knapsack with a limited maximum weight. We want to find out which items we can pack into the knapsack without exceeding that maximum weight. We would move over the list <em>while</em> the maximum weight is not exceeded and add the items:</p>
 <div class="cell docutils container">
@@ -803,7 +803,7 @@ name=Max, rating=1200
 <span class="n">item_weights</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
 <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">while</span> <span class="n">current_weight</span> <span class="o">&lt;</span> <span class="n">maximum_weight</span><span class="p">:</span>
+<span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">item_weights</span><span class="p">)</span> <span class="ow">and</span> <span class="n">current_weight</span> <span class="o">+</span> <span class="n">item_weights</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">maximum_weight</span><span class="p">:</span>
     <span class="n">current_weight</span> <span class="o">+=</span> <span class="n">item_weights</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
     <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
@@ -817,7 +817,7 @@ name=Max, rating=1200
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>120
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
 </pre></div>
 </div>
 </div>
@@ -829,7 +829,7 @@ name=Max, rating=1200
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -841,7 +841,7 @@ name=Max, rating=1200
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 20, 40]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 30, 20]
 </pre></div>
 </div>
 </div>
@@ -924,10 +924,10 @@ name=Max, rating=1200
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional statements</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-statements">Conditional Statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">For Loops</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comprehensions">Comprehensions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loops">While Loops</a></li>
 </ul>
   </nav></div>
 

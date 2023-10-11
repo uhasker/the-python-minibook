@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, Data Types and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
@@ -365,16 +365,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-strings">More on strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-string-methods">Important string methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape characters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-strings">More on Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-string-methods">Important String Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape Characters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input() function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files">Working with text files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-text-files">Reading text files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-with-statement">The with statement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mode-argument">The mode argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input() Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files">Working with Text Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-text-files">Reading Text Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-with-statement">The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mode-argument">The <code class="docutils literal notranslate"><span class="pre">mode</span></code> Argument</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encodings">Encodings</a></li>
@@ -394,10 +394,10 @@ document.write(`
 <p>In this chapter we will cover how to read input from a user or a file and how to write output to a file.</p>
 <p>We will also cover a topic that is rarely discussed in introductory programming books, but should be understood by every working programmer - <em>encodings</em>.</p>
 <section id="more-on-strings">
-<h2>More on strings<a class="headerlink" href="#more-on-strings" title="Permalink to this heading">#</a></h2>
-<p>When working with input and output, you will be usually need to perform operations on strings. While we introduced the string data type in chapter 1, we haven’t actually done too much with strings so far. Let us fix that and talk about strings in more detail.</p>
+<h2>More on Strings<a class="headerlink" href="#more-on-strings" title="Permalink to this heading">#</a></h2>
+<p>When working with input and output, you will usually need to perform operations on strings. While we introduced the string data type in chapter 1, we haven’t actually done too much with strings so far. Let us fix that and talk about strings in more detail.</p>
 <section id="important-string-methods">
-<h3>Important string methods<a class="headerlink" href="#important-string-methods" title="Permalink to this heading">#</a></h3>
+<h3>Important String Methods<a class="headerlink" href="#important-string-methods" title="Permalink to this heading">#</a></h3>
 <p>Just like lists, strings have a bunch of operators and methods that you will use quite often. We already discussed the concatenation operator <code class="docutils literal notranslate"><span class="pre">+</span></code> and repetition operator <code class="docutils literal notranslate"><span class="pre">*</span></code>. Another important operator is the index access operator, which allows us to take the character at some position of a string. This operator works the same way it works for lists - you think of a string as a <em>list of characters</em> in this context:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -461,7 +461,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Strings also ship with a lot of methods. It’s useful to know the most important ones, since you will be using them quite regulary.</p>
+<p>Strings also ship with a lot of methods. It’s useful to know the most important ones, since you will be using them quite regularly.</p>
 <p>For example you can lowercase strings using the <code class="docutils literal notranslate"><span class="pre">lower()</span></code> method and uppercase them using the <code class="docutils literal notranslate"><span class="pre">upper()</span></code> method:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -553,12 +553,12 @@ document.write(`
 </div>
 </section>
 <section id="escape-characters">
-<h3>Escape characters<a class="headerlink" href="#escape-characters" title="Permalink to this heading">#</a></h3>
+<h3>Escape Characters<a class="headerlink" href="#escape-characters" title="Permalink to this heading">#</a></h3>
 <p>Some characters don’t denote letters, digits or special characters like <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">;</span></code> and need special treatment. The most important example of this is the <strong>newline character</strong>.</p>
 <p>The newline character is a <strong>non-printable character</strong>, because it’s - well - not really printed to the screen. Instead it describes an <em>action to take</em> (namely to go to the next line). Python represents newline characters using <code class="docutils literal notranslate"><span class="pre">\n</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;This a line.</span><span class="se">\n</span><span class="s2">This is another line.&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;This is a line.</span><span class="se">\n</span><span class="s2">This is another line.&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -571,7 +571,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This a line.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a line.
 This is another line.
 </pre></div>
 </div>
@@ -585,7 +585,7 @@ This is another line.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This a line.\nThis is another line.&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;This is a line.\nThis is another line.&#39;
 </pre></div>
 </div>
 </div>
@@ -723,7 +723,7 @@ This is another line.
 </section>
 </section>
 <section id="the-input-function">
-<h2>The input() function<a class="headerlink" href="#the-input-function" title="Permalink to this heading">#</a></h2>
+<h2>The input() Function<a class="headerlink" href="#the-input-function" title="Permalink to this heading">#</a></h2>
 <p>We can read a string from the command line using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 </pre></div>
@@ -735,9 +735,9 @@ This is another line.
 </div>
 </section>
 <section id="working-with-text-files">
-<h2>Working with text files<a class="headerlink" href="#working-with-text-files" title="Permalink to this heading">#</a></h2>
+<h2>Working with Text Files<a class="headerlink" href="#working-with-text-files" title="Permalink to this heading">#</a></h2>
 <section id="reading-text-files">
-<h3>Reading text files<a class="headerlink" href="#reading-text-files" title="Permalink to this heading">#</a></h3>
+<h3>Reading Text Files<a class="headerlink" href="#reading-text-files" title="Permalink to this heading">#</a></h3>
 <p>Let’s create a text file <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> with the following content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Roses</span> <span class="n">are</span> <span class="n">red</span><span class="o">.</span>
 <span class="n">Violets</span> <span class="n">aren</span><span class="s1">&#39;t blue.</span>
@@ -800,7 +800,7 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
-<p>We also need to <em>close</em> the file to free up the resouces consumed by the file object:</p>
+<p>We also need to <em>close</em> the file to free up the resources consumed by the file object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
@@ -842,7 +842,7 @@ They&#39;re called violets.
 <p>To summarize, we first need to <em>open</em> a file resulting in a <em>file object</em>. We are then able to perform operation on that <em>file object</em> like reading the content of the file. Finally we need to <em>close</em> the file object.</p>
 </section>
 <section id="the-with-statement">
-<h3>The with statement<a class="headerlink" href="#the-with-statement" title="Permalink to this heading">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement<a class="headerlink" href="#the-with-statement" title="Permalink to this heading">#</a></h3>
 <p>To simplify working with files, we can use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement which will automatically close the file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -878,7 +878,7 @@ They&#39;re called violets.
 </div>
 </section>
 <section id="the-mode-argument">
-<h3>The mode argument<a class="headerlink" href="#the-mode-argument" title="Permalink to this heading">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">mode</span></code> Argument<a class="headerlink" href="#the-mode-argument" title="Permalink to this heading">#</a></h3>
 <p>Writing to a file works similarly to reading from a file. We can write to a file by passing the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> (“write”) mode as the second argument to <code class="docutils literal notranslate"><span class="pre">open</span></code> and calling the <code class="docutils literal notranslate"><span class="pre">write</span></code> method on the file object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1355,16 +1355,16 @@ They&#39;re called violets.
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-strings">More on strings</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-string-methods">Important string methods</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape characters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-strings">More on Strings</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-string-methods">Important String Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape Characters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input() function</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files">Working with text files</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-text-files">Reading text files</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-with-statement">The with statement</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mode-argument">The mode argument</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input() Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files">Working with Text Files</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-text-files">Reading Text Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-with-statement">The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mode-argument">The <code class="docutils literal notranslate"><span class="pre">mode</span></code> Argument</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encodings">Encodings</a></li>

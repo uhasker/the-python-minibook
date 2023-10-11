@@ -163,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01-installation/chapter.html">Chapter 1. Fundamentals</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, data types and operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02-variables-data-types-and-operators/chapter.html">Chapter 2. Variables, Data Types and Operators</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 4. Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
@@ -365,10 +365,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-classes">Objects and classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-and-repr-methods">The __str__ and __repr__ methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity">Object identity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-equality">Object equality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-classes">Objects and Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-and-repr-methods">The __str__ and __repr__ Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity">Object Identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-equality">Object Equality</a></li>
 </ul>
             </nav>
         </div>
@@ -383,10 +383,11 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-classes">
 <h1>Chapter 4. Classes<a class="headerlink" href="#chapter-4-classes" title="Permalink to this heading">#</a></h1>
 <section id="objects-and-classes">
-<h2>Objects and classes<a class="headerlink" href="#objects-and-classes" title="Permalink to this heading">#</a></h2>
+<h2>Objects and Classes<a class="headerlink" href="#objects-and-classes" title="Permalink to this heading">#</a></h2>
 <p>An <strong>object</strong> is a data structure that contains <em>state</em> and <em>behaviour</em>.</p>
 <p>Before we can create objects, we (usually) need to define a <strong>class</strong> which will be our <em>a template for creating objects</em>. The objects which we create from that template are called <strong>instances</strong> of the class.</p>
-<p>Consider an example. We have a ball which has a position and a speed. The position and the speed describe the <em>state</em> of the ball. The ball can also move, i.e. update its position based on the speed. This is the <em>behaviour</em> of the ball.</p>
+<p>Consider the following example:</p>
+<p>We have a ball which has a position and a speed. The position and the speed describe the <em>state</em> of the ball. The ball can also move, i.e. update its position based on the speed. This is the <em>behaviour</em> of the ball.</p>
 <p>We can define a class <code class="docutils literal notranslate"><span class="pre">Ball</span></code> (which will be the template for creating ball objects in the future) like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -399,7 +400,10 @@ document.write(`
 </div>
 </div>
 <p>Here the state consists of the variables <code class="docutils literal notranslate"><span class="pre">pos</span></code> and <code class="docutils literal notranslate"><span class="pre">speed</span></code>. Generally speaking, variables that are associated with objects (and represent its state) are called <strong>attributes</strong>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function is a special function which <strong>initializes</strong> an object with some <em>initial state</em>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function (commonly referred to as <strong>constructor</strong>) is a special function which <strong>initializes</strong> an object with some <em>initial state</em>.</p>
+<blockquote>
+<div><p>PEP8 Note: Class names should normally use the CapWords convention, e.g. <code class="docutils literal notranslate"><span class="pre">Ball</span></code> or <code class="docutils literal notranslate"><span class="pre">MyAwesomeClass</span></code>.</p>
+</div></blockquote>
 <p>For example if we want to create a ball with the position <code class="docutils literal notranslate"><span class="pre">10</span></code> and with speed <code class="docutils literal notranslate"><span class="pre">8</span></code>, we write:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -408,7 +412,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Just like with functions, we can pass positional arguments and/or keyword arguments:</p>
+<p>Just like with functions, we can pass positional arguments and/or keyword arguments to the constructor:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_ball</span> <span class="o">=</span> <span class="n">Ball</span><span class="p">(</span><span class="n">pos</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
@@ -479,7 +483,7 @@ document.write(`
 <p>But this isn’t really the way to go. What if we wanted to change the speed calculation later (for example taking friction into account)? Then we would need to adjust the calculation in every single place we use it, which is a lot of work and could introduce bugs if we forget the calculation adjustment somewhere.</p>
 <p>If you paid attention in the previous chapter, you will quickly realize that we have the <em>exact same</em> problem that motivated the introduction of <em>functions</em>.</p>
 <p>After we introduced functions, we stored the repetitive calculations in the function body and then simply called the function when we needed those calculations. Luckily, classes and objects provide a similar mechanism.</p>
-<p>We can define functions on classes - these functions are called <strong>methods</strong> and define the <em>behaviour</em> of the objects of that class. Note that the first parameter of all methods is an instance of the current object. By convention this parameter is called <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+<p>We can define functions on classes - these functions are called <strong>methods</strong> and define the <em>behaviour</em> of the objects of that class. The first parameter of every method is an instance of the current object. By convention this parameter is called <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
 <p>For example here is how we could implement a <code class="docutils literal notranslate"><span class="pre">move</span></code> method on the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -494,7 +498,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Here <code class="docutils literal notranslate"><span class="pre">self</span></code> will be the ball object the method is invoked on. For example if call <code class="docutils literal notranslate"><span class="pre">move</span></code> on the object <code class="docutils literal notranslate"><span class="pre">my_ball</span></code> then <code class="docutils literal notranslate"><span class="pre">self</span></code> will be <code class="docutils literal notranslate"><span class="pre">my_ball</span></code>. If we call <code class="docutils literal notranslate"><span class="pre">move</span></code> on the object <code class="docutils literal notranslate"><span class="pre">my_other_ball</span></code> then <code class="docutils literal notranslate"><span class="pre">self</span></code> will be <code class="docutils literal notranslate"><span class="pre">my_other_ball</span></code>.</p>
+<p>Here <code class="docutils literal notranslate"><span class="pre">self</span></code> will be the ball object the method is invoked on. For example if we call <code class="docutils literal notranslate"><span class="pre">move</span></code> on the object <code class="docutils literal notranslate"><span class="pre">my_ball</span></code> then <code class="docutils literal notranslate"><span class="pre">self</span></code> will be <code class="docutils literal notranslate"><span class="pre">my_ball</span></code>. If we call <code class="docutils literal notranslate"><span class="pre">move</span></code> on the object <code class="docutils literal notranslate"><span class="pre">my_other_ball</span></code> then <code class="docutils literal notranslate"><span class="pre">self</span></code> will be <code class="docutils literal notranslate"><span class="pre">my_other_ball</span></code>.</p>
 <p>Note if you are working in the REPL, then after creating the new class you need to <em>recreate</em> the <code class="docutils literal notranslate"><span class="pre">my_ball</span></code> object, otherwise you will still be using the old class!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,7 +525,7 @@ document.write(`
 <p>We should also point out that apart from having to write classes yourself, you will <em>use</em> them <em>all the time</em>. In fact, we will introduce many extremely important classes in the <em>very next chapter</em>.</p>
 </section>
 <section id="the-str-and-repr-methods">
-<h2>The __str__ and __repr__ methods<a class="headerlink" href="#the-str-and-repr-methods" title="Permalink to this heading">#</a></h2>
+<h2>The __str__ and __repr__ Methods<a class="headerlink" href="#the-str-and-repr-methods" title="Permalink to this heading">#</a></h2>
 <p>Quite often, we want to obtain a string representation of an object (e.g. using the <code class="docutils literal notranslate"><span class="pre">print</span></code> function) that shows its current state. Unfortunately at the moment, if we try to print or get the representation of an object, we currently get a string that’s pretty useless.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -530,7 +534,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7faef8769fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball at 0x7f30f0a27ca0&gt;
 </pre></div>
 </div>
 </div>
@@ -542,13 +546,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7faef8769fd0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Ball object at 0x7f30f0a27ca0&gt;
 </pre></div>
 </div>
 </div>
 </div>
+<blockquote>
+<div><p>The weird string at the end of the output (yours will probably be different) is the memory address of the object represented as a hexadecimal number.</p>
+</div></blockquote>
 <p>Luckily, Python allows us to change this behaviour. Classes may implement two special methods called <code class="docutils literal notranslate"><span class="pre">__str__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method produces a human-readable string for consumption by the end user. The <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method produces an <em>unambiguous representation</em> of the object. This is reflected in the circumstances under which these methods are called. For example if you just output an object in the REPL, you will see the output of a call to the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method of that object. If you <code class="docutils literal notranslate"><span class="pre">print</span></code> an object, you will see the result of a call to the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method of that object.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method produces a human-readable string for consumption by the end user. The <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method produces an <em>unambiguous representation</em> of the object. Basically <code class="docutils literal notranslate"><span class="pre">__str__</span></code> is intended to produce an “informal” representation of an object, while <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> is intended to produce a <em>formal representation</em>  of an object.</p>
+<p>This is reflected in the circumstances under which these methods are called. For example if you just output an object in the REPL, you will see the output of a call to the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method of that object. If you <code class="docutils literal notranslate"><span class="pre">print</span></code> an object, you will see the result of a call to the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method of that object.</p>
 <p>This is because in the REPL we generally want to see an <em>unambiguous representation</em> of our objects. On the other hand, when we call <code class="docutils literal notranslate"><span class="pre">print</span></code> we usually want a human-readable string that displays the information we primarily care about.</p>
 <p>These two methods often have the same implementation (since the end user often wants to see the <em>unambiguous representation</em>), but this doesn’t have to be the case. For example, we could argue, that the end user doesn’t care about the speed of the ball and only cares about its current position. Then the <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method would return a string that doesn’t contain the <code class="docutils literal notranslate"><span class="pre">speed</span></code> attribute. However the <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method should still return all attributes:</p>
 <div class="cell docutils container">
@@ -681,7 +689,7 @@ document.write(`
 </div>
 </div>
 <p>Writing <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> for practically all your classes <em>should be second nature for you from now on</em>. Being able to see the state of an object when outputting it is <em>absolutely vital</em> when trying to spot bugs and attempting to understand what’s going on in your application.</p>
-<p>Therefore whenever you define a class, add a <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method which outputs a string that <em>unambiguously represents that class</em>. The best way to go about this is to return a string whose value represents the instantiation of a new object.</p>
+<p>Therefore whenever you define a class, add a <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> method which outputs a string that <em>unambiguously represents the object it was called on</em>. The best way to go about this is to return a string whose value represents the instantiation of a new object.</p>
 <p>For instance, in the above example <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> returned a string with the value <code class="docutils literal notranslate"><span class="pre">Ball(pos=10,</span> <span class="pre">speed=8)</span></code>. If we copy that value into our codebase, we would create a new <code class="docutils literal notranslate"><span class="pre">Ball</span></code> object with the exact same state as the object that produced this string:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -697,7 +705,7 @@ document.write(`
 </div>
 </section>
 <section id="object-identity">
-<h2>Object identity<a class="headerlink" href="#object-identity" title="Permalink to this heading">#</a></h2>
+<h2>Object Identity<a class="headerlink" href="#object-identity" title="Permalink to this heading">#</a></h2>
 <p>Let’s create two instances of the class <code class="docutils literal notranslate"><span class="pre">Ball</span></code> whose attributes have the same values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -835,7 +843,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140389469560400
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139848172097344
 </pre></div>
 </div>
 </div>
@@ -847,7 +855,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140389469560400
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139848172097344
 </pre></div>
 </div>
 </div>
@@ -880,7 +888,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140389469558192
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139848172336560
 </pre></div>
 </div>
 </div>
@@ -892,7 +900,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140389469518192
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>139848172297856
 </pre></div>
 </div>
 </div>
@@ -923,7 +931,7 @@ document.write(`
 </div>
 </section>
 <section id="object-equality">
-<h2>Object equality<a class="headerlink" href="#object-equality" title="Permalink to this heading">#</a></h2>
+<h2>Object Equality<a class="headerlink" href="#object-equality" title="Permalink to this heading">#</a></h2>
 <p>An interesting question is what happens if we use the equality operator <code class="docutils literal notranslate"><span class="pre">==</span></code> on objects. By default, the equality operator does the same thing as the <code class="docutils literal notranslate"><span class="pre">is</span></code> operator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1060,10 +1068,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-classes">Objects and classes</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-and-repr-methods">The __str__ and __repr__ methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity">Object identity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-equality">Object equality</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objects-and-classes">Objects and Classes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-str-and-repr-methods">The __str__ and __repr__ Methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-identity">Object Identity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-equality">Object Equality</a></li>
 </ul>
   </nav></div>
 

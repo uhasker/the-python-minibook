@@ -3,6 +3,7 @@
 
 title: The Python Minibook
 author: Mikhail Berkov
+copyright: "2023"
 
 # Exclude venv from build
 exclude_patterns: [venv]

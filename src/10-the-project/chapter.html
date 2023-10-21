@@ -364,15 +364,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-loop">The game loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paddle">The paddle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ball">The ball</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-class">The Game class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-the-project-into-modules">Splitting the project into modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-detection">Collision detection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-bricks">Adding the bricks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ending-the-game">Ending the game</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">Wrapping up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-loop">The Game Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paddle">The Paddle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ball">The Ball</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-class">The Game Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-the-project-into-modules">Splitting the Project into Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-detection">Collision Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-bricks">Adding the Bricks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ending-the-game">Ending the Game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">Wrapping Up</a></li>
 </ul>
             </nav>
         </div>
@@ -390,7 +390,7 @@ document.write(`
 <p><img alt="" src="../../_images/final_result.png" /></p>
 <p>We will use the <code class="docutils literal notranslate"><span class="pre">pygame</span></code> package designed for writing games in Python. You can install it using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">pygame</span></code> (no surprises there if you followed the last chapter).</p>
 <section id="the-game-loop">
-<h2>The game loop<a class="headerlink" href="#the-game-loop" title="Permalink to this heading">#</a></h2>
+<h2>The Game Loop<a class="headerlink" href="#the-game-loop" title="Permalink to this heading">#</a></h2>
 <p>We begin by writing the <strong>game loop</strong>. Here we create the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object which we draw onto. We also create a <code class="docutils literal notranslate"><span class="pre">clock</span></code> that will allow us to control how often we want to render a frame (for this game we want to render <code class="docutils literal notranslate"><span class="pre">30</span></code> frames per second). We also define a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop which repeatedly executes the following steps as long as the game is active:</p>
 <ol class="arabic simple">
 <li><p>Process all currently existing user events. Right now we only process the <code class="docutils literal notranslate"><span class="pre">pygame.QUIT</span></code> event which happens if the user closes the window. If we see a <code class="docutils literal notranslate"><span class="pre">pygame.QUIT</span></code> event we set the <code class="docutils literal notranslate"><span class="pre">active</span></code> flag to <code class="docutils literal notranslate"><span class="pre">False</span></code> which will exit the game loop and therefore also exit the application (since there is no code following the game loop).</p></li>
@@ -427,7 +427,7 @@ document.write(`
 </div>
 </section>
 <section id="the-paddle">
-<h2>The paddle<a class="headerlink" href="#the-paddle" title="Permalink to this heading">#</a></h2>
+<h2>The Paddle<a class="headerlink" href="#the-paddle" title="Permalink to this heading">#</a></h2>
 <p>Next we need to create our game objects. First we create a paddle that we can move around using our mouse.</p>
 <p>The paddle needs to have the attributes <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code> which denote its position and its dimensions. It also needs to have the usual <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> methods. Additionaly it should have (like all game objects) a <code class="docutils literal notranslate"><span class="pre">render</span></code> method which takes the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object and renders the paddle onto the screen. Finally we need a <code class="docutils literal notranslate"><span class="pre">move</span></code> method which attempts to move the paddle to the respective mouse position.</p>
 <p>Here is a first stab at the <code class="docutils literal notranslate"><span class="pre">Paddle</span></code> class:</p>
@@ -529,7 +529,7 @@ document.write(`
 <p>Try moving the paddle around with your mouse and verify that the paddle moves along.</p>
 </section>
 <section id="the-ball">
-<h2>The ball<a class="headerlink" href="#the-ball" title="Permalink to this heading">#</a></h2>
+<h2>The Ball<a class="headerlink" href="#the-ball" title="Permalink to this heading">#</a></h2>
 <p>Next we need to add the ball. The ball should have a position <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, a direction <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code> and a radius <code class="docutils literal notranslate"><span class="pre">r</span></code>. The ball is not controlled by the player. Instead it simply moves on every frame by the amount given by <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>.</p>
 <p>Here is how the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class looks like:</p>
 <div class="cell docutils container">
@@ -624,7 +624,7 @@ document.write(`
 <p>We could pass that information along to the ball object, but that doesn’t seem right. Additionally, we will later need to coordinate multiple objects anyway (for example we will have to check for collisions between balls and bricks). In order to accomplish this, we create a <code class="docutils literal notranslate"><span class="pre">Game</span></code> class which will coordinate our game objects.</p>
 </section>
 <section id="the-game-class">
-<h2>The Game class<a class="headerlink" href="#the-game-class" title="Permalink to this heading">#</a></h2>
+<h2>The Game Class<a class="headerlink" href="#the-game-class" title="Permalink to this heading">#</a></h2>
 <p>Let’s think about the way the <code class="docutils literal notranslate"><span class="pre">Game</span></code> class should work. It needs to expose two methods - an <code class="docutils literal notranslate"><span class="pre">update</span></code> method that will update the game and a <code class="docutils literal notranslate"><span class="pre">render</span></code> method that will render the game. Here is how that might look like in code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -738,7 +738,7 @@ document.write(`
 <p>Let’s refactor some more and split the different pieces into different modules.</p>
 </section>
 <section id="splitting-the-project-into-modules">
-<h2>Splitting the project into modules<a class="headerlink" href="#splitting-the-project-into-modules" title="Permalink to this heading">#</a></h2>
+<h2>Splitting the Project into Modules<a class="headerlink" href="#splitting-the-project-into-modules" title="Permalink to this heading">#</a></h2>
 <p>Create a file <code class="docutils literal notranslate"><span class="pre">paddle.py</span></code> and move the <code class="docutils literal notranslate"><span class="pre">Paddle</span></code> class into that file. Here is how <code class="docutils literal notranslate"><span class="pre">paddle.py</span></code> should look like now:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
 
@@ -854,7 +854,7 @@ document.write(`
 </div>
 </section>
 <section id="collision-detection">
-<h2>Collision detection<a class="headerlink" href="#collision-detection" title="Permalink to this heading">#</a></h2>
+<h2>Collision Detection<a class="headerlink" href="#collision-detection" title="Permalink to this heading">#</a></h2>
 <p>Now that we have refactored our code, adding collisions with the paddle and the wall is pretty easy.</p>
 <p>Let’s write a helper function that checks if a rectangle collides with a circle. We will keep it really simple and just check whether the center of the circle is inside the rectangle. Add that function to <code class="docutils literal notranslate"><span class="pre">game.py</span></code>:</p>
 <div class="cell docutils container">
@@ -898,7 +898,7 @@ document.write(`
 </div>
 </section>
 <section id="adding-the-bricks">
-<h2>Adding the bricks<a class="headerlink" href="#adding-the-bricks" title="Permalink to this heading">#</a></h2>
+<h2>Adding the Bricks<a class="headerlink" href="#adding-the-bricks" title="Permalink to this heading">#</a></h2>
 <p>We now have a ball that bounces around and can be hit with a paddle. However, we are still missing the <em>actual game</em>, i.e. the possibility to hit some bricks with our ball.</p>
 <p>Let’s create a file <code class="docutils literal notranslate"><span class="pre">brick.py</span></code> containing the <code class="docutils literal notranslate"><span class="pre">Brick</span></code> class:</p>
 <div class="cell docutils container">
@@ -1006,7 +1006,7 @@ document.write(`
 <p><img alt="" src="../../_images/final_result.png" /></p>
 </section>
 <section id="ending-the-game">
-<h2>Ending the game<a class="headerlink" href="#ending-the-game" title="Permalink to this heading">#</a></h2>
+<h2>Ending the Game<a class="headerlink" href="#ending-the-game" title="Permalink to this heading">#</a></h2>
 <p>We are pretty much done, all that is left to do is ending the game when the player wins or loses. To accomplish that we will maintain a <em>game state</em> which will be one of <code class="docutils literal notranslate"><span class="pre">&quot;ongoing&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;won&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;lost&quot;</span></code> and render different things depending on the game state.</p>
 <p>First, we update the <code class="docutils literal notranslate"><span class="pre">Game</span></code> class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">:</span>
@@ -1062,7 +1062,7 @@ document.write(`
 <p>Similarly if the ball disappers throught the bottom of the screen we lose the game.</p>
 </section>
 <section id="wrapping-up">
-<h2>Wrapping up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
+<h2>Wrapping Up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
 <p>Congratulations, you just completed your first game! From here, there are a number of things you can try by yourself:</p>
 <ol class="arabic simple">
 <li><p>The paddle currently partially disappears, if we move the mouse too far left or too far right. This can be improved by checking whether there is a collision between the paddle and a wall.</p></li>
@@ -1130,15 +1130,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-loop">The game loop</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paddle">The paddle</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ball">The ball</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-class">The Game class</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-the-project-into-modules">Splitting the project into modules</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-detection">Collision detection</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-bricks">Adding the bricks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ending-the-game">Ending the game</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">Wrapping up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-loop">The Game Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-paddle">The Paddle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-ball">The Ball</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-game-class">The Game Class</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-the-project-into-modules">Splitting the Project into Modules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#collision-detection">Collision Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-bricks">Adding the Bricks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ending-the-game">Ending the Game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wrapping-up">Wrapping Up</a></li>
 </ul>
   </nav></div>
 

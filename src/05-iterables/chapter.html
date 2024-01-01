@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/05-iterables/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Chapter 6. Control flow" href="../06-control-flow/chapter.html" />
+    <link rel="next" title="Chapter 6. Control Flow" href="../06-control-flow/chapter.html" />
     <link rel="prev" title="Chapter 4. Classes" href="../04-classes/chapter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../03-functions/chapter.html">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 5. Iterables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07-files/chapter.html">Chapter 7. Input and Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08-exceptions/chapter.html">Chapter 8. Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../09-modules-and-packages/chapter.html">Chapter 9. Modules and packages</a></li>
@@ -387,10 +387,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-iterables">
 <h1>Chapter 5. Iterables<a class="headerlink" href="#chapter-5-iterables" title="Permalink to this heading">#</a></h1>
 <p>An <strong>iterable</strong> is a data structure that allows you to <em>store multiple items in a single variable</em>. Put more formally, an iterable object is capable of returning its members one after another.</p>
-<p>You already saw an important iterable - namely the string data structure. There are many more iterables in Python - but in this chapter we will only concern ourselves with the most important ones - lists, ranges, tuples and dictionaries. The first three (i.e. lists, ranges and tuples) are special iterables called <strong>sequences</strong>. Sequences are iterables which support access using a numerical index (we will see what this means in a second).</p>
+<p>You already saw an important iterable - the string. There are many more iterables in Python - but in this chapter we will only concern ourselves with the most important ones - lists, ranges, tuples and dictionaries. The first three (i.e. lists, ranges and tuples) are special iterables called <strong>sequences</strong>. Sequences are iterables which support access using a numerical index (we will see what this means in a second).</p>
 <section id="lists">
 <h2>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">#</a></h2>
-<p>Probably the most important iterable in Python is the <strong>list</strong>. Lists are <strong>mutable</strong> sequences, i.e. sequences whose contents can be changed. You can create a list using square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code> and separating items with commas:</p>
+<p>Probably the most important iterable in Python is the <strong>list</strong>. Lists are <strong>mutable</strong> sequences, i.e. sequences whose contents can be changed. You can create a list using square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Individual list items have to be separated with commas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
@@ -424,8 +424,8 @@ document.write(`
 </div>
 <p>Every item in a list can be accessed by its index:</p>
 <p><img alt="" src="../../_images/list.png" /></p>
-<p>Note that indices start with <code class="docutils literal notranslate"><span class="pre">0</span></code> and <em>not</em> with <code class="docutils literal notranslate"><span class="pre">1</span></code>. Therefore if you want to access the first item of a list, you need to access the item with index <code class="docutils literal notranslate"><span class="pre">0</span></code>. This means that in the case of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list the item with index <code class="docutils literal notranslate"><span class="pre">1</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">4</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">3</span></code> is <code class="docutils literal notranslate"><span class="pre">9</span></code> etc.</p>
-<p>You can access an item of a list by its index using the square bracket notation. For example this how you would access the item of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list at index <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
+<p>Note that indices start with <code class="docutils literal notranslate"><span class="pre">0</span></code> and <em>not</em> with <code class="docutils literal notranslate"><span class="pre">1</span></code>. Therefore, if you want to access the first item of a list, you need to access the item with index <code class="docutils literal notranslate"><span class="pre">0</span></code>. This means that in the case of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list the item with index <code class="docutils literal notranslate"><span class="pre">1</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">2</span></code> is <code class="docutils literal notranslate"><span class="pre">4</span></code>, the item with index <code class="docutils literal notranslate"><span class="pre">3</span></code> is <code class="docutils literal notranslate"><span class="pre">9</span></code> etc.</p>
+<p>You can access an item of a list by its index using the square bracket notation. For example, this how you would access the item of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list at index <code class="docutils literal notranslate"><span class="pre">2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -532,7 +532,7 @@ document.write(`
 </div>
 </div>
 <p>We can also obtain multiple items of a list using the so-called slice notation. Instead of specifying a single index, you can specify a start and stop index separated by the colon symbol <code class="docutils literal notranslate"><span class="pre">:</span></code>. This returns all the items from index <code class="docutils literal notranslate"><span class="pre">start</span></code> to the index <code class="docutils literal notranslate"><span class="pre">stop</span> <span class="pre">-</span> <span class="pre">1</span></code> (i.e. the <code class="docutils literal notranslate"><span class="pre">stop</span></code> index is excluded).</p>
-<p>For example if we want to get a list containing the items of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list at the indices <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code> we would specify a slice with <code class="docutils literal notranslate"><span class="pre">start</span></code> being <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code> being <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
+<p>For example, if we want to get a list containing the items of the <code class="docutils literal notranslate"><span class="pre">squares</span></code> list at the indices <code class="docutils literal notranslate"><span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">4</span></code> we would specify a slice with <code class="docutils literal notranslate"><span class="pre">start</span></code> being <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code> being <code class="docutils literal notranslate"><span class="pre">5</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
@@ -682,7 +682,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Finally you can delete an index using the <code class="docutils literal notranslate"><span class="pre">pop</span></code> method. This method also returns the deleted item:</p>
+<p>Finally, you can delete an index using the <code class="docutils literal notranslate"><span class="pre">pop</span></code> method. This method also returns the deleted item:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">value</span> <span class="o">=</span> <span class="n">squares</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -923,8 +923,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note that technically lists can also hold values of different data types, however usually list <em>hold values of the same data type</em>.</p>
-<p>We should point out we can add parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> around the tuple items for better readability:</p>
+<p>Note that technically lists can also hold values of different data types, however usually lists are used to <em>hold values of the same data type</em>.</p>
+<p>We should point out that we can add parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> around the tuple items for better readability:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="s2">&quot;flunky&quot;</span><span class="p">)</span>
@@ -1041,7 +1041,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>However because tuples are immutable, we can not change their values:</p>
+<p>However because tuples are immutable, we cannot change their values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">color</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
@@ -1095,7 +1095,7 @@ document.write(`
 </div>
 </div>
 <p>This is a <em>bad</em> idea. The reason for that is quite simple - representing complex data structures with tuples makes our code less readable. It is totally unclear what <code class="docutils literal notranslate"><span class="pre">ball[0]</span></code> is supposed to be if we just look at the respective line and don’t know the structure of the tuple. However the meaning of <code class="docutils literal notranslate"><span class="pre">ball.pos</span></code> is totally clear even if we have no idea what else a ball can do - <code class="docutils literal notranslate"><span class="pre">ball.pos</span></code> gives us the position of the ball.</p>
-<p>Generally speaking you should only use tuples for <em>very simple</em> data which contains values that always belong together. Classic examples for valid tuple uses are things like RGB colors, video resolutions and positions:</p>
+<p>Generally speaking you should only use tuples for <em>very simple</em> data which contains values that always belong together. Standard examples for valid tuple uses are things like RGB colors, video resolutions and positions:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rgb_color</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">0</span>  <span class="c1"># the color green</span>
@@ -1184,7 +1184,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>This what allowed us to write things like:</p>
+<p>This is what allowed us to write things like:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">get_color</span><span class="p">()</span>
@@ -1196,7 +1196,7 @@ document.write(`
 <section id="dictionaries">
 <h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">#</a></h2>
 <p><strong>Dictionaries</strong> are data structures that <em>map (immutable) keys to values</em>.</p>
-<p>We can define a dictionary using the <code class="docutils literal notranslate"><span class="pre">{}</span></code> bracket notation and separating key-value pairs with commas. For example here is how we could define a dictionary which maps countries to their capitals:</p>
+<p>We can define a dictionary using the <code class="docutils literal notranslate"><span class="pre">{}</span></code> bracket notation. The key-value pairs must be separated with commas. For example, here is how we could define a dictionary which maps countries to their capitals:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">capitals</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Germany&quot;</span><span class="p">:</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;France&quot;</span><span class="p">:</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;Spain&quot;</span><span class="p">:</span> <span class="s2">&quot;Madrid&quot;</span><span class="p">}</span>
@@ -1379,7 +1379,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 6. Control flow</p>
+        <p class="prev-next-title">Chapter 6. Control Flow</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

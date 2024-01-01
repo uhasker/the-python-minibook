@@ -169,7 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 3. Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04-classes/chapter.html">Chapter 4. Classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05-iterables/chapter.html">Chapter 5. Iterables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07-files/chapter.html">Chapter 7. Input and Output</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08-exceptions/chapter.html">Chapter 8. Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../09-modules-and-packages/chapter.html">Chapter 9. Modules and packages</a></li>
@@ -373,9 +373,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and Calling Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">Function Parameters and Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-return-keyword">The <code class="docutils literal notranslate"><span class="pre">return</span></code> Keyword</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-complex-function">Writing a complex function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-complex-function">Writing a Complex Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-built-in-functions">Useful built-in functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-built-in-functions">Useful Built-in Functions</a></li>
 </ul>
             </nav>
         </div>
@@ -392,7 +392,7 @@ document.write(`
 <section id="why-functions">
 <h2>Why Functions?<a class="headerlink" href="#why-functions" title="Permalink to this heading">#</a></h2>
 <p>The most important concept in Python and arguably in all of programming is that of a <strong>function</strong>. Functions are <em>reusable blocks of code</em>.</p>
-<p>Consider the following example. We are writing an application for handling tournaments and want to compute player ratings using the <a class="reference external" href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO rating system</a>. This system works by first calculating the probabilities of the players winning (i.e. the expected scores) and then updating the player’s rating from those probabilities and their old ratings.</p>
+<p>Consider the following example. We are writing an application for handling tournaments and want to compute player ratings using the <a class="reference external" href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO rating system</a>. This system works by first calculating the probabilities of the players winning (i.e. the expected scores) and then updating the player’s ratings from those probabilities and their old ratings.</p>
 <p>Consider an example with two players, where the first player has the rating <code class="docutils literal notranslate"><span class="pre">1000</span></code> and the second player has the rating <code class="docutils literal notranslate"><span class="pre">1500</span></code>. Let’s store the rating of the first player in a variable <code class="docutils literal notranslate"><span class="pre">rating1</span></code> and the rating of the second player in a variable <code class="docutils literal notranslate"><span class="pre">rating2</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -422,7 +422,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Don’t spend too much time worrying about the details of this formula. Basically, the higher the difference between <code class="docutils literal notranslate"><span class="pre">rating2</span></code> and <code class="docutils literal notranslate"><span class="pre">rating1</span></code>, the lower the expected score of the first player should be. After all a high value of <code class="docutils literal notranslate"><span class="pre">rating2</span> <span class="pre">-</span> <span class="pre">rating1</span></code> means that the first player has a substantially lower rating than the second player, i.e. we don’t expect the first player to achieve a high score.</p>
+<p>Don’t spend too much time worrying about the details of the formula. Basically, the higher the difference between <code class="docutils literal notranslate"><span class="pre">rating2</span></code> and <code class="docutils literal notranslate"><span class="pre">rating1</span></code>, the lower the expected score of the first player should be. After all a high value of <code class="docutils literal notranslate"><span class="pre">rating2</span> <span class="pre">-</span> <span class="pre">rating1</span></code> means that the first player has a substantially lower rating than the second player, i.e. we don’t expect the first player to achieve a high score.</p>
 <p>Additionally, the score is normalized to be between <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>. An expected score of <code class="docutils literal notranslate"><span class="pre">0</span></code> means that the first player has no chance of winning. An expected score of <code class="docutils literal notranslate"><span class="pre">1</span></code> means that the first player will definitely win.</p>
 <p>In this particular case we see that the expected score of the first player is very small (around <code class="docutils literal notranslate"><span class="pre">0.05</span></code>), which makes sense since the first player has a much lower rating than the second player.</p>
 <p>The expected score of the second player can be calculated in a similar manner:</p>
@@ -530,7 +530,7 @@ document.write(`
 </section>
 <section id="defining-and-calling-functions">
 <h2>Defining and Calling Functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this heading">#</a></h2>
-<p>We <strong>define</strong> a function using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword followed by the function name and parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. After that a <strong>function body</strong> follows which contains the function implementation (i.e. the code that we want to store inside the function).</p>
+<p>We <strong>define</strong> a function using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword followed by the function name and parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. This should be followed by a <strong>function body</strong> which contains the function implementation (i.e. the code that we want to store inside the function).</p>
 <p>For example, here is a function that prints a greeting. This function is not super useful, but it will serve to illustrate a few important concepts:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -571,7 +571,7 @@ document.write(`
 </div>
 </div>
 <blockquote>
-<div><p>PEP8 note: Code should always be indented using <em>4 spaces</em>. However when working in a REPL it’s common practice to indent code using tabs, because you need to type less characters that way. In addition editors like PyCharm will automatically insert 4 spaces when you press the tab key.</p>
+<div><p>PEP8 note: Code should always be indented using <em>4 spaces</em>. However, when working in a REPL it’s common practice to indent code using tabs, because you need to type less characters that way. In addition, you can configure most code editors to automatically insert 4 spaces when you press the tab key.</p>
 </div></blockquote>
 <p>If the function body has multiple statements, you must <em>indent them all</em>:</p>
 <div class="cell docutils container">
@@ -601,7 +601,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We can execute the function body with a <strong>function call</strong>. To call a function we write down the function name followed by parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. No <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword is present in a function call:</p>
+<p>We can execute the function body with a <strong>function call</strong>. To call a function we write down the function name followed by parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_greeting</span><span class="p">()</span>
@@ -628,12 +628,12 @@ Hello, other user
 </div>
 </div>
 <p>Hooray! We just wrote our very first function! Go tell all your friends about it!</p>
-<p>However to make our functions useful, we should give them parameters that we can use to <em>customize their behaviour</em>.</p>
+<p>To make our functions more useful, we should give them parameters that we can use to <em>customize their behaviour</em>.</p>
 </section>
 <section id="function-parameters-and-arguments">
 <h2>Function Parameters and Arguments<a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this heading">#</a></h2>
 <p>Functions can take <strong>parameters</strong> between the parentheses which allow us to pass additional values to the function in a function call. These parameters may then be used inside the function body just like regular variables.</p>
-<p>Consider a function that should print a greeting given a name. We would write it like this:</p>
+<p>Consider a function that should print a greeting which contains a name. We would write it like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_greeting</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
@@ -710,7 +710,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>The number of arguments must be exactly equal to the number of parameters. Passing more or less arguments won’t do. For example, if we pass too few arguments, Python will <em>calmly</em> inform us that we are missing arguments:</p>
+<p>The number of arguments must be exactly equal to the number of parameters. Passing more or less arguments won’t do. For example, if we pass too few arguments, Python will <em>calmly</em> yell at us that we are missing arguments:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
@@ -762,7 +762,7 @@ Hello, other user
 </div>
 </div>
 <p>Now these arguments are <strong>keyword arguments</strong> because the parameters they will be assigned to are determined from the argument names. This means that <code class="docutils literal notranslate"><span class="pre">&quot;John&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">first_name</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;Doe&quot;</span></code> will be assigned to <code class="docutils literal notranslate"><span class="pre">last_name</span></code>.</p>
-<p>If we use keyword arguments, the order of the arguments plays no role. For example this function call is equivalent to the preceding function call:</p>
+<p>If we use keyword arguments, the order of the arguments plays no role. For example, this function call is equivalent to the preceding function call:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="n">last_name</span><span class="o">=</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="n">first_name</span><span class="o">=</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
@@ -775,7 +775,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>However if we use positional arguments, the order of arguments <em>does play a role</em>. For example this function call is <em>not</em> equivalent to the previous function calls:</p>
+<p>If we use positional arguments, the order of arguments <em>does play a role</em>. For example this function call is <em>not</em> equivalent to the previous function calls:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_complex_greeting</span><span class="p">(</span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span> <span class="s2">&quot;John&quot;</span><span class="p">)</span>
@@ -869,7 +869,7 @@ Hello, other user
 </div>
 </div>
 <p>Something that often trips up beginners is that they confuse <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">return</span></code>. However these are <em>two completely different and unrelated things</em>. The first one - <code class="docutils literal notranslate"><span class="pre">print</span></code> - is a <em>function which outputs a value to the console</em>. The second one - <code class="docutils literal notranslate"><span class="pre">return</span></code> - is a <em>keyword which allows a function to return a value to the code that calls it</em>.</p>
-<p>Therefore <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> and <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code> are two completely different functions. The function <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> prints the greeting and doesn’t return anything. For example if we try to assign a value to the result of <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code>, this happens:</p>
+<p>Therefore <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> and <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code> are two completely different functions. The function <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> prints the greeting and doesn’t return anything useful. For example if we try to assign a value to the result of <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code>, this happens:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">another_greeting</span> <span class="o">=</span> <span class="n">print_greeting</span><span class="p">(</span><span class="s2">&quot;John&quot;</span><span class="p">)</span>
@@ -917,7 +917,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>This is also the point at which we note that returning a value from a function is <em>far more common</em> than printing something. After all, if we <em>print</em> a value, we can’t do anything useful with the output later on. However, if we <em>return</em> a value, we can assign that value to a variable and manipulate it further. Here is a pattern you will see quite often:</p>
+<p>This is the point at which we note that returning a value from a function is <em>far more common</em> than printing something. After all, if we <em>print</em> a value, we can’t do anything useful with the output later on. However, if we <em>return</em> a value, we can assign that value to a variable and manipulate it further. Here is a pattern you will see quite often:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_full_name</span><span class="p">(</span><span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
@@ -952,10 +952,10 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>However if we would have printed <code class="docutils literal notranslate"><span class="pre">full_name</span></code> instead of returning it we wouldn’t have been able to pass it to <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code>.</p>
+<p>However, if we would have printed <code class="docutils literal notranslate"><span class="pre">full_name</span></code> instead of returning it we wouldn’t have been able to pass it to <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code>.</p>
 </section>
 <section id="writing-a-complex-function">
-<h2>Writing a complex function<a class="headerlink" href="#writing-a-complex-function" title="Permalink to this heading">#</a></h2>
+<h2>Writing a Complex Function<a class="headerlink" href="#writing-a-complex-function" title="Permalink to this heading">#</a></h2>
 <p>Armed with our knowledge, we can return to the example that motivated this chapter.</p>
 <p>Here is how we would write a function that computes the expected scores for two players given their ratings.</p>
 <div class="cell docutils container">
@@ -1039,8 +1039,9 @@ Hello, other user
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Calculate the expected scores of two players given their ratings.</span>
 <span class="sd">    </span>
-<span class="sd">    The expected scores are calculated using the formula</span>
-<span class="sd">    E = 1 / (1 + 10 ** ((RA - RB) / 400)).</span>
+<span class="sd">    The expected scores are calculated using the standard ELO formula</span>
+<span class="sd">    E = 1 / (1 + 10 ** ((R_A - R_B) / 400)).</span>
+<span class="sd">    R_A and R_B are the ratings of the players respectively.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">expected1</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">rating2</span> <span class="o">-</span> <span class="n">rating1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
     <span class="n">expected2</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">**</span> <span class="p">((</span><span class="n">rating1</span> <span class="o">-</span> <span class="n">rating2</span><span class="p">)</span> <span class="o">/</span> <span class="mi">400</span><span class="p">))</span>
@@ -1054,9 +1055,9 @@ Hello, other user
 <p>You should write docstrings for all functions that will be used by other developers in a codebase or if you are writing a package that is intended to be used by other people.</p>
 </section>
 <section id="useful-built-in-functions">
-<h2>Useful built-in functions<a class="headerlink" href="#useful-built-in-functions" title="Permalink to this heading">#</a></h2>
+<h2>Useful Built-in Functions<a class="headerlink" href="#useful-built-in-functions" title="Permalink to this heading">#</a></h2>
 <p>There is a number of useful built-in functions.</p>
-<p>In fact you already encountered two of them - namely <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
+<p>In fact, you already encountered two of them - namely <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1081,7 +1082,7 @@ Hello, other user
 </div>
 </div>
 </div>
-<p>However <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> are not the only useful built-in functions.</p>
+<p>However, <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code> are not the only useful built-in functions.</p>
 <p>For example you can use the <code class="docutils literal notranslate"><span class="pre">int</span></code> function (not to be confused with the <code class="docutils literal notranslate"><span class="pre">int</span></code> data type) to convert a value to an integer:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1254,9 +1255,9 @@ Hello, other user
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-and-calling-functions">Defining and Calling Functions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#function-parameters-and-arguments">Function Parameters and Arguments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-return-keyword">The <code class="docutils literal notranslate"><span class="pre">return</span></code> Keyword</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-complex-function">Writing a complex function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-complex-function">Writing a Complex Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docstrings">Docstrings</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-built-in-functions">Useful built-in functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-built-in-functions">Useful Built-in Functions</a></li>
 </ul>
   </nav></div>
 

@@ -402,15 +402,15 @@ document.write(`
 <section id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
 <p>Programming is all about <em>working with data</em>. Specifically, we need the ability to <em>store and access</em> data in the <strong>memory</strong> of our computer. Storing data sounds pretty simple - just write a value to some <strong>memory cell</strong> and be happy. But how do we access the value later?</p>
-<p>Let us say that we are writing a computer game (as we will in the last chapter in this book). We will probably need to store positions and speeds of game objects. For example, we would like to store that the player has a speed of <code class="docutils literal notranslate"><span class="pre">5</span></code> units/second. But if we just write <code class="docutils literal notranslate"><span class="pre">5</span></code> to some memory cell, we will not know what it means later on. It could be the speed of the player, but it could also be the number of eliminated enemies.</p>
-<p>In order to be able to <em>access</em> our data, we need to store values together with a <strong>symbolic name</strong> that tells us what the value means. For example, we could store the value <code class="docutils literal notranslate"><span class="pre">5</span></code> with the symbolic name <code class="docutils literal notranslate"><span class="pre">player_speed</span></code>. Or we could store the value <code class="docutils literal notranslate"><span class="pre">5</span></code> with the symbolic name <code class="docutils literal notranslate"><span class="pre">enemies_destroyed</span></code>. The value is the same in both cases and yet it refers to two completely different things.</p>
+<p>Let us say that we are writing a computer game (as we will in the last chapter in this book). We will probably need to store positions and speeds of game objects. For example, we would like to store the fact that the player has a speed of <code class="docutils literal notranslate"><span class="pre">5</span></code> units/second. But if we just write <code class="docutils literal notranslate"><span class="pre">5</span></code> to some memory cell, we will have no idea what this value refers to later on. It could be the speed of the player, but it could also be the number of eliminated enemies.</p>
+<p>In order to be able to <em>access</em> our data, we really want to store values together with a <strong>symbolic name</strong> that tells us what the value means. For example, we could store the value <code class="docutils literal notranslate"><span class="pre">5</span></code> together with the symbolic name <code class="docutils literal notranslate"><span class="pre">player_speed</span></code>. Or we could store the value <code class="docutils literal notranslate"><span class="pre">5</span></code> together with the symbolic name <code class="docutils literal notranslate"><span class="pre">enemies_destroyed</span></code>. The value is the same in both cases and yet it refers to two completely different things.</p>
 <p>Variables allow us to reflect that. Put simply, a <strong>variable</strong> is a <em>value paired with a symbolic name</em> that can be used to access that value.</p>
 <p>For example, we could store the value <code class="docutils literal notranslate"><span class="pre">42</span></code> somewhere in our memory and pair it with a symbolic name like <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>:</p>
 <p><img alt="" src="../../_images/variable.png" /></p>
-<p>Programmers say that the variable <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> <em>has the value</em> <code class="docutils literal notranslate"><span class="pre">42</span></code>. We are now able to access the value we just stored using the symbolic name <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>.</p>
-<p>Even if the value of a variable changes, its symbolic name stays the same. Let’s say that the answer to everything becomes <code class="docutils literal notranslate"><span class="pre">43</span></code> instead of <code class="docutils literal notranslate"><span class="pre">42</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> is updated to reflect that:</p>
+<p>Programmers like to say that the variable <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> <em>has the value</em> <code class="docutils literal notranslate"><span class="pre">42</span></code>. We are now able to access the value we just stored using the symbolic name <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>.</p>
+<p>Even if the value of a variable changes, its symbolic name will always stay the same. Let’s say that the answer to everything becomes <code class="docutils literal notranslate"><span class="pre">43</span></code> instead of <code class="docutils literal notranslate"><span class="pre">42</span></code> and the variable <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> is updated to reflect that:</p>
 <p><img alt="" src="../../_images/variable43.png" /></p>
-<p>Now if we access the variable somewhere from our program, we automatically get the <em>new</em> value (which is <code class="docutils literal notranslate"><span class="pre">43</span></code>).</p>
+<p>Now if we access the variable somewhere from our program, we automatically get the <em>new</em> value (which is <code class="docutils literal notranslate"><span class="pre">43</span></code>). However the symbolic name is still the same - <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>.</p>
 <p>Consider another example: We can store the position of a ball in the variable <code class="docutils literal notranslate"><span class="pre">ball_position</span></code> and the speed of the ball in a variable <code class="docutils literal notranslate"><span class="pre">ball_speed</span></code>. If we want to change the position of the ball, we simply update the value of <code class="docutils literal notranslate"><span class="pre">ball_position</span></code> depending on the value of <code class="docutils literal notranslate"><span class="pre">ball_speed</span></code>. Accessing <code class="docutils literal notranslate"><span class="pre">ball_position</span></code> will now yield the new value.</p>
 <p>The three important things we can do with variables are therefore:</p>
 <ol class="arabic simple">
@@ -429,11 +429,11 @@ document.write(`
 <p>This creates the variable <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> which has the value <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
 <p><img alt="" src="../../_images/variable-declaration.png" /></p>
 <blockquote>
-<div><p>PEP8 note: Always surround the assignment operator with exactly a single space on both sides. Additionally, variable names should be lowercase, with words separated by underscores as necessary to improve readability.</p>
+<div><p>PEP8 note: Always surround the assignment operator with exactly a single space on both sides. Additionally, variable names should be lowercase. If a variable name contains multiple words, they should be separated by underscores.</p>
 </div></blockquote>
 <p>To keep things short, instead of saying “a variable with the symbolic name <code class="docutils literal notranslate"><span class="pre">foo</span></code>” from now on we will just say “the variable <code class="docutils literal notranslate"><span class="pre">foo</span></code>”.</p>
-<p>Do note that, unlike in mathematics, the statement <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span> <span class="pre">=</span> <span class="pre">42</span></code> doesn’t mean that <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> <em>should be equal</em> to <code class="docutils literal notranslate"><span class="pre">42</span></code>. Instead <code class="docutils literal notranslate"><span class="pre">=</span></code> tells the Python interpreter to create a variable with the <em>symbolic name</em> given on the <em>left side</em> of the assignment operator (<code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> in this case) and the <em>value</em> given on the <em>right side</em> of the assignment operator (<code class="docutils literal notranslate"><span class="pre">42</span></code> in this case). The assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code> has nothing to do with the equality operator <code class="docutils literal notranslate"><span class="pre">=</span></code> that you know from mathematics.</p>
-<p>For example a statement like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code> which is totally sensible when doing math, has no meaning when writing code since <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code> is not a valid variable name. In fact here is what will happen if you try to write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code>:</p>
+<p>Note that, unlike in mathematics, the statement <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span> <span class="pre">=</span> <span class="pre">42</span></code> doesn’t mean that <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> <em>should be equal</em> to <code class="docutils literal notranslate"><span class="pre">42</span></code>. Instead <code class="docutils literal notranslate"><span class="pre">=</span></code> tells the Python interpreter to create a variable with the <em>symbolic name</em> given on the <em>left side</em> of the assignment operator (<code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> in this case) and the <em>value</em> given on the <em>right side</em> of the assignment operator (<code class="docutils literal notranslate"><span class="pre">42</span></code> in this case). The assignment operator <code class="docutils literal notranslate"><span class="pre">=</span></code> has nothing to do with the equality operator <code class="docutils literal notranslate"><span class="pre">=</span></code> that you know from mathematics.</p>
+<p>For example a statement like <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code> which is totally sensible when doing math, has no meaning when writing code since <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span></code> is not a valid variable name. Here is what will happen if you try to write <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">=</span> <span class="pre">4</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">=</span> <span class="mi">4</span>
@@ -487,7 +487,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Now <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> has the value <code class="docutils literal notranslate"><span class="pre">43</span></code> instead of <code class="docutils literal notranslate"><span class="pre">42</span></code>. However the symbolic name didn’t change, only the value of the variable did. This means that we can still access the value using <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>. It’s just a different value now:</p>
+<p>Now <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code> has the value <code class="docutils literal notranslate"><span class="pre">43</span></code> instead of <code class="docutils literal notranslate"><span class="pre">42</span></code>. However, the symbolic name didn’t change, only the value of the variable did. This means that we can still access the value using <code class="docutils literal notranslate"><span class="pre">the_answer_to_everything</span></code>. It’s just a different value now:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">the_answer_to_everything</span>
@@ -563,9 +563,12 @@ document.write(`
 </section>
 <section id="the-floating-point-data-type">
 <h3>The Floating Point Data Type<a class="headerlink" href="#the-floating-point-data-type" title="Permalink to this heading">#</a></h3>
-<p>Variables of the floating point data type are capable of storing, well, floating point numbers (this book is just <em>full of surprises</em>). These are numbers which have a decimal point. Such variables are called <em>floats</em> for short.</p>
+<p>Variables of the floating point data type are capable of storing, well, floating point numbers (<em>this book is just full of surprises</em>). Such variables are called <em>floats</em> for short.</p>
+<blockquote>
+<div><p>In case you skipped school (we sympathize), floating point numbers are numbers that have a decimal point, e.g. <code class="docutils literal notranslate"><span class="pre">-1.34</span></code> or <code class="docutils literal notranslate"><span class="pre">8.526</span></code>.</p>
+</div></blockquote>
 <p>We should note that floats and real numbers are <em>not</em> the same thing. Floats are only approximations of real numbers. The reason they are <em>only approximations</em> is not because of Python, but because of the limitations of something all programmers really hate - <em>reality</em>.</p>
-<p>After all, real numbers can have an arbitrary amount of digits after the decimal point - some real numbers even have an infinite amount of digits after the decimal point (like the number <em>pi</em>). But of course such numbers cannot be represented accurately by our hardware. Unfortunately, computers do not have an infinite amount of memory space. In fact the amount of memory available to a single floating point number is usually <em>very finite</em>.</p>
+<p>After all, real numbers can have an arbitrary amount of digits after the decimal point - some real numbers even have an infinite amount of digits after the decimal point (like the number <em>pi</em>). Unfortunately, computers do not have an infinite amount of memory space. Therefore numbers with a large (or infinite) amount of digits after the decimal cannot be accurately represented by computer hardware.</p>
 <p>Here is an example of a floating point variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -574,7 +577,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We can again verify that <code class="docutils literal notranslate"><span class="pre">fastest_sprint</span></code> is a floating point variable using <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
+<p>We can verify that <code class="docutils literal notranslate"><span class="pre">fastest_sprint</span></code> is a floating point variable using <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">fastest_sprint</span><span class="p">)</span>
@@ -615,8 +618,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Boolean values are not particularly useful on their own. However they will become extremely important when we will need to do things depending on the outcome of certain logical operations.</p>
-<p>For example we might want to determine whether a game object has been destroyed based on the outcome of a collision check. A boolean variable <code class="docutils literal notranslate"><span class="pre">collides</span></code> which is <code class="docutils literal notranslate"><span class="pre">True</span></code> if a collision happened and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise certainly comes in handy in such a case.</p>
+<p>Boolean values are not particularly useful on their own. However, they are <em>very</em> useful when we need to do things depending on the outcome of certain logical operations.</p>
+<p>For example, we might want to determine whether a game object has been destroyed based on the outcome of a collision check. A boolean variable <code class="docutils literal notranslate"><span class="pre">collides</span></code>, which is <code class="docutils literal notranslate"><span class="pre">True</span></code> if a collision happened and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise certainly comes in handy in such a case.</p>
 </section>
 <section id="the-string-data-type">
 <h3>The String Data Type<a class="headerlink" href="#the-string-data-type" title="Permalink to this heading">#</a></h3>
@@ -636,7 +639,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note that string variables are the first variables whose <em>unambiguous representation</em> look different than their value. If we print <code class="docutils literal notranslate"><span class="pre">my_name</span></code>, we get <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Mustermann</span></code> without the quotes:</p>
+<p>Note that string variables are the first variables whose <em>unambiguous representations</em> look different from their values. If we <code class="docutils literal notranslate"><span class="pre">print</span></code> the <code class="docutils literal notranslate"><span class="pre">my_name</span></code> variable, we get <code class="docutils literal notranslate"><span class="pre">Max</span> <span class="pre">Mustermann</span></code> without the quotes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">my_name</span><span class="p">)</span>
@@ -649,7 +652,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>However if we obtain the <em>unambiguous representation</em> of the variable by typing the variable name in a REPL, we get <code class="docutils literal notranslate"><span class="pre">'Max</span> <span class="pre">Mustermann'</span></code> with the quotes:</p>
+<p>However, if we obtain the <em>unambiguous representation</em> of the variable by typing the variable name in a REPL, we get <code class="docutils literal notranslate"><span class="pre">'Max</span> <span class="pre">Mustermann'</span></code> with the quotes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_name</span>
@@ -662,9 +665,9 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note that we assigned the value <code class="docutils literal notranslate"><span class="pre">&quot;Max</span> <span class="pre">Mustermann&quot;</span></code> but the <em>unambiguous representation</em> looks like <code class="docutils literal notranslate"><span class="pre">'Max</span> <span class="pre">Mustermann'</span></code>. These two literals represents <em>the exact same value</em>. The quotes aren’t part of the actual string value, they only serve to indicate a string literal.</p>
+<p>Note that we assigned the value <code class="docutils literal notranslate"><span class="pre">&quot;Max</span> <span class="pre">Mustermann&quot;</span></code>, but the <em>unambiguous representation</em> looks like <code class="docutils literal notranslate"><span class="pre">'Max</span> <span class="pre">Mustermann'</span></code>. These two literals represent <em>the exact same value</em>. The quotes aren’t part of the actual string value, they only serve to indicate a string literal.</p>
 <p>There is no strong convention in Python regarding the use of single or double quotes. The general advice is to pick one and stick to that in your codebase. Within this particular book we will use double quotes.</p>
-<p>Something you should try from time to time is to see what happens if you make a specific mistake on purpose. That way when you see that same mistake later on in a more complicated codebase you will already know what to do. For example, what happens if we forget the quotes in a string?</p>
+<p>Something you should try from time to time is to see what happens if you make a specific mistake on purpose. This way, you will know what to do when you see that same mistake later on in a more complicated codebase. For example, what happens if we forget the quotes in a string?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_country</span> <span class="o">=</span> <span class="n">Germany</span>
@@ -682,8 +685,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We get a <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'Germany'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>. This is because in this example the interpreter thinks that <code class="docutils literal notranslate"><span class="pre">Germany</span></code> is supposed to be the symbolic name of a variable (since the quotes are missing). As we did not declare a variable <code class="docutils literal notranslate"><span class="pre">Germany</span></code>, Python raises a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> telling us that there is no variable with the name <code class="docutils literal notranslate"><span class="pre">Germany</span></code>.</p>
-<p>That is something very important to keep in mind - if you write a sequence of characters <em>without quotes</em>, the Python interpreter will think that the sequence of characters represents a variable name:</p>
+<p>We get a <code class="docutils literal notranslate"><span class="pre">NameError:</span> <span class="pre">name</span> <span class="pre">'Germany'</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">defined</span></code>. The reason for this is that the interpreter thinks that <code class="docutils literal notranslate"><span class="pre">Germany</span></code> is supposed to be the symbolic name of a variable (since the quotes are missing). As we did not declare a variable <code class="docutils literal notranslate"><span class="pre">Germany</span></code>, Python raises a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> telling us that there is no variable with the name <code class="docutils literal notranslate"><span class="pre">Germany</span></code>.</p>
+<p>This is very important to keep in mind - if you write a sequence of characters <em>without quotes</em>, the Python interpreter will think that the sequence of characters represents a variable name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">the_answer_to_everything</span> <span class="o">=</span> <span class="mi">42</span>
@@ -691,7 +694,7 @@ document.write(`
 <span class="c1"># Python assumes that this sequence of characters</span>
 <span class="c1"># represents the variable the_answer_to_everything.</span>
 <span class="c1"># Accordingly the line below will output the value</span>
-<span class="c1"># of the variable which in this case is 42.</span>
+<span class="c1"># of the variable (which is 42 in this case).</span>
 <span class="c1"># vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</span>
 
 <span class="n">the_answer_to_everything</span>
@@ -704,14 +707,14 @@ document.write(`
 </div>
 </div>
 </div>
-<p>However if you write a sequence of characters <em>with quotes</em>, the Python interpreter will think that the sequence of characters represents a string value:</p>
+<p>However, if you write a sequence of characters <em>with quotes</em>, the Python interpreter will think that the sequence of characters represents a string value:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python assumes that this sequence of characters</span>
 <span class="c1"># represents the string with the value </span>
 <span class="c1"># &quot;the_answer_to_everything&quot;.</span>
 <span class="c1"># Accordingly the line below will output the string</span>
-<span class="c1"># which in this case is &quot;the_answer_to_everything&quot;.</span>
+<span class="c1"># &quot;the_answer_to_everything&quot;.</span>
 <span class="c1"># vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</span>
 <span class="s2">&quot;the_answer_to_everything&quot;</span>
 </pre></div>
@@ -906,12 +909,12 @@ document.write(`
 </div>
 </div>
 <blockquote>
-<div><p>PEP8 note: Always surround binary operators with a single space on either side (this also applies to the operators below).</p>
+<div><p>PEP8 note: If an operator takes two values, surround the operator with a single space on either side (this also applies to the operators below).</p>
 </div></blockquote>
 </section>
 <section id="arithmetic-operators">
 <h3>Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h3>
-<p>You can also use the usual <strong>arithmetic operators</strong> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> on integers and floats. Unless you slept through school (in which case we sympathize), you probably already know what they do.</p>
+<p>You can also use the usual <strong>arithmetic operators</strong> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> on integers and floats. Unless you slept through school (again, we sympathize), you probably already know what they do.</p>
 <p>For completeness’ sake, here are some examples:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1098,7 +1101,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We will later learn how we can handle errors like that. For now just don’t divide by <code class="docutils literal notranslate"><span class="pre">0</span></code> (this is also generally good life advice).</p>
+<p>We will later learn, how to handle these kinds of errors. For now just don’t divide by <code class="docutils literal notranslate"><span class="pre">0</span></code> (this is also good life advice in general).</p>
 <p>Two other important arithmetic operators are the <strong>modulo</strong> <code class="docutils literal notranslate"><span class="pre">%</span></code> and <strong>integer division</strong> <code class="docutils literal notranslate"><span class="pre">//</span></code> (also called floor division) operators. These return the integer quotient and remainder of a division respectively. For example <code class="docutils literal notranslate"><span class="pre">63</span> <span class="pre">/</span> <span class="pre">42</span></code> is <code class="docutils literal notranslate"><span class="pre">1</span></code> with remainder <code class="docutils literal notranslate"><span class="pre">21</span></code>. Therefore:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1125,7 +1128,7 @@ document.write(`
 </div>
 </div>
 <blockquote>
-<div><p>These operators also work with negative numbers, but they are rarely useful in that scenario, have unintuitive behaviour and should generally be avoided in that case.</p>
+<div><p>These operators also work with negative numbers, but are rarely useful in that scenario, have unintuitive behaviour and should generally be avoided in that case.</p>
 </div></blockquote>
 <p>The <code class="docutils literal notranslate"><span class="pre">%</span></code> operator is very useful to check if a number is divisible by another number without a remainder. If <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">%</span> <span class="pre">y</span></code> is <code class="docutils literal notranslate"><span class="pre">0</span></code>, then we know that <code class="docutils literal notranslate"><span class="pre">x</span></code> is divisible by <code class="docutils literal notranslate"><span class="pre">y</span></code> without a remainder.</p>
 <p>Finally, Python also has the <strong>exponentiation</strong> operator <code class="docutils literal notranslate"><span class="pre">**</span></code>:</p>
@@ -1328,7 +1331,7 @@ document.write(`
 </section>
 <section id="using-the-operators-on-strings">
 <h3>Using the Operators on Strings<a class="headerlink" href="#using-the-operators-on-strings" title="Permalink to this heading">#</a></h3>
-<p>Something that might be surprising to learn is that we can use all of these operators with strings. However in this context the operators take on different meanings. The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator becomes <strong>string concatenation</strong>:</p>
+<p>Something that might be surprising to learn is that we can use some of these operators with strings. However, in this context the operators take on different meanings. The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator becomes <strong>string concatenation</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span> <span class="o">=</span> <span class="s2">&quot;Hello, &quot;</span>

@@ -390,25 +390,28 @@ document.write(`
 <h1>Chapter 1. Fundamentals<a class="headerlink" href="#chapter-1-fundamentals" title="Permalink to this heading">#</a></h1>
 <section id="programming-languages">
 <h2>Programming Languages<a class="headerlink" href="#programming-languages" title="Permalink to this heading">#</a></h2>
-<p>A <strong>program</strong> is a sequence of instructions for a computer to execute. For example, <a class="reference external" href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Adobe Photoshop</a> is a program, as is <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Paint">Microsoft Paint</a>. Even though these two programs are of different quality, they both contain sequences of instructions like “add these two numbers”, “draw line”, “recognize this face” that are then executed by your computer.</p>
-<p>A program is generally written in a <strong>programming language</strong>. A programming language is usually very different from a natural language like English. If I say something like “Python is awesome programming language”, then despite the fact that there is a grammar error (did you notice the missing article?) you are still able to understand me.</p>
-<p>With computers the picture is very different. We need to be very formal and precise when “speaking in” a programming language. A missing character can make the difference between a perfectly working program and a total disaster.</p>
-<p>One of the most popular and beginner-friendly languages is <strong>Python</strong>. This book will introduce you to the most important concepts of Python and teach you to create working software. Note that the goal isn’t to introduce you <em>to every single Python feature</em> (which is impossible in a single book). Most of these features will not be terribly important at the beginning of your software developer career anyway. Instead the goal is to teach you the most important practical concepts that you need to write code that <em>won’t</em> make your fellow developers cry and weep.</p>
-<p>However this is not a book that just teaches you if statements, for loops and functions and leaves it at that. We will dive into certain topics that are often left out of beginner books, but are <em>extremely important</em> in the real world like the <em>dreaded</em> encodings or how to work with third-party packages.</p>
+<p>A <strong>program</strong> is a sequence of instructions for a computer to execute. For example, <a class="reference external" href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Adobe Photoshop</a> is a program, as is <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Paint">Microsoft Paint</a>. Even though these two programs are of different quality, they both contain sequences of instructions like “add these two numbers”, “draw a line”, “recognize this face” which are then executed by your computer.</p>
+<p>A program is generally in a <strong>programming language</strong>. A programming language is usually very different from a natural language like English. If I say something like “Python is awesome programming language”, then despite the fact that there is a grammar error (did you notice the missing article?) you are still able to understand me.</p>
+<p>With computers, the picture is very different. We need to be very precise when “speaking in” a programming language. A missing character can make the difference between a perfectly working program and a total disaster.</p>
+<p>One of the most popular and beginner-friendly languages is <strong>Python</strong>. This book will introduce you to the most important concepts of Python and teach you how to create working software. Note that the goal isn’t to introduce you <em>to every single Python feature in existence</em> (which is impossible in a single book). Most of these features will not be terribly important at the beginning of your software developer career anyway. Instead, we will teach you the most important practical concepts that you need to write code that <em>won’t</em> make your fellow developers cry and weep.</p>
+<p>However, this is also not a book that just teaches you if statements, for loops and functions and leaves it at that. We will dive into certain topics that are often left out of beginner books, but are <em>extremely important</em> in the real world like the <em>dreaded</em> encodings or how to work with third-party packages.</p>
 </section>
 <section id="installing-a-python-runtime">
 <h2>Installing a Python Runtime<a class="headerlink" href="#installing-a-python-runtime" title="Permalink to this heading">#</a></h2>
-<p>Python is a great programming language. But even the best programming language is useless, without a <strong>runtime environment</strong> (or just runtime for short) to execute it. Some languages can use a runtime that is already present on your operating system. However Python requires a special runtime which we will download now.</p>
-<p>There are multiple runtimes for Python, the most popular one is <strong>CPython</strong>. Go to <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a> to download it:</p>
+<p>Python is a great programming language. But even the best programming language is useless, without a <strong>runtime environment</strong> (or just runtime for short) to execute it. Some languages can use a runtime that is already present on your operating system. However, Python requires a special runtime which we will download now.</p>
+<blockquote>
+<div><p>The installation instructions below assume that you are on Windows. If you use macOS or a Linux distribution, you can consult the appropriate guides.</p>
+</div></blockquote>
+<p>There are multiple runtimes for Python, the most popular one being <strong>CPython</strong>. Go to <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a> to grab it:</p>
 <p><img alt="" src="../../_images/installation.png" /></p>
 <p>Click the “Download” button to download the runtime installer.</p>
-<p>Note that by the time you are reading this book the displayed Python version might be different. The precise version doesn’t really matter for the purposes of this book. The only caveat is that you <em>should only use Python 3 and never Python 2</em>. Python 2 is no longer maintained and should therefore never be used for new projects.</p>
-<p>The download will give you an <code class="docutils literal notranslate"><span class="pre">exe</span></code> (executable) file. Start the <code class="docutils literal notranslate"><span class="pre">exe</span></code> file which will show a screen:</p>
+<p>Note that by the time you are reading this book, the displayed Python version might be different. The precise version doesn’t really matter for our purposes. The only caveat is that you <em>should only use Python 3 and not Python 2</em>. Python 2 has been sunset and should therefore never be used for new projects.</p>
+<p>The download will give you an <code class="docutils literal notranslate"><span class="pre">exe</span></code> (executable) file. If you start the <code class="docutils literal notranslate"><span class="pre">exe</span></code> file, you will see the following screen:</p>
 <p><img alt="" src="../../_images/installation2.png" /></p>
-<p>Note that its important that the “Add python.exe to PATH” is checked. If it is not, you need to check it yourself. This is needed so that Python will be found on your system later on when we execute commands.</p>
+<p>Note that it’s important that the “Add python.exe to PATH” checkbox is checked. If it is not, you need to check it yourself. This is necessary so that Python will be found on your system later on when we execute commands.</p>
 <p>After the installation is done, you should see the following:</p>
 <p><img alt="" src="../../_images/installation3.png" /></p>
-<p>Next we open a <strong>command line</strong> on our computer to execute the Python <strong>interpreter</strong> which will allow us to write and execute Python programs.</p>
+<p>You can open a <strong>command line</strong> on our computer to execute the Python <strong>interpreter</strong> which will allow us to write and execute Python programs.</p>
 <p>On Windows, you can open the command line by opening the “Run” window using Win + R, typing <code class="docutils literal notranslate"><span class="pre">cmd</span></code> and pressing the “Ok” button:</p>
 <p><img alt="" src="../../_images/run-window.png" /></p>
 <p>Alternatively you can type “cmd” into the search field. An app called “command prompt” should show up. Simply click the app and a CLI should open:</p>
@@ -433,8 +436,8 @@ document.write(`
 </div>
 <p>As you can see, this statement tells the runtime to display <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>.</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> is a special expression called a <strong>literal</strong>, which is a way to represent a fixed value in your code.</p>
-<p>Congratulations! You just executed your first Python statement from the REPL! Whenever you wish to execute a statement in the REPL you need to type the statement and then hit <code class="docutils literal notranslate"><span class="pre">Return</span></code> (<code class="docutils literal notranslate"><span class="pre">Enter</span></code>).</p>
-<p>We should note that we could also just write an expression in the REPL. Try simply typing <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>:</p>
+<p>Congratulations! You just executed your first Python statement from the REPL! Whenever you wish to execute a statement in the REPL, you need to type the statement and then hit <code class="docutils literal notranslate"><span class="pre">Return</span></code> (<code class="docutils literal notranslate"><span class="pre">Enter</span></code>).</p>
+<p>We should note that we can also just write an expression in the REPL. Try simply typing <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello, World!&quot;</span>
@@ -447,22 +450,22 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Note that there is a subtle difference between outputting a value with <code class="docutils literal notranslate"><span class="pre">print</span></code> versus just writing the value in the REPL. The <code class="docutils literal notranslate"><span class="pre">print</span></code> outputs the a user-readable value. However if we just write the value in the REPL, we get an <em>unambiguous representation</em> of that value. We can actually already see the difference. If you look closely <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code> outputs <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>, whereas just writing <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code> outputs <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code> (note the single quotes).</p>
+<p>Note that there is a subtle difference between outputting a value with <code class="docutils literal notranslate"><span class="pre">print</span></code> versus just writing the value in the REPL. The <code class="docutils literal notranslate"><span class="pre">print</span></code> outputs the a user-readable value. However if we just write the value in the REPL, we get an <em>unambiguous representation</em> of that value. We can actually already see the difference. If you look closely, you can see that <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code> outputs <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>, whereas just writing <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> outputs <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code> (note the single quotes).</p>
 </section>
 <section id="scripts">
 <h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading">#</a></h2>
-<p>Executing statements from the REPL is all fine and dandy for learning. However we can’t instruct our users to write statements in the REPL to execute our programs.</p>
-<p>Therefore Python allows us to write <strong>scripts</strong>, which are files that contain Python code. These files can then be executed, which will execute all statements in the file.</p>
-<p>Let us create a file named <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and write <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code> to that file. The content of your file should therefore look like this:</p>
+<p>Executing statements from the REPL is all fine and dandy for learning. However we can’t really instruct our users to write statements in the REPL to execute our programs.</p>
+<p>Therefore Python allows us to write <strong>scripts</strong>, which are files that contain Python code. These files can then be executed. Executing a file will simply execute all statements in that file.</p>
+<p>Let us create a file named <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and add the statement <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code> to that file. The content of your file should therefore look like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, World!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Then, execute the following from a command line:</p>
+<p>Now, execute the following from a command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">hello</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>This should again print <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>.</p>
-<p>If you are executing code from a script and you want to print values, you will always need to <code class="docutils literal notranslate"><span class="pre">print</span></code> them. Just writing the values down won’t work. For example, try creating a file <code class="docutils literal notranslate"><span class="pre">hello2.py</span></code> with the following content:</p>
+<p>If you are executing code from a script and you want to output values, you will always need to <code class="docutils literal notranslate"><span class="pre">print</span></code> them. Just writing the values down won’t work. For example, try creating a file <code class="docutils literal notranslate"><span class="pre">hello2.py</span></code> with the following content:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello, World!&quot;</span>
 </pre></div>
 </div>
@@ -471,11 +474,11 @@ document.write(`
 </pre></div>
 </div>
 <p>As you can see, nothing happens.</p>
-<p>This is important to remember - if you wish to show output when executing a file, you will need to use <code class="docutils literal notranslate"><span class="pre">print</span></code>, you <em>can’t just write down an expression</em>. But inside a REPL you can just write down an expression and the REPL will show the resulting value.</p>
+<p>This is important to remember - if you wish to show output when executing a file, you will need to use <code class="docutils literal notranslate"><span class="pre">print</span></code>, you <em>can’t just write down an expression</em>. This is different from a REPL where you can just write down an expression and the REPL will show the resulting value.</p>
 </section>
 <section id="comments">
 <h2>Comments<a class="headerlink" href="#comments" title="Permalink to this heading">#</a></h2>
-<p>Python uses a special symbol for <strong>comments</strong>, which start with <code class="docutils literal notranslate"><span class="pre">#</span></code> and are ignored by the interpreter:</p>
+<p>If you want to write a statement that should be ignored by the interpreter, you can use <strong>comments</strong>. Python uses a special symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> to denote such a comment:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># I am a comment!</span>
@@ -487,7 +490,7 @@ document.write(`
 </section>
 <section id="style-guide">
 <h2>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this heading">#</a></h2>
-<p>As long as the code you write is syntactically valid, you can <em>technically</em> write Python code however you wish. For example this is another way to output <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>:</p>
+<p>As long as the code you write is syntactically valid, you can <em>technically</em> write Python code however you want. For example this is another way to output <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="s2">&quot;Hello, World!&quot;</span>  <span class="p">)</span>
@@ -500,7 +503,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>However this statement looks ugly. Writing software means that you will be reading <em>a lot</em> of code. If that code isn’t properly formatted it’s harder to understand, harder to maintain and just straight up annoying. Luckily for us, Python has a style guide outlined in <a class="reference external" href="https://peps.python.org/pep-0008/">Python Enhancement Proposal #8</a> (PEP8 for short). Python programmers are <em>strongly encouraged</em> to follow this style guide.</p>
+<p>However, this looks really ugly. Writing software means that you will be reading <em>a lot</em> of code. If that code isn’t properly formatted it’s harder to understand, harder to maintain and just straight up annoying. Luckily for us, the creators of Python have outlined a style guide in <a class="reference external" href="https://peps.python.org/pep-0008/">Python Enhancement Proposal #8</a> (PEP8 for short). Python programmers are <em>strongly encouraged</em> to follow this style guide.</p>
 <blockquote>
 <div><p>By strongly encouraged we mean that if you don’t follow PEP8 a horde of Python programmers will hunt you down and force you to write COBOL. You don’t want to write COBOL.</p>
 </div></blockquote>
@@ -508,7 +511,7 @@ document.write(`
 <blockquote>
 <div><p>PEP8 note: The flunkie should be formatted in such a way, that the flunkifier is flunkified.</p>
 </div></blockquote>
-<p>We will keep this to a minimum, since we will introduce a tool in the later chapter, that will help us automate the formatting process. Nevertheless you should know that PEP8 exists, that you should adhere to it and keep a few very basic PEP8 rules in mind.</p>
+<p>We will keep this to a minimum, since there are tools that can help us automate the formatting process. Nevertheless you should know that PEP8 exists, that you should adhere to it and keep a few very basic PEP8 rules in mind.</p>
 </section>
 </section>
 

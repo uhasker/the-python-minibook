@@ -16,8 +16,8 @@ Chapters on the following topics are currently planned:
 - [x] Classes
 - [x] Iterables
 - [x] Control Flow
-- [x] Input and Output
 - [x] Exceptions
+- [x] Input and Output
 - [x] Modules and Packages
 - [x] The Project
 
@@ -25,39 +25,24 @@ The first draft of the book is completed and the book is currently in **alpha st
 
 ## Contributing
 
-You will need to install the requirements:
+We welcome issues & contributions.
+If you want to contribute, you can either create an issue or a pull request.
+If you create a pull request, **read the `CONTRIBUTING.md` first**.
+We will reject PRs that fail to adhere to the `CONTRIBUTING.md` without further review.
 
-```sh
-python -m pip install -r requirements.txt
-```
+**Please do not try to contribute to chapters that are not marked as finished in the progress section.**
 
-To build the book as HTML execute the following command:
+We are specifically interested if you find one of the following:
 
-```sh
-python -m jupyter book build .
-```
+- typos
+- grammatical errors
+- factual errors
+- poor explanations that are unaccessible for beginners
+- poor structure within a book section
 
-To build the book as PDF install the `pyppeteer` package and execute the build command:
+This list is not exhaustive - if you think that an interesting piece of trivia or a funny joke would add value to this book, don't hesitate to contribute it.
 
-```sh
-python -m pip install pyppeteer
-python -m jupyter book build --builder pdfhtml .
-```
+When submitting improvement suggestions, remember that:
 
-To build as LaTeX you will need to install the required packages and then run the build command:
-
-```sh
-sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex latexmk
-python -m jupyter book build . --builder pdflatex
-# OR python -m jupyter book build . --builder latex if you only want the LaTeX file
-```
-
-## Creating a Pull Request
-
-If you find a spelling or grammar mistakes or you want to suggest an improvement, you're welcome to create a PR!
-
-Don't forget to clear all notebooks before doing so, otherwise your code cell outputs will be included in the PR, which you don't want:
-
-```sh
-find src -type f -name "*.ipynb" -exec jupyter nbconvert --clear-output --inplace {} \;
-```
+- this book should be suitable for beginners, i.e. all new terminology must be explained
+- this book maintains an informal tone (and even dares to make jokes) to make it more accessible to a general audience

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>The Python Minibook &#8212; The Python Minibook</title>
+    <title>Contributing &#8212; The Python Minibook</title>
   
   
   
@@ -63,7 +63,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CONTRIBUTING';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -243,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/uhasker/the-python-minibook/issues/new?title=Issue%20on%20page%20%2FCONTRIBUTING.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +273,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/README.md" target="_blank"
+      <li><a href="_sources/CONTRIBUTING.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -357,7 +357,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>The Python Minibook</h1>
+    <h1>Contributing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,9 +367,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this">What is this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#progress">Progress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commits">Commits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branches">Branches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull Requests</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -381,51 +385,52 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="the-python-minibook">
-<h1>The Python Minibook<a class="headerlink" href="#the-python-minibook" title="Permalink to this heading">#</a></h1>
-<section id="what-is-this">
-<h2>What is this?<a class="headerlink" href="#what-is-this" title="Permalink to this heading">#</a></h2>
-<p>This is the repository for the book “The Python Minibook”, a book about Python aimed primarily at beginners.</p>
-<p>The live version of the book is <a class="reference external" href="https://uhasker.github.io/the-python-minibook">here</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<p>You will need to install the requirements:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<p>To build the book as HTML execute the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>jupyter<span class="w"> </span>book<span class="w"> </span>build<span class="w"> </span>.
+</pre></div>
+</div>
+<p>To build the book as PDF install the <code class="docutils literal notranslate"><span class="pre">pyppeteer</span></code> package and execute the build command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pyppeteer
+python<span class="w"> </span>-m<span class="w"> </span>jupyter<span class="w"> </span>book<span class="w"> </span>build<span class="w"> </span>--builder<span class="w"> </span>pdfhtml<span class="w"> </span>.
+</pre></div>
+</div>
+<p>To build as LaTeX you will need to install the required packages and then run the build command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>texlive-latex-extra<span class="w"> </span>texlive-fonts-extra<span class="w"> </span>texlive-xetex<span class="w"> </span>latexmk
+python<span class="w"> </span>-m<span class="w"> </span>jupyter<span class="w"> </span>book<span class="w"> </span>build<span class="w"> </span>.<span class="w"> </span>--builder<span class="w"> </span>pdflatex
+<span class="c1"># OR python -m jupyter book build . --builder latex if you only want the LaTeX file</span>
+</pre></div>
+</div>
 </section>
-<section id="progress">
-<h2>Progress<a class="headerlink" href="#progress" title="Permalink to this heading">#</a></h2>
-<p>Chapters on the following topics are currently planned:</p>
-<ul class="contains-task-list simple">
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Fundementals</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Variables, Data Types and Operators</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Functions</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Classes</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Iterables</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Control Flow</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Exceptions</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Input and Output</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Modules and Packages</p></li>
-<li class="task-list-item"><p><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> The Project</p></li>
-</ul>
-<p>The first draft of the book is completed and the book is currently in <strong>alpha stage</strong>, i.e. you can read it, but expect some minor mistakes.</p>
+<section id="guidelines">
+<h2>Guidelines<a class="headerlink" href="#guidelines" title="Permalink to this heading">#</a></h2>
+<section id="commits">
+<h3>Commits<a class="headerlink" href="#commits" title="Permalink to this heading">#</a></h3>
+<p>Please adhere to <a class="reference external" href="https://www.conventionalcommits.org/en/v1.0.0/">https://www.conventionalcommits.org/en/v1.0.0/</a> when writing commit messages.</p>
+<p>If you are working on a particular chapter the scope should always be of the form <code class="docutils literal notranslate"><span class="pre">C1</span></code>. For example if you make some minor improvements in chapter 1, your commit message should look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">chore</span><span class="p">(</span><span class="n">C1</span><span class="p">):</span> <span class="n">minor</span> <span class="n">improvements</span>
+</pre></div>
+</div>
 </section>
-<section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h2>
-<p>We welcome issues &amp; contributions.
-If you want to contribute, you can either create an issue or a pull request.
-If you create a pull request, <strong>read the <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code> first</strong>.
-We will reject PRs that fail to adhere to the <code class="docutils literal notranslate"><span class="pre">CONTRIBUTING.md</span></code> without further review.</p>
-<p><strong>Please do not try to contribute to chapters that are not marked as finished in the progress section.</strong></p>
-<p>We are specifically interested if you find one of the following:</p>
-<ul class="simple">
-<li><p>typos</p></li>
-<li><p>grammatical errors</p></li>
-<li><p>factual errors</p></li>
-<li><p>poor explanations that are unaccessible for beginners</p></li>
-<li><p>poor structure within a book section</p></li>
-</ul>
-<p>This list is not exhaustive - if you think that an interesting piece of trivia or a funny joke would add value to this book, don’t hesitate to contribute it.</p>
-<p>When submitting improvement suggestions, remember that:</p>
-<ul class="simple">
-<li><p>this book should be suitable for beginners, i.e. all new terminology must be explained</p></li>
-<li><p>this book maintains an informal tone (and even dares to make jokes) to make it more accessible to a general audience</p></li>
-</ul>
+<section id="branches">
+<h3>Branches<a class="headerlink" href="#branches" title="Permalink to this heading">#</a></h3>
+<p>Branch names should be <code class="docutils literal notranslate"><span class="pre">lisp-case</span></code> and should start with the chapter name the feature of fix applies to.</p>
+<p>For example if you fix a typo in Chapter 1, the branch name should be <code class="docutils literal notranslate"><span class="pre">c-01-fix-typo</span></code>.</p>
+</section>
+<section id="pull-requests">
+<h3>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this heading">#</a></h3>
+<p>Don’t forget to clear all notebooks before creating a PR, otherwise your code cell outputs will be included in the PR, which you don’t want:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>find<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;*.ipynb&quot;</span><span class="w"> </span>-exec<span class="w"> </span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--clear-output<span class="w"> </span>--inplace<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -474,9 +479,13 @@ We will reject PRs that fail to adhere to the <code class="docutils literal notr
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-this">What is this?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#progress">Progress</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guidelines">Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commits">Commits</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#branches">Branches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pull-requests">Pull Requests</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

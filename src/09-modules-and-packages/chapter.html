@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Chapter 9. Modules and packages &#8212; The Python Minibook</title>
+    <title>Chapter 9. Modules and Packages &#8212; The Python Minibook</title>
   
   
   
@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07-exceptions/chapter.html">Chapter 7. Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08-input-and-output/chapter.html">Chapter 8. Input and Output</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 9. Modules and packages</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 9. Modules and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10-the-project/chapter.html">Chapter 10. The Project</a></li>
 </ul>
 
@@ -359,7 +359,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 9. Modules and packages</h1>
+    <h1>Chapter 9. Modules and Packages</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -384,7 +384,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-9-modules-and-packages">
-<h1>Chapter 9. Modules and packages<a class="headerlink" href="#chapter-9-modules-and-packages" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 9. Modules and Packages<a class="headerlink" href="#chapter-9-modules-and-packages" title="Permalink to this heading">#</a></h1>
 <section id="modules">
 <h2>Modules<a class="headerlink" href="#modules" title="Permalink to this heading">#</a></h2>
 <p>When writing large and complex software projects it’s usually a terrible idea to put everything into a single file as that file will quickly become large and <em>unmaintainable</em>. Therefore different functionalities are often split into different files whose code is then made available to other files.</p>
@@ -407,7 +407,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We can use the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement to make code from <code class="docutils literal notranslate"><span class="pre">greeting.py</span></code> available to the REPL or another file.</p>
+<p>Truly exciting code, we know.</p>
+<p>We can use the <code class="docutils literal notranslate"><span class="pre">import</span></code> statement to make our exciting code from <code class="docutils literal notranslate"><span class="pre">greeting.py</span></code> available to the REPL or another file.</p>
 <p>For example if you open a REPL in the same directory as <code class="docutils literal notranslate"><span class="pre">greeting.py</span></code>, you can import <code class="docutils literal notranslate"><span class="pre">greeting</span></code> as following:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -690,7 +691,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2562305039789934
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.7109223940879461
 </pre></div>
 </div>
 </div>
@@ -702,7 +703,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -714,7 +715,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;first element&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;second element&#39;
 </pre></div>
 </div>
 </div>
@@ -741,7 +742,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 1, 1, 15, 7, 5, 919066)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2024, 1, 1, 16, 42, 52, 476934)
 </pre></div>
 </div>
 </div>
@@ -753,7 +754,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>52
 </pre></div>
 </div>
 </div>
@@ -765,7 +766,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -777,7 +778,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
 </pre></div>
 </div>
 </div>
@@ -822,7 +823,8 @@ document.write(`
 </section>
 <section id="third-party-packages">
 <h2>Third-party Packages<a class="headerlink" href="#third-party-packages" title="Permalink to this heading">#</a></h2>
-<p>We add third-party packages using the <strong>package manager</strong> <code class="docutils literal notranslate"><span class="pre">pip</span></code>. If you followed the installation instructions in chapter 1, <code class="docutils literal notranslate"><span class="pre">pip</span></code> should already be installed on your machine.</p>
+<p>Quite often, you will need some complex functionality that is not available in the built-in modules. Sometimes you need to write such functionality yourself, but in many cases you can use third-party packages, i.e. packages written by other people for that.</p>
+<p>We can install third-party packages using the <strong>package manager</strong> <code class="docutils literal notranslate"><span class="pre">pip</span></code>. If you followed the installation instructions in chapter 1, <code class="docutils literal notranslate"><span class="pre">pip</span></code> should already be installed on your machine.</p>
 <p>This package manager lets us install packages using the <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span></code> command. For example we can install the third-party package <code class="docutils literal notranslate"><span class="pre">numpy</span></code> for numerical computations using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">numpy</span></code>:</p>
 <p><img alt="" src="../../_images/pip.png" /></p>
 <p>Now that we installed the package we can import modules from that package:</p>
@@ -868,7 +870,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9fe9b9ac70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fc96855ec40&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/7b74ee30806f6a784d5dcdf54e4f332f3ed099873c3cf46ab585a054fbfe0572.png" src="../../_images/7b74ee30806f6a784d5dcdf54e4f332f3ed099873c3cf46ab585a054fbfe0572.png" />

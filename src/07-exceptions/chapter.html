@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control Flow</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 7. Exceptions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../08-input-and-output/chapter.html">Chapter 8. Input and Output</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09-modules-and-packages/chapter.html">Chapter 9. Modules and packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09-modules-and-packages/chapter.html">Chapter 9. Modules and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10-the-project/chapter.html">Chapter 10. The Project</a></li>
 </ul>
 
@@ -394,7 +394,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -404,7 +404,7 @@ document.write(`
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">x</span> <span class="o">/</span> <span class="n">y</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
 
 <span class="ne">ZeroDivisionError</span>: division by zero
 </pre></div>
@@ -412,7 +412,7 @@ document.write(`
 </div>
 </div>
 <p>If this happens during the execution of a script, the execution is stopped and the exception is shown to the user. But this doesn’t always seem ideal.</p>
-<p>Consider writing calculator software. It would probably be bad, if the software just crashed every time we accidentally try to divide by zero. Instead we should probably show a meaningful error message to the user that explains what went wrong and ask him to try again. Let’s fix our example:</p>
+<p>Consider writing calculator software. It would probably be bad, if the software just crashed every time we accidentally try to divide by zero. Instead we should show a meaningful error message to the user that explains what went wrong and ask him to try again. Let’s fix our example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
@@ -493,7 +493,7 @@ Continue execution
 </div>
 </div>
 </div>
-<p>Note that the string <code class="docutils literal notranslate"><span class="pre">&quot;More</span> <span class="pre">code</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">try</span> <span class="pre">clause&quot;</span></code> is never printed, because there an exception happens at the line <code class="docutils literal notranslate"><span class="pre">print(3</span> <span class="pre">/</span> <span class="pre">0)</span></code> and so the rest of the <code class="docutils literal notranslate"><span class="pre">try</span></code> clause after that line is skipped. Also note that because we <em>caught</em> the exception, the rest of the code continue as usual and so the line <code class="docutils literal notranslate"><span class="pre">&quot;Continue</span> <span class="pre">execution&quot;</span></code> is still printed.</p>
+<p>Note that the string <code class="docutils literal notranslate"><span class="pre">&quot;More</span> <span class="pre">code</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">try</span> <span class="pre">clause&quot;</span></code> is never printed, because an exception happens at the line <code class="docutils literal notranslate"><span class="pre">print(3</span> <span class="pre">/</span> <span class="pre">0)</span></code> and so the rest of the <code class="docutils literal notranslate"><span class="pre">try</span></code> clause after that line is skipped. Also note that because we <em>caught</em> the exception, the rest of the code continues as usual and so the line <code class="docutils literal notranslate"><span class="pre">&quot;Continue</span> <span class="pre">execution&quot;</span></code> is still printed.</p>
 <p>If the raised exception does not match the exception after the <code class="docutils literal notranslate"><span class="pre">except</span></code> keyword, the except clause is ignored and the exception is still raised:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -645,7 +645,7 @@ Continue execution
 </div>
 </div>
 </div>
-<p>As you can see, the exception <code class="docutils literal notranslate"><span class="pre">e</span></code> is just a regular Python object of instance <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>! This is not just theoretically interesting - it means that we can work with properties of that object. For example we can convert the exception to a string and print it:</p>
+<p>As you can see, the exception <code class="docutils literal notranslate"><span class="pre">e</span></code> is just a regular Python object of instance <code class="docutils literal notranslate"><span class="pre">ZeroDivisionError</span></code>! This is not just theoretically interesting - it means that we can work with attributes of that object. For example we can convert the exception to a string and print it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -665,7 +665,7 @@ Continue execution
 </section>
 <section id="raising-exceptions">
 <h2>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this heading">#</a></h2>
-<p>You can also raising exceptions yourself by utilizing the <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement:</p>
+<p>You can also raise exceptions yourself by utilizing the <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Bad value&quot;</span><span class="p">)</span>

@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/08-input-and-output/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Chapter 9. Modules and packages" href="../09-modules-and-packages/chapter.html" />
+    <link rel="next" title="Chapter 9. Modules and Packages" href="../09-modules-and-packages/chapter.html" />
     <link rel="prev" title="Chapter 7. Exceptions" href="../07-exceptions/chapter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -172,7 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../06-control-flow/chapter.html">Chapter 6. Control Flow</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07-exceptions/chapter.html">Chapter 7. Exceptions</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 8. Input and Output</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../09-modules-and-packages/chapter.html">Chapter 9. Modules and packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09-modules-and-packages/chapter.html">Chapter 9. Modules and Packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10-the-project/chapter.html">Chapter 10. The Project</a></li>
 </ul>
 
@@ -374,7 +374,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape Characters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input() Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The <code class="docutils literal notranslate"><span class="pre">input</span></code> Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files">Working with Text Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-text-files">Reading Text Files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-with-statement">The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement</a></li>
@@ -581,7 +581,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>However if we get the <em>unambiguous representation</em> of <code class="docutils literal notranslate"><span class="pre">my_str</span></code>, we will see the <code class="docutils literal notranslate"><span class="pre">\n</span></code> representation of the newline:</p>
+<p>However, if we get the <em>unambiguous representation</em> of <code class="docutils literal notranslate"><span class="pre">my_str</span></code>, we will see the <code class="docutils literal notranslate"><span class="pre">\n</span></code> representation of the newline:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str</span>
@@ -630,7 +630,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>However they are two different strings, which the equality operator confirms:</p>
+<p>However, they are two different strings, which the equality operator confirms:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str1</span> <span class="o">==</span> <span class="n">my_str2</span>
@@ -643,7 +643,7 @@ This is another line.
 </div>
 </div>
 </div>
-<p>This can be extremely confusing, if you look at the output of <code class="docutils literal notranslate"><span class="pre">print</span></code>. However the <em>unambiguous representation</em> of the strings immediately clears up the confusion:</p>
+<p>This can be extremely confusing, if you only look at the output of <code class="docutils literal notranslate"><span class="pre">print</span></code>. Luckily, the <em>unambiguous representation</em> of the strings immediately clears up the confusion:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_str1</span>
@@ -683,7 +683,7 @@ This is another line.
 </div>
 </div>
 <p>The characters <code class="docutils literal notranslate"><span class="pre">\t</span></code> and <code class="docutils literal notranslate"><span class="pre">\n</span></code> are also called <strong>escape characters</strong> because a backslash is used for <em>escaping</em> characters.</p>
-<p>Because backslashes have this special meaning inside string, this means that if you want to display backslashes in your strings, you might need to escape them as well resulting in <code class="docutils literal notranslate"><span class="pre">\\</span></code>:</p>
+<p>Because backslashes have this special meaning inside strings, this means that if you want to display backslashes in your strings, you might need to escape them as well resulting in <code class="docutils literal notranslate"><span class="pre">\\</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">t means tab&quot;</span><span class="p">)</span>
@@ -727,8 +727,8 @@ This is another line.
 </section>
 </section>
 <section id="the-input-function">
-<h2>The input() Function<a class="headerlink" href="#the-input-function" title="Permalink to this heading">#</a></h2>
-<p>We can read a string from the command line using the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function:</p>
+<h2>The <code class="docutils literal notranslate"><span class="pre">input</span></code> Function<a class="headerlink" href="#the-input-function" title="Permalink to this heading">#</a></h2>
+<p>We can read a string from the command line using the <code class="docutils literal notranslate"><span class="pre">input</span></code> function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -843,7 +843,7 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
-<p>To summarize, we first need to <em>open</em> a file resulting in a <em>file object</em>. We are then able to perform operation on that <em>file object</em> like reading the content of the file. Finally we need to <em>close</em> the file object.</p>
+<p>To summarize, we first need to <em>open</em> a file resulting in a <em>file object</em>. We can then perform operations on that <em>file object</em> (for example we can read the content of the file). Finally we need to <em>close</em> the file object.</p>
 </section>
 <section id="the-with-statement">
 <h3>The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement<a class="headerlink" href="#the-with-statement" title="Permalink to this heading">#</a></h3>
@@ -1075,7 +1075,7 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
-<p>Characters like space, newline etc are also simply stored as bytes. For example the number corresponding to the space characters is <code class="docutils literal notranslate"><span class="pre">32</span></code>:</p>
+<p>Characters like space, newline etc are also simply stored as bytes. For example, the number corresponding to the space characters is <code class="docutils literal notranslate"><span class="pre">32</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">content</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
@@ -1099,6 +1099,9 @@ They&#39;re called violets.
 <li><p>the emoji <code class="docutils literal notranslate"><span class="pre">😀</span></code> which has the code point 128512</p></li>
 </ul>
 <p>You can think of Unicode as a <em>giant</em> extension of the ASCII table.</p>
+<blockquote>
+<div><p>In reality, Unicode is more complicated than that, but we don’t care about this right now.</p>
+</div></blockquote>
 <p>The fact that Unicode is so large means we can no longer store every character in a single byte. In order to fit every Unicode character, we would need at least <em>four bytes</em>. However this would be extremely wasteful for e.g. english texts, since we would rarely <em>actually</em> need all four bytes in this case.</p>
 <p>Therefore there are multiple <strong>encodings</strong> which govern how code points are <strong>encoded</strong> (i.e. converted) to bytes. For example an encoding can decide to represent some characters as a single byte, some characters as two bytes etc. We will not dive into the gritty details of encodings in this chapter since this is not essential to understand (at least not for know). But it <em>is essential</em> to realize that the <em>same code point</em> can be <em>converted to a different sequence of bytes depending on the encoding</em>.</p>
 <p>Consider the German umlaut <code class="docutils literal notranslate"><span class="pre">ä</span></code> for example. The code point of <code class="docutils literal notranslate"><span class="pre">ä</span></code> is (always) 228, because that is the code point that was assigned to <code class="docutils literal notranslate"><span class="pre">ä</span></code>. However <em>different encodings</em> will represent this code point using <em>different byte sequences</em>.</p>
@@ -1146,7 +1149,7 @@ They&#39;re called violets.
 </div>
 </div>
 </div>
-<p>However the <code class="docutils literal notranslate"><span class="pre">Windows-1252</span></code> encoding (called <code class="docutils literal notranslate"><span class="pre">cp1252</span></code> for short) which is commonly used on Windows systems represents the same code point completely differently:</p>
+<p>However, the <code class="docutils literal notranslate"><span class="pre">Windows-1252</span></code> encoding (called <code class="docutils literal notranslate"><span class="pre">cp1252</span></code> for short) which is commonly used on Windows systems represents the same code point completely differently:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cp1252_umlaut</span> <span class="o">=</span> <span class="s2">&quot;ä&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;cp1252&quot;</span><span class="p">)</span>
@@ -1215,7 +1218,7 @@ They&#39;re called violets.
 </div>
 </div>
 <blockquote>
-<div><p>It should be noted that if you don’t know the encoding of a string there are certain statistical methods that can be used to guess that encoding using common patterns. In addition there are some encodings that are much more common than the rest (like UTF-8 or Windows-1252). However this is all guessing and therefore not always accurate. This means that it is usually a bad idea to rely on such guesses when writing production code.</p>
+<div><p>It should be noted that if you don’t know the encoding of a string there are certain statistical methods that can be used to guess that encoding using common patterns. In addition there are some encodings that are much more common than the rest (like UTF-8 or Windows-1252). However, such guesses are not always accurate. This means that it is a really bad idea to rely on such guesses when writing production code.</p>
 </div></blockquote>
 <p>This also means that if you write a file using one encoding and then try to read it using a different encoding, you will either get scrambled content or maybe even fail to read the file completely. This is actually a fairly common occurence if a file was created on an operating system that uses one encoding by default and then read on another operating system that uses another encoding by default.</p>
 <p>Let’s see this in action. Create a text file <code class="docutils literal notranslate"><span class="pre">german.txt</span></code> with the following content:</p>
@@ -1340,7 +1343,7 @@ They&#39;re called violets.
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 9. Modules and packages</p>
+        <p class="prev-next-title">Chapter 9. Modules and Packages</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1364,7 +1367,7 @@ They&#39;re called violets.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#escape-characters">Escape Characters</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input() Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The <code class="docutils literal notranslate"><span class="pre">input</span></code> Function</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-text-files">Working with Text Files</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-text-files">Reading Text Files</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-with-statement">The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement</a></li>

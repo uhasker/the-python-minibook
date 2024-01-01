@@ -564,7 +564,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Again we have the special methods <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. We also have the <code class="docutils literal notranslate"><span class="pre">render</span></code> method which renders the ball onto the screen. Finally, we have a <code class="docutils literal notranslate"><span class="pre">move</span></code> methods which updates the position of the ball.</p>
+<p>Again we have the special methods <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> and <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. We also have the <code class="docutils literal notranslate"><span class="pre">render</span></code> method which renders the ball onto the screen. Finally, we have a <code class="docutils literal notranslate"><span class="pre">move</span></code> method which updates the position of the ball.</p>
 <p>Let’s create a <code class="docutils literal notranslate"><span class="pre">ball</span></code> object and have a look at its functionality:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,7 +624,7 @@ document.write(`
 <p>Our game now looks like this:</p>
 <p><img alt="ball" src="../../_images/ball.png" /></p>
 <p>If you run the game now, you will see a tiny problem - the ball moves through the bottom wall and disappears. This is because we currently have no <strong>collision detection</strong>. Since <code class="docutils literal notranslate"><span class="pre">dy</span></code> is negative, the ball just keeps moving downwards until it’s no longer inside the playing area.</p>
-<p>The algorithm for collision detection will be relatively straightforward. We check if the ball collides with a wall and if that’s the case, we will simply reverse its direction. However we now have a problem. Finding out if the ball collides with one of the walls requires knowledge about the dimension of the screen.</p>
+<p>The algorithm for collision detection will be relatively straightforward. We check if the ball collides with a wall and if that’s the case, we will simply reverse its direction. This leads to a problem. Finding out if the ball collides with one of the walls requires knowledge about the dimension of the screen.</p>
 <p>We could pass that information along to the ball object, but that doesn’t seem right. Additionally, we will later need to coordinate multiple objects anyway (for example we will have to check for collisions between balls and bricks). In order to accomplish this, we create a <code class="docutils literal notranslate"><span class="pre">Game</span></code> class which will coordinate our game objects.</p>
 </section>
 <section id="the-game-class">
@@ -715,7 +715,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>This looks good. Now we update the game loop. Instead of updating and rerendering all game objects separately, the <code class="docutils literal notranslate"><span class="pre">game</span></code> object will now take care of that:</p>
+<p>This looks good. Now we update the game loop. Instead of updating and rerendering all game objects separately, the <code class="docutils literal notranslate"><span class="pre">game</span></code> object will now take care of updates and renders:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
 
 <span class="n">paddle</span> <span class="o">=</span> <span class="n">Paddle</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">280</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">460</span><span class="p">,</span> <span class="n">w</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -822,7 +822,7 @@ document.write(`
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Game(w=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">w</span><span class="si">}</span><span class="s2">, h=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">h</span><span class="si">}</span><span class="s2">, ball=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">ball</span><span class="si">}</span><span class="s2">, paddle=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">paddle</span><span class="si">}</span><span class="s2">)&quot;</span>
 </pre></div>
 </div>
-<p>Finally the game loop moves to a file <code class="docutils literal notranslate"><span class="pre">breakout.py</span></code>:</p>
+<p>Finally let’s move the game loop to a file <code class="docutils literal notranslate"><span class="pre">breakout.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
 
 <span class="kn">from</span> <span class="nn">ball</span> <span class="kn">import</span> <span class="n">Ball</span>
@@ -1011,7 +1011,7 @@ document.write(`
 </section>
 <section id="ending-the-game">
 <h2>Ending the Game<a class="headerlink" href="#ending-the-game" title="Permalink to this heading">#</a></h2>
-<p>We are pretty much done, all that is left to do is ending the game when the player wins or loses. To accomplish that we will maintain a <em>game state</em> which will be one of <code class="docutils literal notranslate"><span class="pre">&quot;ongoing&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;won&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;lost&quot;</span></code> and render different things depending on the game state.</p>
+<p>We are pretty much done, all that is left to do is end the game when the player wins or loses. To accomplish that we will maintain a <em>game state</em> which will be one of <code class="docutils literal notranslate"><span class="pre">&quot;ongoing&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;won&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;lost&quot;</span></code> and render different things depending on the game state.</p>
 <p>First, we update the <code class="docutils literal notranslate"><span class="pre">Game</span></code> class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">paddle</span><span class="p">,</span> <span class="n">ball</span><span class="p">,</span> <span class="n">n_bricks_x</span><span class="p">,</span> <span class="n">n_bricks_y</span><span class="p">):</span>
@@ -1072,7 +1072,7 @@ document.write(`
 <li><p>The paddle currently partially disappears, if we move the mouse too far left or too far right. This can be improved by checking whether there is a collision between the paddle and a wall.</p></li>
 <li><p>Try adding a score counter to the game.</p></li>
 <li><p>Improve the collision detection between the ball and the various game elements.</p></li>
-<li><p>Add a timer to the game, so that the player has only a limited amount of time to destroy all the bricks!</p></li>
+<li><p>Add a timer to the game, so that the player only has a limited amount of time to destroy all the bricks!</p></li>
 <li><p>Improve the user experience. The game looks quite flat and boring. This could be fixed by playing around with colors, shadows etc.</p></li>
 <li><p>Allow the player to restart the game by pressing a special key after he won or lost the game.</p></li>
 </ol>
@@ -1167,7 +1167,7 @@ By Mikhail Berkov
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2023-.
       <br/>
     
   </p>

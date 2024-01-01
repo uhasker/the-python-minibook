@@ -1,10 +1,29 @@
 # The Python Minibook
 
-This repository contains the files for "The Python Minibook".
+## What is this?
+
+This is the repository for the book "The Python Minibook", a book about Python aimed primarily at beginners.
 
 The live version of the book is [here](https://uhasker.github.io/the-python-minibook).
 
-## Building the Book
+## Progress
+
+Chapters on the following topics are currently planned:
+
+- [x] Fundementals
+- [x] Variables, Data Types and Operators
+- [x] Functions
+- [x] Classes
+- [x] Iterables
+- [x] Control Flow
+- [x] Input and Output
+- [x] Exceptions
+- [x] Modules and Packages
+- [x] The Project
+
+The first draft of the book is completed and the book is currently in **alpha stage**, i.e. you can read it, but expect some minor mistakes.
+
+## Contributing
 
 You will need to install the requirements:
 

@@ -6,23 +6,6 @@ This is the repository for the book "The Python Minibook", a book about Python a
 
 The live version of the book is [here](https://uhasker.github.io/the-python-minibook).
 
-## Progress
-
-Chapters on the following topics are currently planned:
-
-- [x] Fundementals
-- [x] Variables, Data Types and Operators
-- [x] Functions
-- [x] Classes
-- [x] Iterables
-- [x] Control Flow
-- [x] Exceptions
-- [x] Input and Output
-- [x] Modules and Packages
-- [x] The Project
-
-The first draft of the book is completed and the book is currently in **alpha stage**, i.e. you can read it, but expect some minor mistakes.
-
 ## Contributing
 
 We welcome issues & contributions.

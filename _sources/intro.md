@@ -1,5 +1,7 @@
 # The Python Minibook
 
+![](./cover.png)
+
 Always wanted to learn to code, but didn't quite know where to start?
 Then this book is for you.
 

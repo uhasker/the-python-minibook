@@ -37,3 +37,4 @@ use_multitoc_numbering = True
 
 # Open Graph metadata
 ogp_site_url = "https://uhasker.github.io/the-python-minibook"
+ogp_image = "https://uhasker.github.io/the-python-minibook/_images/cover.png"

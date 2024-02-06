@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 6. Control Flow" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://uhasker.github.io/src/06-control-flow/chapter.html" />
+<meta property="og:site_name" content="Python" />
+<meta property="og:description" content="Conditional Statements: Very often, we want to execute some code depending on whether a condition is True or False. Let’s say that we have a function process_event which takes a user event in a gam..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://uhasker.github.io/the-python-minibook/_images/social_previews/summary_src_06-control-flow_chapter_556eb1a8.png" />
+<meta property="og:image:alt" content="Conditional Statements: Very often, we want to execute some code depending on whether a condition is True or False. Let’s say that we have a function process..." />
+<meta name="description" content="Conditional Statements: Very often, we want to execute some code depending on whether a condition is True or False. Let’s say that we have a function process_event which takes a user event in a gam..." />
+<meta name="twitter:card" content="summary_large_image" />
 
     <title>Chapter 6. Control Flow &#8212; The Python Minibook</title>
   
@@ -29,40 +39,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=0f3ba4bc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/06-control-flow/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -155,7 +169,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">The Python Minibook</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -387,9 +412,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-control-flow">
-<h1>Chapter 6. Control Flow<a class="headerlink" href="#chapter-6-control-flow" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 6. Control Flow<a class="headerlink" href="#chapter-6-control-flow" title="Link to this heading">#</a></h1>
 <section id="conditional-statements">
-<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Permalink to this heading">#</a></h2>
+<h2>Conditional Statements<a class="headerlink" href="#conditional-statements" title="Link to this heading">#</a></h2>
 <p>Very often, we want to execute some code depending on whether a <strong>condition</strong> is <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Let’s say that we have a function <code class="docutils literal notranslate"><span class="pre">process_event</span></code> which takes a user event in a game and processes that event. Depending on the kind of the event we receive we would need to execute different code.</p>
 <p>This can be achieved by using the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. This allows us to specify various tests and execute code depending on whether those tests succeed or fail:</p>
 <div class="cell docutils container">
@@ -574,7 +599,7 @@ Therefore the two lines will be printed
 <p>Beware of <code class="docutils literal notranslate"><span class="pre">if</span></code> statements that are nested too deeply as such code will quickly become very hard to read and maintain.</p>
 </section>
 <section id="for-loops">
-<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">#</a></h2>
+<h2>For Loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
 <p>Another important control flow construct is the <strong>for loop</strong>. In Python, the for loop can be used to <strong>iterate</strong> over iterables and execute a block of code for each iteration.</p>
 <p>Here is how we could iterate over a list and print each element of that list:</p>
 <div class="cell docutils container">
@@ -693,7 +718,7 @@ name=Max, rating=1200
 </div>
 </section>
 <section id="comprehensions">
-<h2>Comprehensions<a class="headerlink" href="#comprehensions" title="Permalink to this heading">#</a></h2>
+<h2>Comprehensions<a class="headerlink" href="#comprehensions" title="Link to this heading">#</a></h2>
 <p>Instead of populating a list using a for loop, we can write a <strong>list comprehension</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -799,7 +824,7 @@ name=Max, rating=1200
 </div>
 </section>
 <section id="while-loops">
-<h2>While Loops<a class="headerlink" href="#while-loops" title="Permalink to this heading">#</a></h2>
+<h2>While Loops<a class="headerlink" href="#while-loops" title="Link to this heading">#</a></h2>
 <p>Finally, <strong>while loops</strong> allow us to execute a block of code as long as a condition is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>Let’s say we have a list of items which have a certain weight and a knapsack with a limited maximum weight. We want to find out which items we can pack into the knapsack without exceeding that maximum weight. We would move over the list <em>while</em> the maximum weight is not exceeded and add the items:</p>
 <div class="cell docutils container">

@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 2. Variables, Data Types and Operators" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://uhasker.github.io/src/02-variables-data-types-and-operators/chapter.html" />
+<meta property="og:site_name" content="Python" />
+<meta property="og:description" content="Variables: Programming is all about working with data. Specifically, we need the ability to store and access data in the memory of our computer. Storing data sounds pretty simple - just write a val..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://uhasker.github.io/the-python-minibook/_images/social_previews/summary_src_02-variables-data-types-and-operators_chapter_a750ab9a.png" />
+<meta property="og:image:alt" content="Variables: Programming is all about working with data. Specifically, we need the ability to store and access data in the memory of our computer. Storing data..." />
+<meta name="description" content="Variables: Programming is all about working with data. Specifically, we need the ability to store and access data in the memory of our computer. Storing data sounds pretty simple - just write a val..." />
+<meta name="twitter:card" content="summary_large_image" />
 
     <title>Chapter 2. Variables, Data Types and Operators &#8212; The Python Minibook</title>
   
@@ -29,40 +39,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=0f3ba4bc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/02-variables-data-types-and-operators/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -155,7 +169,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">The Python Minibook</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -400,9 +425,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-variables-data-types-and-operators">
-<h1>Chapter 2. Variables, Data Types and Operators<a class="headerlink" href="#chapter-2-variables-data-types-and-operators" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 2. Variables, Data Types and Operators<a class="headerlink" href="#chapter-2-variables-data-types-and-operators" title="Link to this heading">#</a></h1>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 <p>Programming is all about <em>working with data</em>. Specifically, we need the ability to <em>store and access</em> data in the <strong>memory</strong> of our computer. Storing data sounds pretty simple - just write a value to some <strong>memory cell</strong> and be happy. But how do we access the value later?</p>
 <p>Let us say that we are writing a computer game (as we will in the last chapter in this book). We will probably need to store positions and speeds of game objects. For example, we would like to store the fact that the player has a speed of <code class="docutils literal notranslate"><span class="pre">5</span></code> units/second. But if we just write <code class="docutils literal notranslate"><span class="pre">5</span></code> to some memory cell, we will have no idea what this value refers to later on. It could be the speed of the player, but it could also be the number of eliminated enemies.</p>
 <p>In order to be able to <em>access</em> our data, we really want to store values together with a <strong>symbolic name</strong> that tells us what the value means. For example, we could store the value <code class="docutils literal notranslate"><span class="pre">5</span></code> together with the symbolic name <code class="docutils literal notranslate"><span class="pre">player_speed</span></code>. Or we could store the value <code class="docutils literal notranslate"><span class="pre">5</span></code> together with the symbolic name <code class="docutils literal notranslate"><span class="pre">enemies_destroyed</span></code>. The value is the same in both cases and yet it refers to two completely different things.</p>
@@ -504,7 +529,7 @@ document.write(`
 </div>
 </section>
 <section id="data-types">
-<h2>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h2>
+<h2>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">#</a></h2>
 <p>The <strong>data type</strong> of a variable describes the possible values and allowed operations on a variable. For example, if a variable has the integer data type, its possible values are integers and you can perform operations like addition, subtraction, multiplication, division etc.</p>
 <p>Note that instead of saying that a variable has the type <code class="docutils literal notranslate"><span class="pre">thingy</span></code>, programmers often say that a variable <em>is a</em> <code class="docutils literal notranslate"><span class="pre">thingy</span></code>. For example if a variable has the data type integer, programmers will say that the variable <em>is an</em> integer.</p>
 <p>Python has four built-in data types that are of particular importance to us right now - namely the <strong>integer</strong> data type (<code class="docutils literal notranslate"><span class="pre">int</span></code> for short), the <strong>floating point</strong> data type (<code class="docutils literal notranslate"><span class="pre">float</span></code> for short), the <strong>boolean</strong> data type (<code class="docutils literal notranslate"><span class="pre">bool</span></code> for short) and the <strong>string</strong> data type (<code class="docutils literal notranslate"><span class="pre">str</span></code> for short). Let’s have a look at these data types one by one.</p>
@@ -512,7 +537,7 @@ document.write(`
 <div><p>These four data types are absolutely crucial to understand and you will be using them practically every time you write any code at all.</p>
 </div></blockquote>
 <section id="the-integer-data-type">
-<h3>The Integer Data Type<a class="headerlink" href="#the-integer-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The Integer Data Type<a class="headerlink" href="#the-integer-data-type" title="Link to this heading">#</a></h3>
 <p>Variables of the integer data type are capable of storing, well, integers (<em>we should probably give you a moment to recover from this shock</em>). Such variables are called <em>integers</em> for short (<em>truly deep stuff</em>).</p>
 <p>For example, the following variables all have the integer data type:</p>
 <div class="cell docutils container">
@@ -564,7 +589,7 @@ document.write(`
 <p>All three lines output <code class="docutils literal notranslate"><span class="pre">int</span></code> which means that the respective values are indeed integers.</p>
 </section>
 <section id="the-floating-point-data-type">
-<h3>The Floating Point Data Type<a class="headerlink" href="#the-floating-point-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The Floating Point Data Type<a class="headerlink" href="#the-floating-point-data-type" title="Link to this heading">#</a></h3>
 <p>Variables of the floating point data type are capable of storing, well, floating point numbers (<em>this book is just full of surprises</em>). Such variables are called <em>floats</em> for short.</p>
 <blockquote>
 <div><p>In case you skipped school (we sympathize), floating point numbers are numbers that have a decimal point, e.g. <code class="docutils literal notranslate"><span class="pre">-1.34</span></code> or <code class="docutils literal notranslate"><span class="pre">8.526</span></code>.</p>
@@ -610,7 +635,7 @@ document.write(`
 <p>For instance, if you need to store the amount of money in a bank account you should store it in cents (e.g. <code class="docutils literal notranslate"><span class="pre">15673</span></code> cents) instead of dollars (e.g. <code class="docutils literal notranslate"><span class="pre">156.73</span></code> dollars).</p>
 </section>
 <section id="the-boolean-data-type">
-<h3>The Boolean Data Type<a class="headerlink" href="#the-boolean-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The Boolean Data Type<a class="headerlink" href="#the-boolean-data-type" title="Link to this heading">#</a></h3>
 <p>Another important data type is the <code class="docutils literal notranslate"><span class="pre">bool</span></code> data type. A boolean variable can store the two values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,7 +649,7 @@ document.write(`
 <p>For example, we might want to determine whether a game object has been destroyed based on the outcome of a collision check. A boolean variable <code class="docutils literal notranslate"><span class="pre">collides</span></code>, which is <code class="docutils literal notranslate"><span class="pre">True</span></code> if a collision happened and <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise certainly comes in handy in such a case.</p>
 </section>
 <section id="the-string-data-type">
-<h3>The String Data Type<a class="headerlink" href="#the-string-data-type" title="Permalink to this heading">#</a></h3>
+<h3>The String Data Type<a class="headerlink" href="#the-string-data-type" title="Link to this heading">#</a></h3>
 <p>The final data type we will look at in this chapter is the string data type. A <strong>string</strong> is just a <em>sequence of characters</em>.</p>
 <p>String literals go either between double quotes or between single quotes:</p>
 <div class="cell docutils container">
@@ -795,9 +820,9 @@ document.write(`
 </section>
 </section>
 <section id="operators">
-<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
+<h2>Operators<a class="headerlink" href="#operators" title="Link to this heading">#</a></h2>
 <section id="equality-operators">
-<h3>Equality Operators<a class="headerlink" href="#equality-operators" title="Permalink to this heading">#</a></h3>
+<h3>Equality Operators<a class="headerlink" href="#equality-operators" title="Link to this heading">#</a></h3>
 <p>Every data type has associated <strong>operators</strong>. An operator takes one or more values and produces a result.</p>
 <p>Two important operators we can use with variables of essentially every data type are <code class="docutils literal notranslate"><span class="pre">==</span></code> (equals) and <code class="docutils literal notranslate"><span class="pre">!=</span></code> (not equals). Consider the following variables:</p>
 <div class="cell docutils container">
@@ -915,7 +940,7 @@ document.write(`
 </div></blockquote>
 </section>
 <section id="arithmetic-operators">
-<h3>Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Permalink to this heading">#</a></h3>
+<h3>Arithmetic Operators<a class="headerlink" href="#arithmetic-operators" title="Link to this heading">#</a></h3>
 <p>You can also use the usual <strong>arithmetic operators</strong> <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> and <code class="docutils literal notranslate"><span class="pre">/</span></code> on integers and floats. Unless you slept through school (again, we sympathize), you probably already know what they do.</p>
 <p>For completeness’ sake, here are some examples:</p>
 <div class="cell docutils container">
@@ -1223,7 +1248,7 @@ document.write(`
 </div>
 </section>
 <section id="comparison-operators">
-<h3>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this heading">#</a></h3>
+<h3>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Link to this heading">#</a></h3>
 <p>Python also has the <strong>comparison operators</strong> <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, which work pretty much the way you would expect:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1332,7 +1357,7 @@ document.write(`
 <p>Not much to say here - pretty straightforward stuff.</p>
 </section>
 <section id="using-the-operators-on-strings">
-<h3>Using the Operators on Strings<a class="headerlink" href="#using-the-operators-on-strings" title="Permalink to this heading">#</a></h3>
+<h3>Using the Operators on Strings<a class="headerlink" href="#using-the-operators-on-strings" title="Link to this heading">#</a></h3>
 <p>Something that might be surprising to learn is that we can use some of these operators with strings. However, in this context the operators take on different meanings. The <code class="docutils literal notranslate"><span class="pre">+</span></code> operator becomes <strong>string concatenation</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1422,7 +1447,7 @@ document.write(`
 <p>Don’t spend too much time worrying about this - you will rarely use <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> and <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> to compare strings. We mostly mention this for the sake of completeness.</p>
 </section>
 <section id="logical-operators">
-<h3>Logical Operators<a class="headerlink" href="#logical-operators" title="Permalink to this heading">#</a></h3>
+<h3>Logical Operators<a class="headerlink" href="#logical-operators" title="Link to this heading">#</a></h3>
 <p>Finally, we need to introduce the <strong>logical operators</strong> <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> which take boolean values and return another boolean value.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">and</span></code> operator takes two boolean values and returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if and only if they are <em>both</em> <code class="docutils literal notranslate"><span class="pre">True</span></code>:</p>
 <div class="cell docutils container">
@@ -1578,7 +1603,7 @@ document.write(`
 </div>
 </section>
 <section id="grouping-operators-with-parentheses">
-<h3>Grouping Operators with Parentheses<a class="headerlink" href="#grouping-operators-with-parentheses" title="Permalink to this heading">#</a></h3>
+<h3>Grouping Operators with Parentheses<a class="headerlink" href="#grouping-operators-with-parentheses" title="Link to this heading">#</a></h3>
 <p>Just like in mathematics, you can change the <strong>precedence</strong> of operators (i.e. which operator is evaluated first) using parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. Consider this expression:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

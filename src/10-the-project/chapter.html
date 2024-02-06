@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 10. The Project" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://uhasker.github.io/src/10-the-project/chapter.html" />
+<meta property="og:site_name" content="Python" />
+<meta property="og:description" content="In this chapter we will apply the concepts we learned in the previous chapters and create a clone of the Breakout game. The goal of this game is to use a paddle to hit a ball and destroy bricks. Yo..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://uhasker.github.io/the-python-minibook/_images/social_previews/summary_src_10-the-project_chapter_c9d10e2f.png" />
+<meta property="og:image:alt" content="In this chapter we will apply the concepts we learned in the previous chapters and create a clone of the Breakout game. The goal of this game is to use a pad..." />
+<meta name="description" content="In this chapter we will apply the concepts we learned in the previous chapters and create a clone of the Breakout game. The goal of this game is to use a paddle to hit a ball and destroy bricks. Yo..." />
+<meta name="twitter:card" content="summary_large_image" />
 
     <title>Chapter 10. The Project &#8212; The Python Minibook</title>
   
@@ -29,40 +39,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=0f3ba4bc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/10-the-project/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -154,7 +168,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">The Python Minibook</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -391,12 +416,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-10-the-project">
-<h1>Chapter 10. The Project<a class="headerlink" href="#chapter-10-the-project" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 10. The Project<a class="headerlink" href="#chapter-10-the-project" title="Link to this heading">#</a></h1>
 <p>In this chapter we will apply the concepts we learned in the previous chapters and create a clone of the <a class="reference external" href="https://de.wikipedia.org/wiki/Breakout_(Computerspiel)">Breakout</a> game. The goal of this game is to use a paddle to hit a ball and destroy bricks. You win, if all the bricks are destroyed and you lose if the ball touches the bottom wall:</p>
 <p><img alt="" src="../../_images/final_result.png" /></p>
 <p>We will use the <code class="docutils literal notranslate"><span class="pre">pygame</span></code> package designed for writing games in Python. You can install it using <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">pygame</span></code> (no surprises there if you followed the last chapter).</p>
 <section id="the-game-loop">
-<h2>The Game Loop<a class="headerlink" href="#the-game-loop" title="Permalink to this heading">#</a></h2>
+<h2>The Game Loop<a class="headerlink" href="#the-game-loop" title="Link to this heading">#</a></h2>
 <p>We begin by writing the <strong>game loop</strong>. Here we create the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object which we draw onto. We also create a <code class="docutils literal notranslate"><span class="pre">clock</span></code> that will allow us to control how often we want to render a frame (for this game we want to render <code class="docutils literal notranslate"><span class="pre">30</span></code> frames per second). We also define a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop which repeatedly executes the following steps as long as the game is active:</p>
 <ol class="arabic simple">
 <li><p>Process all currently existing user events. Right now we only process the <code class="docutils literal notranslate"><span class="pre">pygame.QUIT</span></code> event which happens if the user closes the window. If we see a <code class="docutils literal notranslate"><span class="pre">pygame.QUIT</span></code> event we set the <code class="docutils literal notranslate"><span class="pre">active</span></code> flag to <code class="docutils literal notranslate"><span class="pre">False</span></code> which will exit the game loop and therefore also exit the application (since there is no code following the game loop).</p></li>
@@ -433,7 +458,7 @@ document.write(`
 </div>
 </section>
 <section id="the-paddle">
-<h2>The Paddle<a class="headerlink" href="#the-paddle" title="Permalink to this heading">#</a></h2>
+<h2>The Paddle<a class="headerlink" href="#the-paddle" title="Link to this heading">#</a></h2>
 <p>Next we need to create our game objects. First we create a paddle that we can move around using our mouse.</p>
 <p>The paddle needs to have the attributes <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">h</span></code> which denote its position and its dimensions. It also needs to have the usual <code class="docutils literal notranslate"><span class="pre">__repr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__eq__</span></code> methods. Additionaly it should have (like all game objects) a <code class="docutils literal notranslate"><span class="pre">render</span></code> method which takes the <code class="docutils literal notranslate"><span class="pre">screen</span></code> object and renders the paddle onto the screen. Finally we need a <code class="docutils literal notranslate"><span class="pre">move</span></code> method which attempts to move the paddle to the respective mouse position.</p>
 <p>Here is a first stab at the <code class="docutils literal notranslate"><span class="pre">Paddle</span></code> class:</p>
@@ -535,7 +560,7 @@ document.write(`
 <p>Try moving the paddle around with your mouse and verify that the paddle moves along.</p>
 </section>
 <section id="the-ball">
-<h2>The Ball<a class="headerlink" href="#the-ball" title="Permalink to this heading">#</a></h2>
+<h2>The Ball<a class="headerlink" href="#the-ball" title="Link to this heading">#</a></h2>
 <p>Next we need to add the ball. The ball should have a position <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, a direction <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code> and a radius <code class="docutils literal notranslate"><span class="pre">r</span></code>. The ball is not controlled by the player. Instead it simply moves on every frame by the amount given by <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code>.</p>
 <p>Here is how the <code class="docutils literal notranslate"><span class="pre">Ball</span></code> class looks like:</p>
 <div class="cell docutils container">
@@ -630,7 +655,7 @@ document.write(`
 <p>We could pass that information along to the ball object, but that doesn’t seem right. Additionally, we will later need to coordinate multiple objects anyway (for example we will have to check for collisions between balls and bricks). In order to accomplish this, we create a <code class="docutils literal notranslate"><span class="pre">Game</span></code> class which will coordinate our game objects.</p>
 </section>
 <section id="the-game-class">
-<h2>The Game Class<a class="headerlink" href="#the-game-class" title="Permalink to this heading">#</a></h2>
+<h2>The Game Class<a class="headerlink" href="#the-game-class" title="Link to this heading">#</a></h2>
 <p>Let’s think about the way the <code class="docutils literal notranslate"><span class="pre">Game</span></code> class should work. It needs to expose two methods - an <code class="docutils literal notranslate"><span class="pre">update</span></code> method that will update the game and a <code class="docutils literal notranslate"><span class="pre">render</span></code> method that will render the game. Here is how that might look like in code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -744,7 +769,7 @@ document.write(`
 <p>Let’s refactor some more and split the different pieces into different modules.</p>
 </section>
 <section id="splitting-the-project-into-modules">
-<h2>Splitting the Project into Modules<a class="headerlink" href="#splitting-the-project-into-modules" title="Permalink to this heading">#</a></h2>
+<h2>Splitting the Project into Modules<a class="headerlink" href="#splitting-the-project-into-modules" title="Link to this heading">#</a></h2>
 <p>Create a file <code class="docutils literal notranslate"><span class="pre">paddle.py</span></code> and move the <code class="docutils literal notranslate"><span class="pre">Paddle</span></code> class into that file. Here is how <code class="docutils literal notranslate"><span class="pre">paddle.py</span></code> should look like now:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pygame</span>
 
@@ -860,7 +885,7 @@ document.write(`
 </div>
 </section>
 <section id="collision-detection">
-<h2>Collision Detection<a class="headerlink" href="#collision-detection" title="Permalink to this heading">#</a></h2>
+<h2>Collision Detection<a class="headerlink" href="#collision-detection" title="Link to this heading">#</a></h2>
 <p>Now that we have refactored our code, adding collisions with the paddle and the wall is pretty easy.</p>
 <p>Let’s write a helper function that checks if a rectangle collides with a circle. We will keep it really simple and just check whether the center of the circle is inside the rectangle. Add that function to <code class="docutils literal notranslate"><span class="pre">game.py</span></code>:</p>
 <div class="cell docutils container">
@@ -904,7 +929,7 @@ document.write(`
 </div>
 </section>
 <section id="adding-the-bricks">
-<h2>Adding the Bricks<a class="headerlink" href="#adding-the-bricks" title="Permalink to this heading">#</a></h2>
+<h2>Adding the Bricks<a class="headerlink" href="#adding-the-bricks" title="Link to this heading">#</a></h2>
 <p>We now have a ball that bounces around and can be hit with a paddle. However, we are still missing the <em>actual game</em>, i.e. the possibility to hit some bricks with our ball.</p>
 <p>Let’s create a file <code class="docutils literal notranslate"><span class="pre">brick.py</span></code> containing the <code class="docutils literal notranslate"><span class="pre">Brick</span></code> class:</p>
 <div class="cell docutils container">
@@ -1012,7 +1037,7 @@ document.write(`
 <p><img alt="" src="../../_images/final_result.png" /></p>
 </section>
 <section id="ending-the-game">
-<h2>Ending the Game<a class="headerlink" href="#ending-the-game" title="Permalink to this heading">#</a></h2>
+<h2>Ending the Game<a class="headerlink" href="#ending-the-game" title="Link to this heading">#</a></h2>
 <p>We are pretty much done, all that is left to do is end the game when the player wins or loses. To accomplish that we will maintain a <em>game state</em> which will be one of <code class="docutils literal notranslate"><span class="pre">&quot;ongoing&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;won&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;lost&quot;</span></code> and render different things depending on the game state.</p>
 <p>First, we update the <code class="docutils literal notranslate"><span class="pre">Game</span></code> class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Game</span><span class="p">:</span>
@@ -1068,7 +1093,7 @@ document.write(`
 <p>Similarly if the ball disappers throught the bottom of the screen we lose the game.</p>
 </section>
 <section id="wrapping-up">
-<h2>Wrapping Up<a class="headerlink" href="#wrapping-up" title="Permalink to this heading">#</a></h2>
+<h2>Wrapping Up<a class="headerlink" href="#wrapping-up" title="Link to this heading">#</a></h2>
 <p>Congratulations, you just completed your first game! From here, there are a number of things you can try by yourself:</p>
 <ol class="arabic simple">
 <li><p>The paddle currently partially disappears, if we move the mouse too far left or too far right. This can be improved by checking whether there is a collision between the paddle and a wall.</p></li>

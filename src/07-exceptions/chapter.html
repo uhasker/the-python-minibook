@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 7. Exceptions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://uhasker.github.io/src/07-exceptions/chapter.html" />
+<meta property="og:site_name" content="Python" />
+<meta property="og:description" content="Basic Exception Handling: When we execute a program, some statements may cause exceptions(basically unhandled errors). One of the most obvious examples is division by zero. Consider this example: I..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://uhasker.github.io/the-python-minibook/_images/social_previews/summary_src_07-exceptions_chapter_6fc37b2c.png" />
+<meta property="og:image:alt" content="Basic Exception Handling: When we execute a program, some statements may cause exceptions(basically unhandled errors). One of the most obvious examples is di..." />
+<meta name="description" content="Basic Exception Handling: When we execute a program, some statements may cause exceptions(basically unhandled errors). One of the most obvious examples is division by zero. Consider this example: I..." />
+<meta name="twitter:card" content="summary_large_image" />
 
     <title>Chapter 7. Exceptions &#8212; The Python Minibook</title>
   
@@ -29,40 +39,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=0f3ba4bc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/07-exceptions/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -155,7 +169,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">The Python Minibook</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -388,9 +413,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-exceptions">
-<h1>Chapter 7. Exceptions<a class="headerlink" href="#chapter-7-exceptions" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 7. Exceptions<a class="headerlink" href="#chapter-7-exceptions" title="Link to this heading">#</a></h1>
 <section id="basic-exception-handling">
-<h2>Basic Exception Handling<a class="headerlink" href="#basic-exception-handling" title="Permalink to this heading">#</a></h2>
+<h2>Basic Exception Handling<a class="headerlink" href="#basic-exception-handling" title="Link to this heading">#</a></h2>
 <p>When we execute a program, some statements may cause <strong>exceptions</strong> (basically unhandled errors). One of the most obvious examples is division by zero. Consider this example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -438,7 +463,7 @@ Luckily, we caught the exception and prevented you from destroying the universe!
 <p>Much better! We caught the error and our script may proceed, e.g. by asking the user to provide us with another number.</p>
 </section>
 <section id="the-try-statement-and-the-except-clause">
-<h2>The <code class="docutils literal notranslate"><span class="pre">try</span></code> Statement and the <code class="docutils literal notranslate"><span class="pre">except</span></code> Clause<a class="headerlink" href="#the-try-statement-and-the-except-clause" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">try</span></code> Statement and the <code class="docutils literal notranslate"><span class="pre">except</span></code> Clause<a class="headerlink" href="#the-try-statement-and-the-except-clause" title="Link to this heading">#</a></h2>
 <p>The cornerstones of exception handling are the <code class="docutils literal notranslate"><span class="pre">try</span></code> statement and the <code class="docutils literal notranslate"><span class="pre">except</span></code> clause.</p>
 <p>The general form of the <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">...</span> <span class="pre">except</span> <span class="pre">...</span></code> construct looks as follows:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -531,7 +556,7 @@ Continue execution
 <p>Note that the program crashes, so neither <code class="docutils literal notranslate"><span class="pre">&quot;&quot;More</span> <span class="pre">code</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">try</span> <span class="pre">clause&quot;</span></code> nor <code class="docutils literal notranslate"><span class="pre">&quot;Continue</span> <span class="pre">execution&quot;</span></code> are printed.</p>
 </section>
 <section id="handling-multiple-exceptions">
-<h2>Handling Multiple Exceptions<a class="headerlink" href="#handling-multiple-exceptions" title="Permalink to this heading">#</a></h2>
+<h2>Handling Multiple Exceptions<a class="headerlink" href="#handling-multiple-exceptions" title="Link to this heading">#</a></h2>
 <p>Consider this snippet:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -630,7 +655,7 @@ Continue execution
 </div>
 </section>
 <section id="working-with-exception-objects">
-<h2>Working with Exception Objects<a class="headerlink" href="#working-with-exception-objects" title="Permalink to this heading">#</a></h2>
+<h2>Working with Exception Objects<a class="headerlink" href="#working-with-exception-objects" title="Link to this heading">#</a></h2>
 <p>It is often useful to bind the exception to a variable by specifying a variable after the exception name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -666,7 +691,7 @@ Continue execution
 <p>This is very useful if we want to see what originally caused an error. It is in fact common practice to print the exception object when encountering an exception - especially during debugging.</p>
 </section>
 <section id="raising-exceptions">
-<h2>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Permalink to this heading">#</a></h2>
+<h2>Raising Exceptions<a class="headerlink" href="#raising-exceptions" title="Link to this heading">#</a></h2>
 <p>You can also raise exceptions yourself by utilizing the <code class="docutils literal notranslate"><span class="pre">raise</span></code> statement:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

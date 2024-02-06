@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 1. Fundamentals" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://uhasker.github.io/src/01-installation/chapter.html" />
+<meta property="og:site_name" content="Python" />
+<meta property="og:description" content="Programming Languages: A program is a sequence of instructions for a computer to execute. For example, Adobe Photoshop is a program, as is Microsoft Paint. Even though these two programs are of dif..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://uhasker.github.io/the-python-minibook/_images/social_previews/summary_src_01-installation_chapter_7df39ef7.png" />
+<meta property="og:image:alt" content="Programming Languages: A program is a sequence of instructions for a computer to execute. For example, Adobe Photoshop is a program, as is Microsoft Paint. E..." />
+<meta name="description" content="Programming Languages: A program is a sequence of instructions for a computer to execute. For example, Adobe Photoshop is a program, as is Microsoft Paint. Even though these two programs are of dif..." />
+<meta name="twitter:card" content="summary_large_image" />
 
     <title>Chapter 1. Fundamentals &#8212; The Python Minibook</title>
   
@@ -29,40 +39,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=0f3ba4bc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/01-installation/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -155,7 +169,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">The Python Minibook</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -389,9 +414,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-fundamentals">
-<h1>Chapter 1. Fundamentals<a class="headerlink" href="#chapter-1-fundamentals" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 1. Fundamentals<a class="headerlink" href="#chapter-1-fundamentals" title="Link to this heading">#</a></h1>
 <section id="programming-languages">
-<h2>Programming Languages<a class="headerlink" href="#programming-languages" title="Permalink to this heading">#</a></h2>
+<h2>Programming Languages<a class="headerlink" href="#programming-languages" title="Link to this heading">#</a></h2>
 <p>A <strong>program</strong> is a sequence of instructions for a computer to execute. For example, <a class="reference external" href="https://en.wikipedia.org/wiki/Adobe_Photoshop">Adobe Photoshop</a> is a program, as is <a class="reference external" href="https://en.wikipedia.org/wiki/Microsoft_Paint">Microsoft Paint</a>. Even though these two programs are of different quality, they both contain sequences of instructions like “add these two numbers”, “draw a line”, “recognize this face” which are then executed by your computer.</p>
 <p>A program is generally in a <strong>programming language</strong>. A programming language is usually very different from a natural language like English. If I say something like “Python is awesome programming language”, then despite the fact that there is a grammar error (did you notice the missing article?) you are still able to understand me.</p>
 <p>With computers, the picture is very different. We need to be very precise when “speaking in” a programming language. A missing character can make the difference between a perfectly working program and a total disaster.</p>
@@ -399,7 +424,7 @@ document.write(`
 <p>However, this is also not a book that just teaches you if statements, for loops and functions and leaves it at that. We will dive into certain topics that are often left out of beginner books, but are <em>extremely important</em> in the real world like the <em>dreaded</em> encodings or how to work with third-party packages.</p>
 </section>
 <section id="installing-a-python-runtime">
-<h2>Installing a Python Runtime<a class="headerlink" href="#installing-a-python-runtime" title="Permalink to this heading">#</a></h2>
+<h2>Installing a Python Runtime<a class="headerlink" href="#installing-a-python-runtime" title="Link to this heading">#</a></h2>
 <p>Python is a great programming language. But even the best programming language is useless, without a <strong>runtime environment</strong> (or just runtime for short) to execute it. Some languages can use a runtime that is already present on your operating system. However, Python requires a special runtime which we will download now.</p>
 <blockquote>
 <div><p>The installation instructions below assume that you are on Windows. If you use macOS or a Linux distribution, you can consult the appropriate guides.</p>
@@ -421,7 +446,7 @@ document.write(`
 <p>Next we type <code class="docutils literal notranslate"><span class="pre">python</span></code> in the command line to open a Python <strong>REPL</strong> (short for Read, Eval, Print, Loop) which allows you to interact with the Python interpreter.</p>
 </section>
 <section id="inside-the-python-runtime">
-<h2>Inside the Python Runtime<a class="headerlink" href="#inside-the-python-runtime" title="Permalink to this heading">#</a></h2>
+<h2>Inside the Python Runtime<a class="headerlink" href="#inside-the-python-runtime" title="Link to this heading">#</a></h2>
 <p>The two most important programming constructs are <strong>statements</strong> and <strong>expressions</strong>. A statement tells the runtime to execute an action. An expression is something that can be evaluated to a value.</p>
 <p>Let us type the following statement in the REPL we just opened and hit <code class="docutils literal notranslate"><span class="pre">Return</span></code> (<code class="docutils literal notranslate"><span class="pre">Enter</span></code>):</p>
 <div class="cell docutils container">
@@ -455,7 +480,7 @@ document.write(`
 <p>Note that there is a subtle difference between outputting a value with <code class="docutils literal notranslate"><span class="pre">print</span></code> versus just writing the value in the REPL. The <code class="docutils literal notranslate"><span class="pre">print</span></code> outputs the a user-readable value. However if we just write the value in the REPL, we get an <em>unambiguous representation</em> of that value. We can actually already see the difference. If you look closely, you can see that <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code> outputs <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>, whereas just writing <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code> outputs <code class="docutils literal notranslate"><span class="pre">'Hello,</span> <span class="pre">World!'</span></code> (note the single quotes).</p>
 </section>
 <section id="scripts">
-<h2>Scripts<a class="headerlink" href="#scripts" title="Permalink to this heading">#</a></h2>
+<h2>Scripts<a class="headerlink" href="#scripts" title="Link to this heading">#</a></h2>
 <p>Executing statements from the REPL is all fine and dandy for learning. However we can’t really instruct our users to write statements in the REPL to execute our programs.</p>
 <p>Therefore Python allows us to write <strong>scripts</strong>, which are files that contain Python code. These files can then be executed. Executing a file will simply execute all statements in that file.</p>
 <p>Let us create a file named <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> and add the statement <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span></code> to that file. The content of your file should therefore look like this:</p>
@@ -479,7 +504,7 @@ document.write(`
 <p>This is important to remember - if you wish to show output when executing a file, you will need to use <code class="docutils literal notranslate"><span class="pre">print</span></code>, you <em>can’t just write down an expression</em>. This is different from a REPL where you can just write down an expression and the REPL will show the resulting value.</p>
 </section>
 <section id="comments">
-<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this heading">#</a></h2>
+<h2>Comments<a class="headerlink" href="#comments" title="Link to this heading">#</a></h2>
 <p>If you want to write a statement that should be ignored by the interpreter, you can use <strong>comments</strong>. Python uses a special symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> to denote such a comment:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -491,7 +516,7 @@ document.write(`
 <p>Comments are generally used to document and explain what a particular piece of code is doing, enhancing readability and maintainability.</p>
 </section>
 <section id="style-guide">
-<h2>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this heading">#</a></h2>
+<h2>Style Guide<a class="headerlink" href="#style-guide" title="Link to this heading">#</a></h2>
 <p>As long as the code you write is syntactically valid, you can <em>technically</em> write Python code however you want. For example this is another way to output <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">World!&quot;</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 3. Functions" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://uhasker.github.io/src/03-functions/chapter.html" />
+<meta property="og:site_name" content="Python" />
+<meta property="og:description" content="Why Functions?: The most important concept in Python and arguably in all of programming is that of a function. Functions are reusable blocks of code. Consider the following example. We are writing ..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://uhasker.github.io/the-python-minibook/_images/social_previews/summary_src_03-functions_chapter_5e6bb691.png" />
+<meta property="og:image:alt" content="Why Functions?: The most important concept in Python and arguably in all of programming is that of a function. Functions are reusable blocks of code. Conside..." />
+<meta name="description" content="Why Functions?: The most important concept in Python and arguably in all of programming is that of a function. Functions are reusable blocks of code. Consider the following example. We are writing ..." />
+<meta name="twitter:card" content="summary_large_image" />
 
     <title>Chapter 3. Functions &#8212; The Python Minibook</title>
   
@@ -29,40 +39,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=0f3ba4bc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/03-functions/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -155,7 +169,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">The Python Minibook</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -390,9 +415,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-functions">
-<h1>Chapter 3. Functions<a class="headerlink" href="#chapter-3-functions" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 3. Functions<a class="headerlink" href="#chapter-3-functions" title="Link to this heading">#</a></h1>
 <section id="why-functions">
-<h2>Why Functions?<a class="headerlink" href="#why-functions" title="Permalink to this heading">#</a></h2>
+<h2>Why Functions?<a class="headerlink" href="#why-functions" title="Link to this heading">#</a></h2>
 <p>The most important concept in Python and arguably in all of programming is that of a <strong>function</strong>. Functions are <em>reusable blocks of code</em>.</p>
 <p>Consider the following example. We are writing an application for handling tournaments and want to compute player ratings using the <a class="reference external" href="https://en.wikipedia.org/wiki/Elo_rating_system">ELO rating system</a>. This system works by first calculating the probabilities of the players winning (i.e. the expected scores) and then updating the player’s ratings from those probabilities and their old ratings.</p>
 <p>Consider an example with two players, where the first player has the rating <code class="docutils literal notranslate"><span class="pre">1000</span></code> and the second player has the rating <code class="docutils literal notranslate"><span class="pre">1500</span></code>. Let’s store the rating of the first player in a variable <code class="docutils literal notranslate"><span class="pre">rating1</span></code> and the rating of the second player in a variable <code class="docutils literal notranslate"><span class="pre">rating2</span></code>:</p>
@@ -531,7 +556,7 @@ document.write(`
 <p>Second, if we want to change the rating calculation, we only need to update the function - all code that uses the function will automatically use the new rating calculation.</p>
 </section>
 <section id="defining-and-calling-functions">
-<h2>Defining and Calling Functions<a class="headerlink" href="#defining-and-calling-functions" title="Permalink to this heading">#</a></h2>
+<h2>Defining and Calling Functions<a class="headerlink" href="#defining-and-calling-functions" title="Link to this heading">#</a></h2>
 <p>We <strong>define</strong> a function using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword followed by the function name and parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. This should be followed by a <strong>function body</strong> which contains the function implementation (i.e. the code that we want to store inside the function).</p>
 <p>For example, here is a function that prints a greeting. This function is not super useful, but it will serve to illustrate a few important concepts:</p>
 <div class="cell docutils container">
@@ -633,7 +658,7 @@ Hello, other user
 <p>To make our functions more useful, we should give them parameters that we can use to <em>customize their behaviour</em>.</p>
 </section>
 <section id="function-parameters-and-arguments">
-<h2>Function Parameters and Arguments<a class="headerlink" href="#function-parameters-and-arguments" title="Permalink to this heading">#</a></h2>
+<h2>Function Parameters and Arguments<a class="headerlink" href="#function-parameters-and-arguments" title="Link to this heading">#</a></h2>
 <p>Functions can take <strong>parameters</strong> between the parentheses which allow us to pass additional values to the function in a function call. These parameters may then be used inside the function body just like regular variables.</p>
 <p>Consider a function that should print a greeting which contains a name. We would write it like this:</p>
 <div class="cell docutils container">
@@ -840,7 +865,7 @@ Hello, other user
 </div>
 </section>
 <section id="the-return-keyword">
-<h2>The <code class="docutils literal notranslate"><span class="pre">return</span></code> Keyword<a class="headerlink" href="#the-return-keyword" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">return</span></code> Keyword<a class="headerlink" href="#the-return-keyword" title="Link to this heading">#</a></h2>
 <p>At the moment we are <em>printing</em> values inside our functions. But usually we would like the function to <em>compute</em> a value and hand it to us. We can accomplish this using the <code class="docutils literal notranslate"><span class="pre">return</span></code> keyword.</p>
 <p>Let’s rewrite the <code class="docutils literal notranslate"><span class="pre">print_greeting</span></code> function to a <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code> function that <em>returns</em> the greeting instead of <em>printing</em> it.</p>
 <div class="cell docutils container">
@@ -957,7 +982,7 @@ Hello, other user
 <p>However, if we would have printed <code class="docutils literal notranslate"><span class="pre">full_name</span></code> instead of returning it we wouldn’t have been able to pass it to <code class="docutils literal notranslate"><span class="pre">get_greeting</span></code>.</p>
 </section>
 <section id="writing-a-complex-function">
-<h2>Writing a Complex Function<a class="headerlink" href="#writing-a-complex-function" title="Permalink to this heading">#</a></h2>
+<h2>Writing a Complex Function<a class="headerlink" href="#writing-a-complex-function" title="Link to this heading">#</a></h2>
 <p>Armed with our knowledge, we can return to the example that motivated this chapter.</p>
 <p>Here is how we would write a function that computes the expected scores for two players given their ratings.</p>
 <div class="cell docutils container">
@@ -1032,7 +1057,7 @@ Hello, other user
 <p><strong>Therefore you should always use sensible names for your variables, parameters and functions.</strong></p>
 </section>
 <section id="docstrings">
-<h2>Docstrings<a class="headerlink" href="#docstrings" title="Permalink to this heading">#</a></h2>
+<h2>Docstrings<a class="headerlink" href="#docstrings" title="Link to this heading">#</a></h2>
 <p>To further improve the readability of our functions, it’s common practice to document them using so called <strong>documentation strings</strong> (or docstrings for short).</p>
 <p>This looks like this:</p>
 <div class="cell docutils container">
@@ -1057,7 +1082,7 @@ Hello, other user
 <p>You should write docstrings for all functions that will be used by other developers in a codebase or if you are writing a package that is intended to be used by other people.</p>
 </section>
 <section id="useful-built-in-functions">
-<h2>Useful Built-in Functions<a class="headerlink" href="#useful-built-in-functions" title="Permalink to this heading">#</a></h2>
+<h2>Useful Built-in Functions<a class="headerlink" href="#useful-built-in-functions" title="Link to this heading">#</a></h2>
 <p>There is a number of useful built-in functions.</p>
 <p>In fact, you already encountered two of them - namely <code class="docutils literal notranslate"><span class="pre">print</span></code> and <code class="docutils literal notranslate"><span class="pre">type</span></code>:</p>
 <div class="cell docutils container">

@@ -1,13 +1,23 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:title" content="Chapter 8. Input and Output" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://uhasker.github.io/src/08-input-and-output/chapter.html" />
+<meta property="og:site_name" content="Python" />
+<meta property="og:description" content="In this chapter we will cover how to read input from a user or a file and how to write output to a file. We will also cover a topic that is rarely discussed in introductory programming books, but s..." />
+<meta property="og:image:width" content="1146" />
+<meta property="og:image:height" content="600" />
+<meta property="og:image" content="https://uhasker.github.io/the-python-minibook/_images/social_previews/summary_src_08-input-and-output_chapter_2f6cdb64.png" />
+<meta property="og:image:alt" content="In this chapter we will cover how to read input from a user or a file and how to write output to a file. We will also cover a topic that is rarely discussed..." />
+<meta name="description" content="In this chapter we will cover how to read input from a user or a file and how to write output to a file. We will also cover a topic that is rarely discussed in introductory programming books, but s..." />
+<meta name="twitter:card" content="summary_large_image" />
 
     <title>Chapter 8. Input and Output &#8212; The Python Minibook</title>
   
@@ -29,40 +39,44 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles.css?v=0f3ba4bc" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'src/08-input-and-output/chapter';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -155,7 +169,18 @@ const thebe_selector_output = ".output, .cell_output"
     <p class="title logo__title">The Python Minibook</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -396,14 +421,14 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-8-input-and-output">
-<h1>Chapter 8. Input and Output<a class="headerlink" href="#chapter-8-input-and-output" title="Permalink to this heading">#</a></h1>
+<h1>Chapter 8. Input and Output<a class="headerlink" href="#chapter-8-input-and-output" title="Link to this heading">#</a></h1>
 <p>In this chapter we will cover how to read input from a user or a file and how to write output to a file.</p>
 <p>We will also cover a topic that is rarely discussed in introductory programming books, but should be understood by every working programmer - <em>encodings</em>.</p>
 <section id="more-on-strings">
-<h2>More on Strings<a class="headerlink" href="#more-on-strings" title="Permalink to this heading">#</a></h2>
+<h2>More on Strings<a class="headerlink" href="#more-on-strings" title="Link to this heading">#</a></h2>
 <p>When working with input and output, you will usually need to perform operations on strings. While we introduced the string data type in chapter 1, we haven’t actually done too much with strings so far. Let us fix that and talk about strings in more detail.</p>
 <section id="important-string-methods">
-<h3>Important String Methods<a class="headerlink" href="#important-string-methods" title="Permalink to this heading">#</a></h3>
+<h3>Important String Methods<a class="headerlink" href="#important-string-methods" title="Link to this heading">#</a></h3>
 <p>Just like lists, strings have a bunch of operators and methods that you will use quite often. We already discussed the concatenation operator <code class="docutils literal notranslate"><span class="pre">+</span></code> and repetition operator <code class="docutils literal notranslate"><span class="pre">*</span></code>. Another important operator is the index access operator, which allows us to take the character at some position of a string. This operator works the same way it works for lists - you think of a string as a <em>list of characters</em> in this context:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -559,7 +584,7 @@ document.write(`
 </div>
 </section>
 <section id="escape-characters">
-<h3>Escape Characters<a class="headerlink" href="#escape-characters" title="Permalink to this heading">#</a></h3>
+<h3>Escape Characters<a class="headerlink" href="#escape-characters" title="Link to this heading">#</a></h3>
 <p>Some characters don’t denote letters, digits or special characters like <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">,</span></code> or <code class="docutils literal notranslate"><span class="pre">;</span></code> and need special treatment. The most important example of this is the <strong>newline character</strong>.</p>
 <p>The newline character is a <strong>non-printable character</strong>, because it’s - well - not really printed to the screen. Instead it describes an <em>action to take</em> (namely to go to the next line). Python represents newline characters using <code class="docutils literal notranslate"><span class="pre">\n</span></code>:</p>
 <div class="cell docutils container">
@@ -729,7 +754,7 @@ This is another line.
 </section>
 </section>
 <section id="the-input-function">
-<h2>The <code class="docutils literal notranslate"><span class="pre">input</span></code> Function<a class="headerlink" href="#the-input-function" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">input</span></code> Function<a class="headerlink" href="#the-input-function" title="Link to this heading">#</a></h2>
 <p>We can read a string from the command line using the <code class="docutils literal notranslate"><span class="pre">input</span></code> function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">user_value</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 </pre></div>
@@ -741,9 +766,9 @@ This is another line.
 </div>
 </section>
 <section id="working-with-text-files">
-<h2>Working with Text Files<a class="headerlink" href="#working-with-text-files" title="Permalink to this heading">#</a></h2>
+<h2>Working with Text Files<a class="headerlink" href="#working-with-text-files" title="Link to this heading">#</a></h2>
 <section id="reading-text-files">
-<h3>Reading Text Files<a class="headerlink" href="#reading-text-files" title="Permalink to this heading">#</a></h3>
+<h3>Reading Text Files<a class="headerlink" href="#reading-text-files" title="Link to this heading">#</a></h3>
 <p>Let’s create a text file <code class="docutils literal notranslate"><span class="pre">example.txt</span></code> with the following content:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Roses</span> <span class="n">are</span> <span class="n">red</span><span class="o">.</span>
 <span class="n">Violets</span> <span class="n">aren</span><span class="s1">&#39;t blue.</span>
@@ -848,7 +873,7 @@ They&#39;re called violets.
 <p>To summarize, we first need to <em>open</em> a file resulting in a <em>file object</em>. We can then perform operations on that <em>file object</em> (for example we can read the content of the file). Finally we need to <em>close</em> the file object.</p>
 </section>
 <section id="the-with-statement">
-<h3>The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement<a class="headerlink" href="#the-with-statement" title="Permalink to this heading">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">with</span></code> Statement<a class="headerlink" href="#the-with-statement" title="Link to this heading">#</a></h3>
 <p>To simplify working with files, we can use the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement which will automatically close the file:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -884,7 +909,7 @@ They&#39;re called violets.
 </div>
 </section>
 <section id="the-mode-argument">
-<h3>The <code class="docutils literal notranslate"><span class="pre">mode</span></code> Argument<a class="headerlink" href="#the-mode-argument" title="Permalink to this heading">#</a></h3>
+<h3>The <code class="docutils literal notranslate"><span class="pre">mode</span></code> Argument<a class="headerlink" href="#the-mode-argument" title="Link to this heading">#</a></h3>
 <p>Writing to a file works similarly to reading from a file. We can write to a file by passing the <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> (“write”) mode as the second argument to <code class="docutils literal notranslate"><span class="pre">open</span></code> and calling the <code class="docutils literal notranslate"><span class="pre">write</span></code> method on the file object:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -907,7 +932,7 @@ They&#39;re called violets.
 </section>
 </section>
 <section id="encodings">
-<h2>Encodings<a class="headerlink" href="#encodings" title="Permalink to this heading">#</a></h2>
+<h2>Encodings<a class="headerlink" href="#encodings" title="Link to this heading">#</a></h2>
 <p>Now that we have the basics out of the way, we need to have a look at how the content of a file is actually stored on disk. To accomplish that we will pass yet another mode argument to <code class="docutils literal notranslate"><span class="pre">open</span></code>, namely <code class="docutils literal notranslate"><span class="pre">rb</span></code>. The <code class="docutils literal notranslate"><span class="pre">rb</span></code> mode means “read the file as a binary file” (<code class="docutils literal notranslate"><span class="pre">r</span></code> = read and <code class="docutils literal notranslate"><span class="pre">b</span></code> = binary):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

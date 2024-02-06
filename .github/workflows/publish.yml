@@ -25,7 +25,7 @@ jobs:
       # Build the book
       - name: Build the book
         run: |
-          jupyter-book build .
+          sphinx-build . ./_build/html -b html
 
       # Push the book's HTML to github-pages
       - name: GitHub Pages action
@@ -33,4 +33,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html
-

@@ -13,8 +13,6 @@ If you want to contribute, you can either create an issue or a pull request.
 If you create a pull request, **read the `CONTRIBUTING.md` first**.
 We will reject PRs that fail to adhere to the `CONTRIBUTING.md` without further review.
 
-**Please do not try to contribute to chapters that are not marked as finished in the progress section.**
-
 We are specifically interested if you find one of the following:
 
 - typos
